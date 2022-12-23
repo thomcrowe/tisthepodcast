@@ -153,11 +153,11 @@ function AboutSection(props) {
           !isExpanded && 'lg:line-clamp-4'
         )}
       >
-        Welcome to Tis the Podcast, the podcast that's determined to keep the spirit of Christmas alive 365 days a year! Join us and our community as we talk all things Christmas!
+        Welcome to Tis the Podcast, the podcast that&apos;s determined to keep the spirit of Christmas alive 365 days a year! Join us and our community as we talk all things Christmas!
         
-        So what can you expect from this group of misfit toys? Every week we're going to look at a different Christmas movie, special, or TV episode.
+        So what can you expect from this group of misfit toys? Every week we&apos;re going to look at a different Christmas movie, special, or TV episode.
         
-        As we talk, we'll share our reviews, insights, and witty banter. As our reviews grow, you can find the canonical ranking of Christmas movies here on our site. Really, what more could you want out of a Christmas podcast?
+        As we talk, we&apos;ll share our reviews, insights, and witty banter. As our reviews grow, you can find the canonical ranking of Christmas movies here on our site. Really, what more could you want out of a Christmas podcast?
       </p>
       {!isExpanded && (
         <button
