@@ -4,6 +4,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    domains: ['cdn.raster.app']
+  }
 }
 
 module.exports = nextConfig
