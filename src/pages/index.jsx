@@ -7,6 +7,8 @@ import { useAudioPlayer } from '@/components/AudioProvider'
 import { Container } from '@/components/Container'
 import { FormattedDate } from '@/components/FormattedDate'
 
+export { getStaticProps } from "../utils/feed";
+
 function PlayPauseIcon({ playing, ...props }) {
   return (
     <svg aria-hidden="true" viewBox="0 0 10 10" fill="none" {...props}>
@@ -56,9 +58,8 @@ function EpisodeEntry({ episode }) {
             date={date}
             className="order-first font-mono text-sm leading-7 text-slate-500"
           />
-          <p className="mt-1 text-base leading-7 text-slate-700">
-            {episode.description}
-          </p>
+          <div className="mt-1 text-base leading-7 text-slate-700" dangerouslySetInnerHTML={{__html: episode.description}}/>
+
           <div className="mt-4 flex items-center gap-4">
             <button
               type="button"
@@ -124,24 +125,3 @@ export default function Home({ episodes }) {
   )
 }
 
-export async function getStaticProps() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-
-  return {
-    props: {
-      episodes: feed.items.map(
-        ({ id, title, description, enclosures, published }) => ({
-          id,
-          title: `${id}: ${title}`,
-          published,
-          description,
-          audio: enclosures.map((enclosure) => ({
-            src: enclosure.url,
-            type: enclosure.type,
-          }))[0],
-        })
-      ),
-    },
-    revalidate: 10,
-  }
-}

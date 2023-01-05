@@ -7,6 +7,8 @@ import { Container } from '@/components/Container'
 import { FormattedDate } from '@/components/FormattedDate'
 import { PlayButton } from '@/components/player/PlayButton'
 
+import { getStaticProps as feedStaticProps } from "../utils/feed";
+
 export default function Episode({ episode }) {
   let date = new Date(episode.published)
 
@@ -44,9 +46,7 @@ export default function Episode({ episode }) {
                 />
               </div>
             </div>
-            <p className="ml-24 mt-3 text-lg font-medium leading-8 text-slate-700">
-              {episode.description}
-            </p>
+            <div className="ml-24 mt-3 text-lg font-medium leading-8 text-slate-700" dangerouslySetInnerHTML={{ __html: episode.description }} />
           </header>
           <hr className="my-12 border-gray-200" />
           <div
@@ -60,20 +60,9 @@ export default function Episode({ episode }) {
 }
 
 export async function getStaticProps({ params }) {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-  let episode = feed.items
-    .map(({ id, title, description, content, enclosures, published }) => ({
-      id: id.toString(),
-      title: `${id}: ${title}`,
-      description,
-      content,
-      published,
-      audio: enclosures.map((enclosure) => ({
-        src: enclosure.url,
-        type: enclosure.type,
-      }))[0],
-    }))
-    .find(({ id }) => id === params.episode)
+  let episodes = await feedStaticProps();
+  console.debug(params);
+  let episode = episodes.props.episodes.find(({ id }) => id === params.episode);
 
   if (!episode) {
     return {
@@ -90,12 +79,12 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let feed = await parse('https://their-side-feed.vercel.app/api/feed')
-
+  let feed = await parse('https://feed.podbean.com/tisthepodcast/feed.xml')
+    
   return {
-    paths: feed.items.map(({ id }) => ({
+    paths: feed.items.map(({ link }) => ({
       params: {
-        episode: id.toString(),
+        episode: link.replace('https://tisthepodcast.podbean.com/e/', '').replace(/\/+$/, ''),
       },
     })),
     fallback: 'blocking',
