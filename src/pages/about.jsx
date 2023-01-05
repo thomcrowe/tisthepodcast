@@ -17,7 +17,7 @@ const Blog = ({ title = '', url = '', children }) => (
 
 export default () => (
     <>
-        <div className="pt-16 pb-12 sm:pb-4 lg:pt-12 flex-1 border">
+        <div className="pt-16 pb-12 sm:pb-4 lg:pt-12 flex-1">
             <Container>
                 <div className='grid'>
                     <div>
