@@ -13,6 +13,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap"
         />
+        <script src="https://kit.fontawesome.com/34f0432225.js" crossOrigin="anonymous"></script>
       </Head>
       <body>
         <Main />

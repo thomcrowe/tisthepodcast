@@ -1,0 +1,25 @@
+.btn-hover {
+    @apply relative;
+    z-index: 1;
+    &:not(:disabled) {
+        &::after, &::before {
+            @apply absolute top-0 left-0 right-0 bottom-0;
+        }
+        &::after {
+            content: '';
+            z-index: -1;
+            border-radius: inherit;
+            @apply bg-current opacity-0;
+        }
+        &:hover::after {
+            @apply opacity-5;
+        }
+        &:active::after {
+            @apply opacity-10;
+        }
+    }
+}
+.btn-icon {
+    @extend .btn-hover;
+    @apply inline-flex items-center justify-center rounded-full w-[2em] h-[2em];
+}
