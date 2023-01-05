@@ -8,8 +8,8 @@ const LK = ({ className = '', username = '', brand = '' }) => (
 const Blog = ({ title = '', url = '', children }) => (
     <div className='my-6'>
         <b>{title}</b>
-        <div className='flex gap-4 mt-4 flex-col sm:flex-row'>
-            <img className='w-36 h-36 mt-1' src={`https://cdn.raster.app/tis-the-podcast/library/${url}`} alt="" />
+        <div className='flex gap-4 mt-4 flex-col sm:flex-row items-start'>
+            <Image className='mt-1' width={150} height={150} src={`https://cdn.raster.app/tis-the-podcast/library/${url}`} alt="" />
             <p>{children}</p>
         </div>
     </div>
