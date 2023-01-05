@@ -23,6 +23,12 @@ export default () => (
                         Julia is a people-loving Pollyanna with an affinity for useless knowledge and pop-culture trivia. She can often speak in Movie/TV Quotes and Gifs. With her amazing husband's support, she has made it her goal to raise their 4 kids to not be cotton-headed ninny muggins'.
                         <LK brand='instagram' className='instagram-icon' username='hartnhevn' />
                     </p>
+                    <b>THOM CROWE aka Chief Reindeer Pooper Scooper</b>
+                    <p>
+                        Thom has a self-diagnosed Christmas obsession and is known to subject his very loving and supportive wife and sweet daughter to Christmas music during the hottest of Oklahoma months. Throughout the year, Thom serves as an Orthodox deacon, volunteers with teens, works marketing magic, loves to cook, and enjoys reading, and lots of nerdy things.
+                        <LK brand='twitter' username='thomcrowe' className='text-[#1d9bf0]' />
+                        <LK brand='instagram' className='instagram-icon -ml-[0.5em]' username='thomcrowe' />
+                    </p>
                 </div>
             </Container>
         </div>
