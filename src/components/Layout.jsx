@@ -116,7 +116,7 @@ function OvercastIcon(props) {
 }
 
 function PodcastIcon(props) {
-  return <svg xmlns="http://www.w3.org/2000/svg" {...props}  viewBox="0 0 50 50"><path d="M24.5 12L24.5 12c-1.381 0-2.5-1.119-2.5-2.5v-3C22 5.119 23.119 4 24.5 4h0C25.881 4 27 5.119 27 6.5v3C27 10.881 25.881 12 24.5 12zM24.5 47L24.5 47c-1.381 0-2.5-1.119-2.5-2.5v-3c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v3C27 45.881 25.881 47 24.5 47zM24.5 36L24.5 36c-1.381 0-2.5-1.119-2.5-2.5v-16c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v16C27 34.881 25.881 36 24.5 36zM33.5 12L33.5 12c-1.381 0-2.5 1.119-2.5 2.5v3c0 1.381 1.119 2.5 2.5 2.5h0c1.381 0 2.5-1.119 2.5-2.5v-3C36 13.119 34.881 12 33.5 12zM33.5 23L33.5 23c-1.381 0-2.5 1.119-2.5 2.5v10c0 1.381 1.119 2.5 2.5 2.5h0c1.381 0 2.5-1.119 2.5-2.5v-10C36 24.119 34.881 23 33.5 23zM41.5 21L41.5 21c-1.381 0-2.5 1.119-2.5 2.5v3c0 1.381 1.119 2.5 2.5 2.5h0c1.381 0 2.5-1.119 2.5-2.5v-3C44 22.119 42.881 21 41.5 21zM15.5 38L15.5 38c-1.381 0-2.5-1.119-2.5-2.5v-3c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v3C18 36.881 16.881 38 15.5 38zM15.5 27L15.5 27c-1.381 0-2.5-1.119-2.5-2.5v-10c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v10C18 25.881 16.881 27 15.5 27zM7.5 21L7.5 21c1.381 0 2.5 1.119 2.5 2.5v3c0 1.381-1.119 2.5-2.5 2.5h0C6.119 29 5 27.881 5 26.5v-3C5 22.119 6.119 21 7.5 21z"/></svg>
+  return <svg xmlns="http://www.w3.org/2000/svg" {...props} viewBox="0 0 50 50"><path d="M24.5 12L24.5 12c-1.381 0-2.5-1.119-2.5-2.5v-3C22 5.119 23.119 4 24.5 4h0C25.881 4 27 5.119 27 6.5v3C27 10.881 25.881 12 24.5 12zM24.5 47L24.5 47c-1.381 0-2.5-1.119-2.5-2.5v-3c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v3C27 45.881 25.881 47 24.5 47zM24.5 36L24.5 36c-1.381 0-2.5-1.119-2.5-2.5v-16c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v16C27 34.881 25.881 36 24.5 36zM33.5 12L33.5 12c-1.381 0-2.5 1.119-2.5 2.5v3c0 1.381 1.119 2.5 2.5 2.5h0c1.381 0 2.5-1.119 2.5-2.5v-3C36 13.119 34.881 12 33.5 12zM33.5 23L33.5 23c-1.381 0-2.5 1.119-2.5 2.5v10c0 1.381 1.119 2.5 2.5 2.5h0c1.381 0 2.5-1.119 2.5-2.5v-10C36 24.119 34.881 23 33.5 23zM41.5 21L41.5 21c-1.381 0-2.5 1.119-2.5 2.5v3c0 1.381 1.119 2.5 2.5 2.5h0c1.381 0 2.5-1.119 2.5-2.5v-3C44 22.119 42.881 21 41.5 21zM15.5 38L15.5 38c-1.381 0-2.5-1.119-2.5-2.5v-3c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v3C18 36.881 16.881 38 15.5 38zM15.5 27L15.5 27c-1.381 0-2.5-1.119-2.5-2.5v-10c0-1.381 1.119-2.5 2.5-2.5h0c1.381 0 2.5 1.119 2.5 2.5v10C18 25.881 16.881 27 15.5 27zM7.5 21L7.5 21c1.381 0 2.5 1.119 2.5 2.5v3c0 1.381-1.119 2.5-2.5 2.5h0C6.119 29 5 27.881 5 26.5v-3C5 22.119 6.119 21 7.5 21z" /></svg>
 }
 
 function RSSIcon(props) {
@@ -158,9 +158,9 @@ function AboutSection(props) {
         )}
       >
         Welcome to Tis the Podcast, the podcast that&apos;s determined to keep the spirit of Christmas alive 365 days a year! Join us and our community as we talk all things Christmas!
-        
+
         So what can you expect from this group of misfit toys? Every week we&apos;re going to look at a different Christmas movie, special, or TV episode.
-        
+
         As we talk, we&apos;ll share our reviews, insights, and witty banter. As our reviews grow, you can find the canonical ranking of Christmas movies here on our site. Really, what more could you want out of a Christmas podcast?
       </p>
       {!isExpanded && (
@@ -182,9 +182,11 @@ export function Layout({ children }) {
   return (
     <>
       <header className="bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
-        <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
-          <span className="font-mono text-slate-500">Hosted by</span>
-          <span className="mt-6 flex gap-6 font-bold text-slate-900">
+        <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 gap-6 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
+          <Link href='/' className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
+          <Link href='/about' className="font-mono text-slate-500 hover:text-slate-900">About</Link>
+          <Link href='/list' className="font-mono text-slate-500 hover:text-slate-900">Our List</Link>
+          {/* <span className="mt-6 flex gap-6 font-bold text-slate-900">
             {hosts.map((host, hostIndex) => (
               <Fragment key={host}>
                 {hostIndex !== 0 && (
@@ -195,7 +197,7 @@ export function Layout({ children }) {
                 {host}
               </Fragment>
             ))}
-          </span>
+          </span> */}
         </div>
         <div className="relative z-10 mx-auto px-4 pb-4 pt-10 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:py-12 lg:px-8 xl:px-12">
           <Link
@@ -262,21 +264,10 @@ export function Layout({ children }) {
       <footer className="border-t border-slate-200 bg-slate-50 py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
         <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
           <AboutSection />
-          <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
-            <PersonIcon className="h-3 w-auto fill-slate-300" />
-            <span className="ml-2.5">Hosted by</span>
-          </h2>
-          <div className="mt-2 flex gap-6 text-sm font-bold leading-7 text-slate-900">
-            {hosts.map((host, hostIndex) => (
-              <Fragment key={host}>
-                {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-slate-400">
-                    /
-                  </span>
-                )}
-                {host}
-              </Fragment>
-            ))}
+          <div className='justify-center mt-6 flex gap-6'>
+            <Link href='/' className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
+            <Link href='/about' className="font-mono text-slate-500 hover:text-slate-900">About</Link>
+            <Link href='/list' className="font-mono text-slate-500 hover:text-slate-900">Our List</Link>
           </div>
         </div>
       </footer>
