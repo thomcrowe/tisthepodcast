@@ -185,7 +185,7 @@ export function Layout({ children }) {
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 gap-6 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <Link href='/' className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
           <Link href='/about' className="font-mono text-slate-500 hover:text-slate-900">About</Link>
-          <Link href='/list' className="font-mono text-slate-500 hover:text-slate-900">Our List</Link>
+          <Link href='/the-list' className="font-mono text-slate-500 hover:text-slate-900">The List</Link>
           {/* <span className="mt-6 flex gap-6 font-bold text-slate-900">
             {hosts.map((host, hostIndex) => (
               <Fragment key={host}>
@@ -267,7 +267,7 @@ export function Layout({ children }) {
           <div className='justify-center mt-6 flex gap-6'>
             <Link href='/' className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
             <Link href='/about' className="font-mono text-slate-500 hover:text-slate-900">About</Link>
-            <Link href='/list' className="font-mono text-slate-500 hover:text-slate-900">Our List</Link>
+            <Link href='/the-list' className="font-mono text-slate-500 hover:text-slate-900">The List</Link>
           </div>
         </div>
       </footer>
