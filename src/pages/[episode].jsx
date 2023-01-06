@@ -61,7 +61,6 @@ export default function Episode({ episode }) {
 
 export async function getStaticProps({ params }) {
   let episodes = await feedStaticProps();
-  console.debug(params);
   let episode = episodes.props.episodes.find(({ id }) => id === params.episode);
 
   if (!episode) {
