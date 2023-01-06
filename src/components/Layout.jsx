@@ -221,6 +221,11 @@ export function Layout({ children }) {
             <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
               Keeping the Christmas spirit alive 365 days a year.
             </p>
+            <div className='justify-center mt-6 flex lg:hidden gap-6'>
+              <Link href='/' className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
+              <Link href='/about' className="font-mono text-slate-500 hover:text-slate-900">About</Link>
+              <Link href='/the-list' className="font-mono text-slate-500 hover:text-slate-900">The List</Link>
+            </div>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
           <section className="mt-10 lg:mt-12">
