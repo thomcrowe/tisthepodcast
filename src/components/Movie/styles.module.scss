@@ -4,3 +4,14 @@
         @apply shadow-sm bg-white border;
     }
 }
+
+.main {
+    @apply flex py-2 items-center font-bold gap-4 text-lg;
+    &::after {
+        content: attr(title);
+    }
+    &::before {
+        content: attr(rank);
+        @apply order-1 ml-auto
+    }
+}
