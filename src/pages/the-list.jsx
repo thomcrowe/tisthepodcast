@@ -37,15 +37,60 @@ const List = () => (
             <Movie href="/i-dont-have-any-secrets-but-i-am-an-ally" index={18} title='Happiest Season' rank='8.083' src='epf3o4rhnV?ixlib=js-3.7.0&s=3604563c118b743bb682f077e970ed6a' />
             <Movie href="/merry-christmas-to-those-who-have-who-have-seen-us-at-our-best-and-at-our-worst-and-cant-tell-the-difference" index={19} title='A Crown for Christmas' rank='8.083' src='1YijfeQoSA?ixlib=js-3.7.0&s=d466bc344804477da2faada44d976819' />
             <Movie href="/im-dreaming-of-a-white-christmas-1577037854" index={20} title='White Christmas' rank='7.83' src='LdALl1iTuY?ixlib=js-3.7.0&s=38340a39ee329f757b7e06899c0e94f1' />
-            <Movie href="/now-i-have-a-machine-gun-ho-ho-ho" index={20} title='Die Hard' rank='7.83' src='zUv24MFK72?ixlib=js-3.7.0&s=df642ed1c280642e7f4c3e4c521d6af7' />
+            <Movie href="/justonceidlikea-regularnormal-christmas-eggnoga-fn-christmas-tree-alittle-turkeybutnoi-gotta-crawl-aroundin-this-motherfn-tin-can-die-hard-2" index={20} title='Die Hard 2' rank='7.83' src='sBjqltib3d?ixlib=js-3.7.0&s=34e6ab7098ff7c8fc748b026051b2b78' />
             <Movie href="/gruss-vom-krampus" index={21} title='Krampus' rank='7.73' src='leUk2lIxk8?ixlib=js-3.7.0&s=5420455f67a4ebcebb5bf987804ab0e1' />
             <Movie href="/the-coca-cola-santa-is-just-a-hoax" index={22} title='Rare Exports' rank='7.71' src='vhqjQVCInU?ixlib=js-3.7.0&s=5297f28c8309019ff960107c92b62215' />
             <Movie href="/you-may-not-ask-for-anything-to-do-with-interpersonal-relationships-got-it-this-is-santa-claus-not-dear-abby" index={23} title='All I Want for Christmas' rank='7.617' src='muSqqkbJRP?ixlib=js-3.7.0&s=cf31dea923a9d64fb3778a5a83ed7514' />
             <Movie href="/link-by-link-by-horrifying-link" index={24} title='A Christmas Carol: The Musical (1994)' rank='7.55' src='5vIzbFwqmO?ixlib=js-3.7.0&s=c990800f4b26128acdfa583b1b53f0da' />
             <Movie href="/merry-christmas-ya-filthy-animal-1541871809" index={25} title='Home Alone 2: Lost in New York ' rank='7.50' src='agqmCzN65j?ixlib=js-3.7.0&s=bada262c8119774affeebb50c8d57214' />
-            <Movie href="/gruss-vom-krampus" index={21} title='Krampus' rank='7.73' src='leUk2lIxk8?ixlib=js-3.7.0&s=5420455f67a4ebcebb5bf987804ab0e1' />
-            <Movie href="/gruss-vom-krampus" index={21} title='Krampus' rank='7.73' src='leUk2lIxk8?ixlib=js-3.7.0&s=5420455f67a4ebcebb5bf987804ab0e1' />
+            <Movie href="what-s-christmas-but-a-time-for-finding-yourself-a-day-older-and-not-a-day-richer-scrooge-1970" index={26} title='Scrooge (1970)' rank='7.467' src='hGelgdQ1xy?ixlib=js-3.7.0&s=56137f82f6a2a61e78802cd4e97a7772' />
+            <Movie href="/and-i-told-him-it-was-while-you-were-sleeping" index={27} title='While You Were Sleeping' rank='7.43' src='qHQpRNfIos?ixlib=js-3.7.0&s=3f778074d8f30b2d0abeaecb707f3d86' />
+            <Movie href="/thats-right-bamm-bamm-everyone-but-fred" index={28} title='A Flintstones Christmas Carol' rank='7.383' src='XPdxLDh9Zd?ixlib=js-3.7.0&s=b41d47dce1a61d08cfbd352e7a473156' />
+            <Movie href="/now-i-have-a-machine-gun-ho-ho-ho" index={29} title='Die Hard' rank='7.33' src='dHR2T4zvMN?ixlib=js-3.7.0&s=603cddaa476bfae446edb98ccaabd3c5' />
+            <Movie href="/itsthe-mrs-clause" index={29} title='The Santa Clause 2: The Mrs. Clause' rank='7.33' src='g1i2amnN8W?ixlib=js-3.7.0&s=823bf47aa43c61b027c557562ea6e9f2' />
+            <Movie href="/she-made-them-come-together-so-they-would-be-there-for-one-another-the-best-man-holiday" index={29} title='The Best Man Holiday' rank='7.33' src='c6oKXhwhrL?ixlib=js-3.7.0&s=d3aceee6b6cdaaac7b06b7bcaa9cc5d6' />
+            <Movie href="/love-doesn-t-have-to-be-perfect-it-just-has-to-be-honest-love-hard" index={29} title='Love Hard' rank='7.33' src='xq3P4w1aTl?ixlib=js-3.7.0&s=2806854affe07b3f6fd6b49358b2c6f7' />
+            <Movie href="/i-will-honor-christmas-in-my-heart-and-try-to-keep-it-all-the-year" index={30} title='The Man Who Invented Christmas' rank='7.32' src='GJCuR2BmIJ?ixlib=js-3.7.0&s=4de830042c214483616cd3d194ddf550' />
+            <Movie href="/the-christmas-chronicles-a-very-special-bonus-episode" index={31} title='The Christmas Chronicles' rank='7.73' src='aZN3szRUj4?ixlib=js-3.7.0&s=5a8386b2209500fa657589583a65aa6f' />
+            <Movie href="/every-time-a-bell-rings-an-angel-gets-his-wings" index={32} title='It&#39;s a Wonderful Life' rank='7.083' src='Ex8oedFpMW?ixlib=js-3.7.0&s=31fcca92f2d47dc3a9eddf7d36f9b968' />
+            <Movie href="/keep-your-fingers-crossed-just-in-case-eloise-at-christmastime" index={33} title='Eloise at Christmastime' rank='7.0' src='I1RNqWRctS?ixlib=js-3.7.0&s=5d750ae6fffaa22092b34b2ee8ad222f' />
+            <Movie href="/he-is-for-all-mankind" index={34} title='The Nativity Story' rank='6.84' src='t6WEbjm6Cz?ixlib=js-3.7.0&s=459b1e78644fabfd58b35f33e13560d0' />
+            <Movie href="/christmasis-atimewhenyou-look-at-your-life-througha-magnifying-glassand-whatever-you-dont-have-feels-overwhelming-being-aloneis-somuchlonelierat-ch" index={35} title='Mixed Nuts' rank='6.73' src='HxNUjCsz90?ixlib=js-3.7.0&s=ff72e53517235534c6986b2c38085a2d' />
+            <Movie href="/forget-ever-after-just-live-happily-godmothered" index={36} title='Godmothered' rank='6.583' src='ThVFAxF1lS?ixlib=js-3.7.0&s=d502a093a0365f64985b4640614b88fc' />
+            <Movie href="/merry-christmas-happy-easter-and-dont-forget-to-floss" index={37} title='Rise of the Guardians' rank='6.33' src='VIlKEWMHID?ixlib=js-3.7.0&s=0a70020c1af94299c8c8b534c751d225' />
+            <Movie href="/look-mister-there-are-some-rules-that-youve-got-to-follow" index={38} title='Gremlins' rank='6.27' src='6oDKAgWM2t?ixlib=js-3.7.0&s=bc30480297281882727b244c10262f97' />
+            <Movie href="/this-is-halloween-1509328256" index={39} title='The Nightmare Before Christmas' rank='6.25' src='VRmMOumNLm?ixlib=js-3.7.0&s=be28a2922f459a3dc77eca226e7bcd93' />
+            <Movie href="/nintendoa-maze-ofrubber-wiringand-electronicintelligence-soadvancedit-was-deemednot-avideo-game-butan-8bitentertainment-system8bit-christmas" index={40} title='8-Bit Christmas' rank='6.083' src='LPPjpNpfhC?ixlib=js-3.7.0&s=30316950e86f4bfd9e5e667b93c19e31' />
+            <Movie href="/you-have-a-freak-flag-you-just-dont-fly-it" index={41} title='The Family Stone' rank='6.067' src='jtrYZW9ZWC?ixlib=js-3.7.0&s=dd640058dbf14d5d574febd919eff453' />
+            <Movie href="/a-glimpse-by-definition-is-an-impermanent-thing-jack" index={42} title='The Family Man' rank='6.02' src='W6Aw9KBhnT?ixlib=js-3.7.0&s=ce661c8017cb4aee779b0b390f6ece26' />
+            <Movie href="/human-beings-aren-t-meant-to-be-alone-on-the-holidays-we-actually-need-warmth-companionship-and-someone-to-drunk-mock-strangers-with-at-parties" index={43} title='Holidate' rank='5.967' src='v9fCBUkeuj?ixlib=js-3.7.0&s=d62ba4cb9ee5c42e41ae806d385810a2' />
+            <Movie href="/my-business-now-is-the-future-i-will-just-be-the-best-i-can-be-for-the-spirits-and-the-bright-light-and-the-mirror-i-thank-you" index={44} title=' BBC&#39;s/FX&#39;s A Christmas Carol' rank='5.93' src='4DGJhuy1GC?ixlib=js-3.7.0&s=1b58600e4a8f7a25a5aed9dbb7b3cea4' />
+            <Movie href="/i-tell-my-cat-everything-what-i-spend-on-cat-food-i-save-on-therapy-the-nine-kittens-of-christmas" index={45} title='The Nine Kittens of Christmas' rank='5.85' src='sRUT66HDeG?ixlib=js-3.7.0&s=0bf379f3be5f246f6c178785950d3f32' />
+            <Movie href="/skipping-christmas-with-the-kranks" index={46} title='Christmas with the Kranks' rank='5.83' src='OKcweS1R8y?ixlib=js-3.7.0&s=83a70a75a16e0baff3364fd2f1ed0ee61' />
+            <Movie href="/the-start-is-not-nearly-as-important-as-the-finish-2006s-last-holiday" index={46} title='Last Holiday' rank='5.83' src='Km221mZmu7?ixlib=js-3.7.0&s=11ac5810bffa1022ed69f7728df8bb93' />
+            <Movie href="/sometimes-what-we-want-is-not-what-we-need-next-stop-christmas" index={47} title='Next Stop, Christmas ' rank='5.767' src='EJ2XDpQxE3?ixlib=js-3.7.0&s=b11b87f0c9aae32cf649dc3089caf34b1' />
+            <Movie href="/a-together-christmas" index={48} title='Daddy&#39;s Home 2' rank='5.683' src='EC8X6IJbR9?ixlib=js-3.7.0&s=c96eb28bdced20aa2917925a1e770d66' />
+            <Movie href="/god-bless-us-everyone-1527705636" index={49} title='Disney&#39;s A Christmas Carol' rank='5.617' src='r8oMuaEhEt?ixlib=js-3.7.0&s=ebaf682d4697e4acafcabe1bf82ba283' />
+            <Movie href="/this-is-the-polar-express" index={49} title='The Polar Express' rank='5.617' src='ryMFoA2Qcq?ixlib=js-3.7.0&s=17df77ddca6c7e3a1ec3fd22a9a36889' />
+            <Movie href="/if-it-was-good-enough-for-baby-jesus-it-s-good-enough-for-mr-robert-lee-parton" index={50} title='Dolly Parton’s Christmas of Many Colors: Circle of Love' rank='5.6' src='4bo6DoJHXk?ixlib=js-3.7.0&s=65ecbfe51781de04c7465368cc41109f' />
+            <Movie href="/this-family-sure-knows-how-to-throw-a-christmas-right-in-the-toilet" index={51} title='Pete&#39;s Christmas' rank='5.583' src='s201F9uES7?ixlib=js-3.7.0&s=1ab7d20a5a154fe50cc8ef01366e591d' />
+            <Movie href="/you-sound-sweet-but-you-dont-make-sense-holiday-inn" index={52} title='Holiday Inn' rank='5.05' src='IyzgEpQsYE?ixlib=js-3.7.0&s=7291649e2cb74492e4f88c2f6dca3f88' />
+            <Movie href="/such-a-fuss-when-everything-we-want-is-right-in-front-of-us-the-whole-time" index={53} title='Love the Coopers' rank='5.0' src='IDX1dBS5x9?ixlib=js-3.7.0&s=20775be95dc90a539f064e9525372604' />
+            <Movie href="/the-worlds-most-pissed-off-snow-cone" index={53} title='Jack Frost' rank='5.0' src='bs97t7ZahX?ixlib=js-3.7.0&s=1fecdd764a58090db4b5a9f52911ba44' />
+            <Movie href="/i-wish-it-was-christmas-every-day" index={54} title='Christmas Every Day' rank='4.95' src='H5DEfB1CUU?ixlib=js-3.7.0&s=4a4e1726186d38e56c4518b42b9a115d' />
+            <Movie href="/hes-magical-carol" index={54} title='Prancer' rank='4.95' src='Ft1faSJ1Aa?ixlib=js-3.7.0&s=3bde989f480aec45d0e4766da24c9d57' />
+            <Movie href="/i-just-wish-we-could-have-a-perfect-christmas-like-in-a-christmas-movie-a-christmas-movie-christmas" index={55} title='A Christmas Movie Christmas' rank='4.83' src='XmecK9OcwA?ixlib=js-3.7.0&s=dfded0b0bf209d9f4fd0f211f1c401d7' />
+            <Movie href="/theres-no-more-heroes-left-in-the-world" index={56} title='Lethal Weapon' rank='4.767' src='tiAqjjYwep?ixlib=js-3.7.0&s=f5bf4a99b58409d9157c4a4d7855f696' />
+            <Movie href="/episode-206-oh-no-baby-no-youre-not-going-to-die-they-are-the-long-kiss-goodnight" index={56} title='The Long Kiss Goodnight' rank='4.767' src='rnDNvj4Khu?ixlib=js-3.7.0&s=b371adceb7c35b05ffb0ff044e9eaa74' />
+            <Movie href="it%e2%80%99s-a-non-denominational-holiday-mixer" index={57} title='Office Christmas Party' rank='4.75' src='QiAWUqpbvA?ixlib=js-3.7.0&s=84a742a9f9805351441b6c077090f38f' />
+            <Movie href="/youll-shoot-your-eye-out-kid" index={57} title='A Christmas Story' rank='4.75' src='lL8GTn6es9?ixlib=js-3.7.0&s=11c530d03c89a60ce5975d7559ba7a95' />
+            <Movie href="/mistletoe-can-be-deadily-if-you-eat-it-but-a-kiss-can-be-even-deadlier-if-you-mean-it" index={58} title='Batman Returns' rank='4.67' src='dih82tNZ0Z?ixlib=js-3.7.0&s=8c7fe1d566abeddd11650f1453feb574' />
+            <Movie href="/my-names-harry-lockhart-ill-be-your-narrator" index={58} title='Kiss, Kiss, Bang, Bang' rank='4.67' src='JMsVrBV35R?ixlib=js-3.7.0&s=b3f72b4708889fcece09458bec030645' />
+            <Movie href="/im-following-in-the-path-of-my-christmas-heroes-the-grinch-the-sticky-bandits-hans-gruber-from-die-hard" index={59} title='The Night Before' rank='4.653' src='agyemwQD9x?ixlib=js-3.7.0&s=5c9133e5537196274ff3809a3354369c' />
+            <Movie href="/iron-man-3-title-tbd" index={60} title='Iron Man 3' rank='4.5467' src='lWZeGoUKwo?ixlib=js-3.7.0&s=5c1b16e2176ea54921bddba27eac9145' />
+            <Movie href="/moms-dont-enjoy-they-give-joy-thats-how-being-a-mom-works" index={61} title='A Bad Mom&#39;s Christmas' rank='4.53' src='6VN7bz0qI9?ixlib=js-3.7.0&s=8e0e8b00b17e5f381ce6964cf1c77be71' />
 
+            
         </div>
     </>
 )
