@@ -26,7 +26,7 @@ const About = () => (
             <Blog title="ANTHONY CARUSO aka Santa&apos;s Head Elf"
                 url='oLQz8thDQY?ixlib=js-3.7.0&s=6ff8176dfd3a551d3b0a8b98129ef4db'
             >
-                Anthony inherited his love (some might say obsession) for Christmas from his parents, specifically his mother. He firmly believes that Christmas is a feeling that should be celebrated year round, not just once a year. (Though he will admit the month of December itself is the best month of the year, and September-December is &quot;The Most Wonderful Time of the Year&quot;.) Besides the holidays, Anthony is: an aspiring author; a proud geek; an animal lover; and a progressive, feminist, political nerd. In addition, he watches way too many movies and television shows, and is adept at dropping quotes from all of them into everyday conversation. He&apos;s also lucky enough to have three places on Earth he calls home - New York (USA), Newfoundland (Canada), and Newcastle (UK) - and he loves his wife and two cats more than anything else, including Christmas itself.
+                One part Buddy the Elf, Two parts Bernard the Elf, and 0 parts Curtis the Elf, Anthony is what some would call ‘New York Brash’. Beneath the hard exterior, he has a heart of silver and gold though, and lives to keep the Christmas Spirit Alive 365 days per year. In addition to Christmas, Anthony is an avid reader and writer, and has massive amounts of love for Spooky Season, Movies, DC Comics (especially Batman), Politics, and his wife, Sarah, and dog, Larry. All complaints about his cinematic opinions can be directed to the worst elf, Thom.
                 <LK brand='twitter' username='TheSandersonBro' className='text-[#1d9bf0]' />
                 <LK brand='instagram' className='instagram-icon -ml-[0.5em]' username='anthonyc929' />
             </Blog>
@@ -40,7 +40,7 @@ const About = () => (
                 title='THOM CROWE aka Chief Reindeer Pooper Scooper'
                 url='11br4i6IKX?ixlib=js-3.7.0&s=9f0cf48f0e5fccbe9088fcd6b30892b2'
             >
-                Thom has a self-diagnosed Christmas obsession and is known to subject his very loving and supportive wife and sweet daughter to Christmas music during the hottest of Oklahoma months. Throughout the year, Thom serves as an Orthodox deacon, volunteers with teens, works marketing magic, loves to cook, and enjoys reading, and lots of nerdy things.
+                Thom has a self-diagnosed Christmas obsession and is known to subject his very loving and supportive wife and sweet daughter to Christmas music during the hottest of Oklahoma months. Throughout the year, Thom works marketing magic, leads a Daisy troop, loves to cook, enjoys reading, and lots of nerdy things.
                 <LK brand='twitter' username='thomcrowe' className='text-[#1d9bf0]' />
                 <LK brand='instagram' className='instagram-icon -ml-[0.5em]' username='thomcrowe' />
             </Blog>
