@@ -2042,7 +2042,7 @@
   "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   "version" "1.0.0"
 
-"fsevents@~2.3.2":
+"fsevents@^2.3.2", "fsevents@~2.3.2":
   "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
   "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
   "version" "2.3.2"
@@ -2536,7 +2536,7 @@
     "@corex/deepmerge" "^4.0.29"
     "minimist" "^1.2.7"
 
-"next@*", "next@13.0.2":
+"next@*", "next@>=11.0.0", "next@13.0.2":
   "integrity" "sha512-uQ5z5e4D9mOe8+upy6bQdYYjo/kk1v3jMW87kTy2TgAyAsEO+CkwRnMgyZ4JoHEnhPZLHwh7dk0XymRNLe1gFw=="
   "resolved" "https://registry.npmjs.org/next/-/next-13.0.2.tgz"
   "version" "13.0.2"
@@ -2561,6 +2561,13 @@
     "@next/swc-win32-arm64-msvc" "13.0.2"
     "@next/swc-win32-ia32-msvc" "13.0.2"
     "@next/swc-win32-x64-msvc" "13.0.2"
+
+"nextjs-google-analytics@^2.2.2":
+  "integrity" "sha512-PfA5QZCV+tsCEHG6AE3UXHY8fpHguN+l8t81GztdVW1EtX6UCfu8/rb/X/E+D3oFMY0P3YFQzouSgdm1OhWFiA=="
+  "resolved" "https://registry.npmjs.org/nextjs-google-analytics/-/nextjs-google-analytics-2.2.2.tgz"
+  "version" "2.2.2"
+  optionalDependencies:
+    "fsevents" "^2.3.2"
 
 "node-releases@^2.0.6":
   "integrity" "sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg=="
@@ -2932,7 +2939,7 @@
     "@react-stately/tree" "^3.3.3"
     "@react-types/shared" "^3.14.1"
 
-"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8||^17||^18", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@18.2.0":
+"react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8||^17||^18", "react@^18.2.0", "react@>= 16.8.0 || 17.x.x || ^18.0.0-0", "react@>=17.0.0", "react@18.2.0":
   "integrity" "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ=="
   "resolved" "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   "version" "18.2.0"
