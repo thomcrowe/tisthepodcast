@@ -11,7 +11,6 @@ export default function App({ Component, pageProps }) {
     <AudioProvider>
       <Layout>
         <Component {...pageProps} />
-        <Component {...pageProps} />
       <Analytics />
       </Layout>
     </AudioProvider>
