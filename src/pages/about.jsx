@@ -27,10 +27,10 @@ const About = () => (
                 url='oLQz8thDQY?ixlib=js-3.7.0&s=6ff8176dfd3a551d3b0a8b98129ef4db'
             >
                 One part Buddy the Elf, Two parts Bernard the Elf, and 0 parts Curtis the Elf, Anthony is what some would call ‘New York Brash’. Beneath the hard exterior, he has a heart of silver and gold though, and lives to keep the Christmas Spirit Alive 365 days per year. In addition to Christmas, Anthony is an avid reader and writer, and has massive amounts of love for Spooky Season, Movies, DC Comics (especially Batman), Politics, and his wife, Sarah, and dog, Larry. All complaints about his cinematic opinions can be directed to the worst elf, Thom.
-                <LK brand='twitter' username='TheSandersonBro' className='text-[#1d9bf0]' />
+                <LK brand='twitter' username='TheSandersonBro ' className='text-[#1d9bf0]' />
                 <LK brand='instagram' className='instagram-icon -ml-[0.5em]' username='anthonyc929' />
             </Blog>
-            <Blog title='Julia Colburn aka The Holiday Armadillo'
+            <Blog title='JULIA COLBURN aka The Holiday Armadillo'
                 url='EPNB1MlDol?ixlib=js-3.7.0&s=14e31d4a100d2163619a58df2876c422'
             >
                 Julia is a people-loving Pollyanna with an affinity for useless knowledge and pop-culture trivia. She can often speak in Movie/TV Quotes and Gifs. With her amazing husband&apos;s support, she has made it her goal to raise their 4 kids to not be cotton-headed ninny muggins.
