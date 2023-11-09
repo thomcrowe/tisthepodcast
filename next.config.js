@@ -5,7 +5,7 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['cdn.raster.app']
+    domains: ['rstr.in']
   }
 }
 

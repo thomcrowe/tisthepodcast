@@ -37,9 +37,9 @@ function Waveform(props) {
           <stop offset="100%" stopColor="black" />
         </linearGradient>
         <linearGradient id={`${id}-gradient`}>
-          <stop offset="0%" stopColor="#2E7F18" />
-          <stop offset="50%" stopColor="#8D472B" />
-          <stop offset="100%" stopColor="#C82538" />
+          <stop offset="0%" stopColor="#A31D2D" />
+          <stop offset="50%" stopColor="#C72437" />
+          <stop offset="100%" stopColor="#520F16" />
         </linearGradient>
         <mask id={`${id}-mask`}>
           <rect width="100%" height="100%" fill={`url(#${id}-pattern)`} />
@@ -146,7 +146,7 @@ function AboutSection(props) {
     <section {...props}>
       <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
         <TinyWaveFormIcon
-          colors={['fill-green-600', 'fill-red-600']}
+          colors={['fill-yellow-600', 'fill-blue-600']}
           className="h-2.5 w-2.5"
         />
         <span className="ml-2.5">About</span>
@@ -157,11 +157,7 @@ function AboutSection(props) {
           !isExpanded && 'lg:line-clamp-4'
         )}
       >
-        Welcome to Tis the Podcast, the podcast that&apos;s determined to keep the spirit of Christmas alive 365 days a year! Join us and our community as we talk all things Christmas!
-
-        So what can you expect from this group of misfit toys? Every week we&apos;re going to look at a different Christmas movie, special, or TV episode.
-
-        As we talk, we&apos;ll share our reviews, insights, and witty banter. As our reviews grow, you can find the canonical ranking of Christmas movies here on our site. Really, what more could you want out of a Christmas podcast?
+        Welcome to The Sacristy, a podcast A podcast to exault in the faith delivered once for all, passed down through the Anglican Tradition.
       </p>
       {!isExpanded && (
         <button
@@ -177,7 +173,7 @@ function AboutSection(props) {
 }
 
 export function Layout({ children }) {
-  let hosts = ['Anthony Caruso', 'Julia Colburn', 'Thom Crowe']
+  let hosts = ['Fr. David', 'Fr. Matt']
 
   return (
     <>
@@ -185,7 +181,8 @@ export function Layout({ children }) {
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 gap-6 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <Link href='/' className="font-mono text-slate-900 hover:text-slate-900">Home</Link>
           <Link href='/about' className="font-mono text-slate-900 hover:text-slate-900">About</Link>
-          <Link href='/the-list' className="font-mono text-slate-900 hover:text-slate-900">The List</Link>
+          <Link href='https://sjtulsa.org/' className="font-mono text-slate-900 hover:text-slate-900">Saint John's-Tulsa</Link>
+          <Link href='https://allsoulsfl.org/' className="font-mono text-slate-900 hover:text-slate-900">All Souls'-Horizons West</Link>
           {/* <span className="mt-6 flex gap-6 font-bold text-slate-900">
             {hosts.map((host, hostIndex) => (
               <Fragment key={host}>
@@ -216,15 +213,16 @@ export function Layout({ children }) {
           </Link>
           <div className="mt-10 text-center lg:mt-12 lg:text-left">
             <p className="text-xl font-bold text-slate-900">
-              <Link href="/">Tis the Podcast</Link>
+              <Link href="/">The Sacristy</Link>
             </p>
             <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
-              Keeping the Christmas spirit alive 365 days a year.
+              A podcast by real priests with real jobs.
             </p>
             <div className='justify-center mt-6 flex lg:hidden gap-6'>
               <Link href='/' className="font-mono text-slate-900 hover:text-slate-900">Home</Link>
               <Link href='/about' className="font-mono text-slate-900 hover:text-slate-900">About</Link>
-              <Link href='/the-list' className="font-mono text-slate-900 hover:text-slate-900">The List</Link>
+              <Link href='/the-list' className="font-mono text-slate-900 hover:text-slate-900">St. John's Tulsa</Link>
+              <Link href='/the-list' className="font-mono text-slate-900 hover:text-slate-900">All Souls Horizon West</Link>
             </div>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
@@ -242,10 +240,10 @@ export function Layout({ children }) {
               className="mt-4 flex justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
             >
               {[
-                ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal'],
-                ['Apple Podcast', ApplePodcastIcon, 'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416'],
-                ['Google Podcast', PodcastIcon, 'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3Rpc3RoZXBvZGNhc3QvZmVlZC54bWw'],
-                ['RSS Feed', RSSIcon, 'https://feed.podbean.com/tisthepodcast/feed.xml'],
+                ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/6lyiqeW96To7SvGn2Kjti8'],
+                ['Apple Podcast', ApplePodcastIcon, 'https://podcasts.apple.com/us/podcast/the-sacristy/id1474576153'],
+                ['Google Podcast', PodcastIcon, 'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5zb3VuZGNsb3VkLmNvbS91c2Vycy9zb3VuZGNsb3VkOnVzZXJzOjY3NTI0MjE0Ny9zb3VuZHMucnNz'],
+                ['RSS Feed', RSSIcon, 'https://feeds.acast.com/public/shows/653c5387238f610012e18535'],
               ].map(([label, Icon, href]) => (
                 <li key={label} className="flex">
                   <Link
@@ -272,7 +270,7 @@ export function Layout({ children }) {
           <div className='justify-center mt-6 flex gap-6'>
             <Link href='/' className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
             <Link href='/about' className="font-mono text-slate-500 hover:text-slate-900">About</Link>
-            <Link href='/the-list' className="font-mono text-slate-500 hover:text-slate-900">The List</Link>
+            <Link href='/the-list' className="font-mono text-slate-500 hover:text-slate-900">Saint John's Tulsa</Link>
           </div>
         </div>
       </footer>
