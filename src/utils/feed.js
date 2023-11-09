@@ -1,7 +1,7 @@
 import { parse } from 'rss-to-json'
 
 export async function getStaticProps() {
-  let feed = await parse('https://feeds.acast.com/public/shows/653c5387238f610012e18535')
+  let feed = await parse('https://feed.podbean.com/tisthepodcast/feed.xml')
 
   feed.items
     .filter((episode) => undefined === episode.itunes_episode)
@@ -19,9 +19,9 @@ export async function getStaticProps() {
           itunes_episode,
         }) => ({
           id: link
-            .replace('https://shows.acast.com/the-sacristy/episodes/', '')
+            .replace('https://tisthepodcast.podbean.com/e/', '')
             .replace(/\/+$/, ''),
-          title: `${itunes_episode ?? ' '} ${title}`,
+          title: `${itunes_episode ?? 'Bonus'}: ${title}`,
           published,
           description,
           audio: enclosures.map((enclosure) => ({

@@ -102,11 +102,11 @@ export default function Home({ episodes }) {
     <>
       <Head>
         <title>
-          The Sacristy Podcasts 
+          Tis the Podcast - Keeping the Christmas spirit alive 365 days a year.
         </title>
         <meta
           name="description"
-          content="A podcast to exault in the faith delivered once for all, passed down through the Anglican Tradition"
+          content="Keeping the Christmas spirit alive 365 days a year."
         />
       </Head>
       <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">

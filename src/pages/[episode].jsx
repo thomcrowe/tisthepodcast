@@ -78,12 +78,12 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  let feed = await parse('https://feeds.acast.com/public/shows/653c5387238f610012e18535')
+  let feed = await parse('https://feed.podbean.com/tisthepodcast/feed.xml')
     
   return {
     paths: feed.items.map(({ link }) => ({
       params: {
-        episode: link.replace('https://shows.acast.com/the-sacristy/', '').replace(/\/+$/, ''),
+        episode: link.replace('https://tisthepodcast.podbean.com/e/', '').replace(/\/+$/, ''),
       },
     })),
     fallback: 'blocking',
