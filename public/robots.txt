@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://thesacristy.comcom
+Host: https://tisthepodcast.com
 
 # Sitemaps
 Sitemap: https://tisthepodcast.com/sitemap.xml
