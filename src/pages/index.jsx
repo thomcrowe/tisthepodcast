@@ -106,7 +106,7 @@ export default function Home({ episodes }) {
         </title>
         <meta
           name="description"
-          content="Keeping the Christmas spirit alive 365 days a year."
+          content="A Christmas Podcast Keeping the Christmas spirit alive 365 days a year."
         />
       </Head>
       <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
