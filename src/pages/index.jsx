@@ -102,7 +102,7 @@ export default function Home({ episodes }) {
     <>
       <Head>
         <title>
-          Tis the Podcast - Keeping the Christmas spirit alive 365 days a year.
+          Tis the Podcast - A Christmas Podcast keeping the holiday spirit alive 365 days a year.
         </title>
         <meta
           name="description"
