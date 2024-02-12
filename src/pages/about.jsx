@@ -20,7 +20,7 @@ const About = () => (
         <div className='grid'>
             <div>
                 <h1 className="text-2xl uppercase mb-6 font-bold leading-7 text-slate-900">About Tis Podcast</h1>
-                <p>Welcome to Tis the Podcast, the podcast that&apos;s determined to keep the spirit of Christmas alive 365 days a year! Join us and our community as we talk all things Christmas! So what can you expect from this group of misfit toys? Every week we&aposre going to look at a different Christmas movie, special, or TV episode. As we talk, we&apos;ll share our reviews, insights, and witty banter. As our reviews grow, you can find the canonical ranking of Christmas movies here on our site. Really, what more could you want out of a Christmas podcast?</p>
+                <p>Welcome to Tis the Podcast, the Christmas podcast that&apos;s determined to keep the spirit of Christmas alive 365 days a year! Join us and our community as we talk all things Christmas! So what can you expect from this group of misfit toys? Every week we&aposre going to look at a different Christmas movie, special, or TV episode. As we talk, we&apos;ll share our reviews, insights, and witty banter. As our reviews grow, you can find the canonical ranking of Christmas movies here on our site. Really, what more could you want out of a Christmas podcast?</p>
             </div>
             <h1 className="text-2xl mt-8 uppercase font-bold leading-7 text-slate-900">ABOUT THE ELVES</h1>
             <Blog title="ANTHONY CARUSO aka Santa&apos;s Head Elf"
