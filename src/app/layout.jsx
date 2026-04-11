@@ -2,13 +2,63 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import '@/styles/tailwind.css'
 
+const SITE_URL = 'https://tisthepodcast.com'
+const SITE_NAME = 'Tis the Podcast'
+const SITE_DESCRIPTION =
+  'Keeping the Christmas spirit alive 365 days a year. Join Anthony, Julia, and Thom as they review and rank Christmas movies every week.'
+
 export const metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    template: '%s - Tis the Podcast',
-    default:
-      'Tis the Podcast - Keeping the Christmas spirit alive 365 days a year',
+    template: `%s - ${SITE_NAME}`,
+    default: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
   },
-  description: 'Keeping the Christmas spirit alive 365 days a year.',
+  description: SITE_DESCRIPTION,
+  keywords: [
+    'Christmas podcast',
+    'Christmas movies',
+    'holiday podcast',
+    'Christmas movie reviews',
+    'Christmas movie rankings',
+    'Tis the Podcast',
+    'Christmas spirit',
+  ],
+  authors: [
+    { name: 'Anthony Caruso' },
+    { name: 'Julia Colburn' },
+    { name: 'Thom Crowe' },
+  ],
+  openGraph: {
+    type: 'website',
+    siteName: SITE_NAME,
+    title: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Tis the Podcast',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
+    description: SITE_DESCRIPTION,
+    images: ['/og-image.jpg'],
+  },
+  alternates: {
+    canonical: SITE_URL,
+    types: {
+      'application/rss+xml': 'https://feed.podbean.com/tisthepodcast/feed.xml',
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({ children }) {

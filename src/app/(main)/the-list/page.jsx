@@ -2,7 +2,14 @@ import { Container } from '@/components/Container'
 import Movie from '@/components/Movie'
 
 export const metadata = {
-  title: 'The List',
+  title: 'The Naughty and Nice List',
+  description:
+    'The definitive ranked list of Christmas movies as reviewed by Tis the Podcast. From Elf at #1 to The Christmas Train — every movie the elves have covered, ranked.',
+  openGraph: {
+    title: 'The Naughty and Nice List - Tis the Podcast',
+    description:
+      'The definitive ranked list of Christmas movies as reviewed by Tis the Podcast. From Elf at #1 to The Christmas Train — every movie the elves have covered, ranked.',
+  },
 }
 
 export default function List() {

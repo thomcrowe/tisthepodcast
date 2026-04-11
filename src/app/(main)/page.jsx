@@ -5,6 +5,26 @@ import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { getAllEpisodes } from '@/lib/episodes'
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'PodcastSeries',
+  name: 'Tis the Podcast',
+  url: 'https://tisthepodcast.com',
+  description:
+    'Keeping the Christmas spirit alive 365 days a year. Join Anthony, Julia, and Thom as they review and rank Christmas movies every week.',
+  image: 'https://tisthepodcast.com/og-image.jpg',
+  webFeed: 'https://feed.podbean.com/tisthepodcast/feed.xml',
+  author: [
+    { '@type': 'Person', name: 'Anthony Caruso' },
+    { '@type': 'Person', name: 'Julia Colburn' },
+    { '@type': 'Person', name: 'Thom Crowe' },
+  ],
+  sameAs: [
+    'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
+    'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
+  ],
+}
+
 function PauseIcon(props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 10 10" {...props}>
@@ -90,6 +110,11 @@ export default async function Home() {
   let episodes = await getAllEpisodes()
 
   return (
+    <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
       <Container>
         <h1 className="text-2xl/7 font-bold text-slate-900">Episodes</h1>
@@ -100,6 +125,7 @@ export default async function Home() {
         ))}
       </div>
     </div>
+    </>
   )
 }
 
