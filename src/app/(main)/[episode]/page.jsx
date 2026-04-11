@@ -65,10 +65,6 @@ export default async function Episode({ params }) {
               />
             </div>
           </div>
-          <div
-            className="ml-24 mt-3 text-lg font-medium leading-8 text-slate-700 [&>p+p]:mt-3"
-            dangerouslySetInnerHTML={{ __html: episode.description }}
-          />
         </header>
         <hr className="my-12 border-gray-200" />
         <div
