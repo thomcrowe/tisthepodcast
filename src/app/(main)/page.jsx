@@ -46,7 +46,7 @@ function EpisodeEntry({ episode }) {
             className="order-first font-mono text-sm leading-7 text-slate-500"
           />
           <div
-            className="mt-1 text-base leading-7 text-slate-700"
+            className="mt-1 text-base leading-7 text-slate-700 [&>p+p]:mt-2"
             dangerouslySetInnerHTML={{ __html: episode.description }}
           />
           <div className="mt-4 flex items-center gap-4">
