@@ -1,3 +1,5 @@
+'use client'
+
 function ForwardIcon(props) {
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" {...props}>

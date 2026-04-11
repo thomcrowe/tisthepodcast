@@ -1,3 +1,5 @@
+'use client'
+
 function MuteIcon({ muted, ...props }) {
   return (
     <svg
