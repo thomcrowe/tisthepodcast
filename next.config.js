@@ -11,7 +11,21 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**.mzstatic.com',
       },
+      {
+        // TMDB poster images
+        protocol: 'https',
+        hostname: 'image.tmdb.org',
+      },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/the-list',
+        destination: '/the-watch-list',
+        permanent: true,
+      },
+    ]
   },
 }
 

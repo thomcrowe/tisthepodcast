@@ -2,31 +2,21 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
-import { getAllEpisodesForList, getItunesPoster } from '@/lib/episodes'
+import { getAllEpisodesForList, getPosterFromData } from '@/lib/episodes'
 
 export const metadata = {
-  title: 'The List',
+  title: 'The Watch List',
   description:
     'Every movie, show, and special covered by Tis the Podcast — in episode order.',
   openGraph: {
-    title: 'The List - Tis the Podcast',
+    title: 'The Watch List - Tis the Podcast',
     description:
       'Every movie, show, and special covered by Tis the Podcast — in episode order.',
   },
 }
 
-// Revalidate the page once a day so new episodes appear automatically
+// Revalidate once a day so new episodes appear automatically
 export const revalidate = 86400
-
-// Poster images come from iTunes (mzstatic.com CDN). To keep builds fast we
-// fetch all of them in parallel — Next.js caches each individual fetch for
-// 30 days so only the very first build actually hits the iTunes API.
-async function addPosters(episodes) {
-  const posters = await Promise.all(
-    episodes.map((ep) => getItunesPoster(ep.showTitle))
-  )
-  return episodes.map((ep, i) => ({ ...ep, poster: posters[i] }))
-}
 
 function FilmIcon(props) {
   return (
@@ -40,16 +30,18 @@ function FilmIcon(props) {
   )
 }
 
-export default async function TheListPage() {
+export default async function TheWatchListPage() {
   const episodes = await getAllEpisodesForList()
-  const items = await addPosters(episodes)
+  const items = episodes.map((ep) => ({
+    ...ep,
+    poster: getPosterFromData(ep.episodeNumber),
+  }))
 
   return (
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
       <Container>
-        {/* Header */}
         <div className="mb-8">
-          <h1 className="text-2xl/7 font-bold text-slate-900">The List</h1>
+          <h1 className="text-2xl/7 font-bold text-slate-900">The Watch List</h1>
           <p className="mt-2 text-base leading-7 text-slate-600">
             Every movie, show, and special we&apos;ve covered — {items.length} episodes, in
             order from the very first to the latest.
@@ -77,7 +69,6 @@ export default async function TheListPage() {
                     sizes="(min-width: 1280px) 20vw, (min-width: 1024px) 25vw, (min-width: 768px) 20vw, (min-width: 640px) 25vw, 33vw"
                   />
                 ) : (
-                  /* Fallback when iTunes has no artwork */
                   <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-slate-700 to-slate-900 p-3">
                     <FilmIcon className="h-6 w-6 text-slate-400" />
                     <span className="text-center text-xs font-medium leading-tight text-slate-300 line-clamp-4">

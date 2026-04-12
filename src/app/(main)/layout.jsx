@@ -66,7 +66,7 @@ export default function MainLayout({ children }) {
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:flex-col lg:items-center lg:gap-6 lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <Link href="/" className="font-mono text-slate-900 hover:text-slate-700">Home</Link>
           <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
-          <Link href="/the-list" className="font-mono text-slate-900 hover:text-slate-700">The List</Link>
+          <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
         </div>
         <div className="relative z-10 mx-auto px-4 pb-4 pt-10 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:px-8 lg:py-12 xl:px-12">
           <Link
@@ -93,7 +93,7 @@ export default function MainLayout({ children }) {
             <div className="mt-6 flex justify-center gap-6 lg:hidden">
               <Link href="/" className="font-mono text-slate-900 hover:text-slate-700">Home</Link>
               <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
-              <Link href="/the-list" className="font-mono text-slate-900 hover:text-slate-700">The List</Link>
+              <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
             </div>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
@@ -155,7 +155,7 @@ export default function MainLayout({ children }) {
           <div className="mt-6 flex justify-center gap-6">
             <Link href="/" className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
             <Link href="/about" className="font-mono text-slate-500 hover:text-slate-900">About</Link>
-            <Link href="/the-list" className="font-mono text-slate-500 hover:text-slate-900">The List</Link>
+            <Link href="/the-watch-list" className="font-mono text-slate-500 hover:text-slate-900">The Watch List</Link>
           </div>
         </div>
       </footer>

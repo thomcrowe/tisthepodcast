@@ -26,7 +26,7 @@ export default async function sitemap() {
       priority: 0.5,
     },
     {
-      url: `${SITE_URL}/the-list`,
+      url: `${SITE_URL}/the-watch-list`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
