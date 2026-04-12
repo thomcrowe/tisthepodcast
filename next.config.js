@@ -6,6 +6,11 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'cdn.raster.app',
       },
+      {
+        // iTunes / Apple Music artwork served via Apple's CDN
+        protocol: 'https',
+        hostname: '**.mzstatic.com',
+      },
     ],
   },
 }
