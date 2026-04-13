@@ -106,11 +106,13 @@ export default function About() {
           title="THOM CROWE aka Chief Reindeer Pooper Scooper"
           url="11br4i6IKX?ixlib=js-3.7.0&s=9f0cf48f0e5fccbe9088fcd6b30892b2"
         >
-          Thom has a self-diagnosed Christmas obsession and is known to subject
-          his very loving and supportive wife and sweet daughter to Christmas
-          music during the hottest of Oklahoma months. Throughout the year, Thom
-          works marketing magic, leads a Daisy troop, loves to cook, enjoys
-          reading, and lots of nerdy things.{' '}
+          Thom, or Fr. Thom, has a self-diagnosed Christmas obsession and the
+          audacity to act surprised when his very loving wife and sweet daughter
+          push back on carols in July. An Episcopal priest and marketing
+          professional based in Tulsa, Oklahoma, Thom also co-leads a Girl Scout
+          troop, loves to cook, reads voraciously, and will defend his cinematic
+          opinions to anyone willing to listen. Complaints, as always, go to
+          Anthony.{' '}
           <LK
             brand="twitter"
             username="thomcrowe"
