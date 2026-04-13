@@ -14,6 +14,26 @@ function stripHtml(html) {
   return html?.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() ?? ''
 }
 
+// Build an engaging meta description: find a clean sentence boundary near 155 chars.
+function buildMetaDescription(episode) {
+  const plain = stripHtml(episode.description)
+  if (!plain) return ''
+  if (plain.length <= 155) return plain
+
+  // Try to break at a sentence end within 155 chars
+  const chunk = plain.slice(0, 155)
+  const sentenceEnd = Math.max(
+    chunk.lastIndexOf('. '),
+    chunk.lastIndexOf('! '),
+    chunk.lastIndexOf('? '),
+  )
+  if (sentenceEnd > 80) return plain.slice(0, sentenceEnd + 1)
+
+  // Fall back to word boundary
+  const wordEnd = chunk.lastIndexOf(' ')
+  return plain.slice(0, wordEnd > 0 ? wordEnd : 155) + '…'
+}
+
 const getEpisode = cache(async (id) => {
   let allEpisodes = await getAllEpisodes()
   let episode = allEpisodes.find((episode) => episode.id === id)
@@ -29,28 +49,32 @@ export async function generateMetadata({ params }) {
   let { episode: episodeId } = await params
   let episode = await getEpisode(episodeId)
 
-  let plainDescription = stripHtml(episode.description).slice(0, 160)
+  // SEO title: "Elf (2003) Review" → rendered as "Elf (2003) Review - Tis the Podcast"
+  const seoTitle = episode.year
+    ? `${episode.showTitle} (${episode.year}) Review`
+    : `${episode.showTitle} Review`
+  const metaDescription = buildMetaDescription(episode)
   let episodeUrl = `${SITE_URL}/${episode.id}`
 
   return {
-    title: episode.title,
-    description: plainDescription,
+    title: seoTitle,
+    description: metaDescription,
     alternates: {
       canonical: episodeUrl,
     },
     openGraph: {
       type: 'music.song',
-      title: episode.title,
-      description: plainDescription,
+      title: seoTitle,
+      description: metaDescription,
       url: episodeUrl,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: episode.title }],
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: seoTitle }],
       audio: episode.audio?.src,
       publishedTime: new Date(episode.published).toISOString(),
     },
     twitter: {
       card: 'summary_large_image',
-      title: episode.title,
-      description: plainDescription,
+      title: seoTitle,
+      description: metaDescription,
       images: ['/og-image.jpg'],
     },
   }
@@ -68,13 +92,17 @@ export default async function Episode({ params }) {
   let episode = await getEpisode(episodeId)
   let date = new Date(episode.published)
 
+  const seoTitle = episode.year
+    ? `${episode.showTitle} (${episode.year}) Review`
+    : `${episode.showTitle} Review`
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'PodcastEpisode',
     url: `${SITE_URL}/${episode.id}`,
-    name: episode.title,
+    name: seoTitle,
     datePublished: new Date(episode.published).toISOString(),
-    description: stripHtml(episode.description),
+    description: buildMetaDescription(episode),
     associatedMedia: {
       '@type': 'MediaObject',
       contentUrl: episode.audio?.src,
@@ -109,7 +137,7 @@ export default async function Episode({ params }) {
               />
               <div className="flex flex-col">
                 <h1 className="mt-2 text-4xl font-bold text-slate-900">
-                  {episode.title}
+                  {seoTitle}
                 </h1>
                 <FormattedDate
                   date={date}
