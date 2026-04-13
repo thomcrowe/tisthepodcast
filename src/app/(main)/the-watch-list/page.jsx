@@ -9,7 +9,7 @@ export const metadata = {
   description:
     'Every movie, show, and special covered by Tis the Podcast — in episode order.',
   openGraph: {
-    title: 'The Watch List - Tis the Podcast',
+    title: 'The Watch List | Tis the Podcast',
     description:
       'Every movie, show, and special covered by Tis the Podcast — in episode order.',
   },

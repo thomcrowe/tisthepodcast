@@ -49,7 +49,7 @@ export async function generateMetadata({ params }) {
   let { episode: episodeId } = await params
   let episode = await getEpisode(episodeId)
 
-  // SEO title: "Elf (2003) Review" → rendered as "Elf (2003) Review - Tis the Podcast"
+  // SEO title: "Elf (2003) Review" → rendered as "Elf (2003) Review | Tis the Podcast"
   const seoTitle = episode.year
     ? `${episode.showTitle} (${episode.year}) Review`
     : `${episode.showTitle} Review`

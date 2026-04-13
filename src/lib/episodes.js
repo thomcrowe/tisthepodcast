@@ -7,15 +7,36 @@ const FEED_URL = 'https://feed.podbean.com/tisthepodcast/feed.xml'
 // "the YYYY film" convention. Add entries here as needed.
 const SHOW_YEAR_OVERRIDES = {
   'Elf': '2003',
+  'Die Hard': '1988',
+  'Home Alone': '1990',
+  'Love Actually': '2003',
+}
+
+// Extra HTML appended to episode page content for SEO enrichment.
+// Keyed by episode ID (Podbean slug).
+const CONTENT_ADDITIONS = {
+  'all-i-want-for-christmas-is-you-1534126728':
+    '<p><strong>About the film:</strong> <em>Mariah Carey\'s All I Want for Christmas Is You</em> is a 2017 animated holiday film based on Mariah Carey\'s iconic 1994 Christmas song. Mariah Carey voices the lead character and serves as executive producer, bringing her beloved holiday classic to life in animated form.</p>',
+  'the-christmas-chronicles-a-very-special-bonus-episode':
+    '<p><strong>About the film:</strong> <em>The Christmas Chronicles</em> (2018) is a Netflix original Christmas movie starring <strong>Kurt Russell</strong> as Santa Claus, with a cameo appearance by <strong>Goldie Hawn</strong> as Mrs. Claus. Russell\'s charismatic portrayal of a rock-and-roll Santa became an instant fan favorite.</p>',
+  'happy-holidays-from-everyone-except-jenna':
+    '<p><strong>About the show:</strong> <em>30 Rock</em> starred <strong>Tina Fey</strong> as Liz Lemon, <strong>Alec Baldwin</strong> as Jack Donaghy, <strong>Tracy Morgan</strong> as Tracy Jordan, <strong>Jane Krakowski</strong> as Jenna Maroney, and <strong>Jack McBrayer</strong> as Kenneth Parcell. The series ran on NBC from 2006 to 2013 and is widely regarded as one of the greatest sitcoms ever made.</p>',
 }
 
 // Extract the show/movie/special title from an episode title like:
 // "It Feels Like Christmas! (The Muppet Christmas Carol)"  →  "The Muppet Christmas Carol"
 // "Quote... (Show Title...)"  →  "Show Title"
+// "Silent Night (2023)"  →  "Silent Night"  (year-only parens stripped)
 export function extractShowTitle(rawTitle) {
   const match = rawTitle.match(/\(([^)]+?)\)?\.?\s*$/)
   if (match) {
-    return match[1].replace(/\.{2,}$/, '').trim()
+    const extracted = match[1].replace(/\.{2,}$/, '').trim()
+    // If the parenthetical is just a 4-digit year (e.g. "Silent Night (2023)"),
+    // the real title is everything before the parenthetical.
+    if (/^(19[4-9]\d|20[0-2]\d)$/.test(extracted)) {
+      return rawTitle.replace(/\s*\([^)]*\)\s*$/, '').trim()
+    }
+    return extracted
   }
   return rawTitle.trim()
 }
@@ -75,18 +96,31 @@ export async function getAllEpisodes() {
   let episodes = feed.items.map(
     ({ title, description, content, enclosures, published, link, itunes_episode }) => {
       const showTitle = extractShowTitle(title)
+
+      // Check if the raw RSS title ends with "(YEAR)" — e.g. "Silent Night (2023)".
+      // In that case the year was in the title parens and extractShowTitle already
+      // stripped it, so we capture it here directly.
+      const rawTitleYearMatch = title.match(/\((\d{4})\)\s*$/)
+
       // If year is already embedded in the show title (e.g. "Nosferatu [2024]"),
       // don't extract separately — it will render naturally in the title.
-      // Otherwise, try to find it in the description.
       const yearAlreadyInTitle = /\b(19[4-9]\d|20[0-2]\d)\b/.test(showTitle)
-      const year = yearAlreadyInTitle
-        ? null
-        : (extractYearFromDescription(description) ?? SHOW_YEAR_OVERRIDES[showTitle] ?? null)
+
+      const year = rawTitleYearMatch
+        ? rawTitleYearMatch[1]
+        : yearAlreadyInTitle
+          ? null
+          : (extractYearFromDescription(description) ?? SHOW_YEAR_OVERRIDES[showTitle] ?? null)
+
+      const id = link
+        .replace('https://tisthepodcast.podbean.com/e/', '')
+        .replace(/\/+$/, '')
+
+      const addition = CONTENT_ADDITIONS[id]
+      const enrichedContent = addition ? (content ?? '') + addition : content
 
       return {
-        id: link
-          .replace('https://tisthepodcast.podbean.com/e/', '')
-          .replace(/\/+$/, ''),
+        id,
         title: `${itunes_episode ?? 'Bonus'}: ${title}`,
         rawTitle: title,
         showTitle,
@@ -94,7 +128,7 @@ export async function getAllEpisodes() {
         episodeNumber: itunes_episode ? parseInt(itunes_episode, 10) : null,
         published: new Date(published),
         description,
-        content,
+        content: enrichedContent,
         audio: enclosures.map((enclosure) => ({
           src: enclosure.url,
           type: enclosure.type,

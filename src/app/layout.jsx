@@ -11,7 +11,7 @@ export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: `%s | ${SITE_NAME}`,
-    default: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
+    default: `${SITE_NAME} | Keeping the Christmas spirit alive 365 days a year`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
@@ -31,7 +31,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    title: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
+    title: `${SITE_NAME} | Keeping the Christmas spirit alive 365 days a year`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     images: [
@@ -45,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
+    title: `${SITE_NAME} | Keeping the Christmas spirit alive 365 days a year`,
     description: SITE_DESCRIPTION,
     images: ['/og-image.jpg'],
   },
