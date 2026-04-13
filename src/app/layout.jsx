@@ -10,7 +10,7 @@ const SITE_DESCRIPTION =
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    template: `%s - ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
     default: `${SITE_NAME} - Keeping the Christmas spirit alive 365 days a year`,
   },
   description: SITE_DESCRIPTION,

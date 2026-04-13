@@ -3,6 +3,12 @@ import posterData from '@/data/episode-posters.json'
 
 const FEED_URL = 'https://feed.podbean.com/tisthepodcast/feed.xml'
 
+// Manual year overrides for early episodes whose descriptions predate the
+// "the YYYY film" convention. Add entries here as needed.
+const SHOW_YEAR_OVERRIDES = {
+  'Elf': '2003',
+}
+
 // Extract the show/movie/special title from an episode title like:
 // "It Feels Like Christmas! (The Muppet Christmas Carol)"  →  "The Muppet Christmas Carol"
 // "Quote... (Show Title...)"  →  "Show Title"
@@ -73,7 +79,9 @@ export async function getAllEpisodes() {
       // don't extract separately — it will render naturally in the title.
       // Otherwise, try to find it in the description.
       const yearAlreadyInTitle = /\b(19[4-9]\d|20[0-2]\d)\b/.test(showTitle)
-      const year = yearAlreadyInTitle ? null : extractYearFromDescription(description)
+      const year = yearAlreadyInTitle
+        ? null
+        : (extractYearFromDescription(description) ?? SHOW_YEAR_OVERRIDES[showTitle] ?? null)
 
       return {
         id: link
