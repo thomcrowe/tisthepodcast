@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 import { TinyWaveFormIcon } from '@/components/TinyWaveFormIcon'
 
@@ -10,12 +11,16 @@ export function AboutSection(props) {
 
   return (
     <section {...props}>
-      <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
-        <TinyWaveFormIcon
-          colors={['fill-green-600', 'fill-red-600']}
-          className="h-2.5 w-2.5"
-        />
-        <span className="ml-2.5">About</span>
+      <h2 className="flex items-center gap-4 font-mono text-sm font-medium leading-7 text-slate-900">
+        <span className="flex items-center">
+          <TinyWaveFormIcon
+            colors={['fill-green-600', 'fill-red-600']}
+            className="h-2.5 w-2.5"
+          />
+          <Link href="/about" className="ml-2.5 hover:text-green-700 transition-colors">About</Link>
+        </span>
+        <span className="text-slate-300">/</span>
+        <Link href="/the-watch-list" className="hover:text-green-700 transition-colors">The Watch List</Link>
       </h2>
       <p
         className={clsx(
