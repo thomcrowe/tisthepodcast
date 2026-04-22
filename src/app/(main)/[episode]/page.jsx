@@ -157,4 +157,4 @@ export default async function Episode({ params }) {
   )
 }
 
-export const revalidate = 10
+export const revalidate = 3600
