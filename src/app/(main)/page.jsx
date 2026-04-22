@@ -72,7 +72,7 @@ function EpisodeEntry({ episode }) {
           <div className="mt-4 flex items-center gap-4">
             <EpisodePlayButton
               episode={episode}
-              className="flex items-center gap-x-3 text-sm/6 font-bold text-pink-500 hover:text-pink-700 active:text-pink-900"
+              className="flex items-center gap-x-3 text-sm/6 font-bold text-pink-600 hover:text-pink-700 active:text-pink-900"
               playing={
                 <>
                   <PauseIcon className="h-2.5 w-2.5 fill-current" />
@@ -94,7 +94,7 @@ function EpisodeEntry({ episode }) {
             </span>
             <Link
               href={`/${episode.id}`}
-              className="flex items-center text-sm/6 font-bold text-pink-500 hover:text-pink-700 active:text-pink-900"
+              className="flex items-center text-sm/6 font-bold text-pink-600 hover:text-pink-700 active:text-pink-900"
               aria-label={`Show notes for episode ${episode.title}`}
             >
               Show notes

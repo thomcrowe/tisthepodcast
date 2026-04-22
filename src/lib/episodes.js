@@ -45,6 +45,24 @@ function stripHtmlBasic(html) {
   return html?.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() ?? ''
 }
 
+function fixVagueLinkText(html) {
+  if (!html) return html
+  return html.replace(
+    /<a(\s[^>]*)>(here|click here|this link)<\/a>/gi,
+    (match, attrs) => {
+      const hrefMatch = attrs.match(/href=["']([^"']+)["']/)
+      const href = hrefMatch ? hrefMatch[1] : ''
+      if (href.includes('youtube.com') || href.includes('youtu.be')) {
+        return `<a${attrs}>Watch on YouTube</a>`
+      }
+      if (href.includes('spotify.com')) {
+        return `<a${attrs}>Listen on Spotify</a>`
+      }
+      return `<a${attrs}>View link</a>`
+    },
+  )
+}
+
 // Try to extract the release year from an episode description.
 // Matches patterns like "the 2003 film", "the 2024, Netflix original movie", etc.
 export function extractYearFromDescription(description) {
@@ -127,7 +145,7 @@ export async function getAllEpisodes() {
         year,
         episodeNumber: itunes_episode ? parseInt(itunes_episode, 10) : null,
         published: new Date(published),
-        description,
+        description: fixVagueLinkText(description),
         content: enrichedContent,
         audio: enclosures.map((enclosure) => ({
           src: enclosure.url,

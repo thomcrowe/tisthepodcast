@@ -79,15 +79,10 @@ export default function RootLayout({ children }) {
         <div className="w-full">{children}</div>
         <Analytics />
         <Script
-          src="https://kit.fontawesome.com/34f0432225.js"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
-        <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G6WVFWNYX0"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
