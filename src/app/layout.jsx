@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/styles/tailwind.css'
 
 const SITE_URL = 'https://tisthepodcast.com'
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
       <body className="flex min-h-full">
         <div className="w-full">{children}</div>
         <Analytics />
+        <SpeedInsights />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G6WVFWNYX0"
           strategy="lazyOnload"
