@@ -106,8 +106,18 @@ function EpisodeEntry({ episode }) {
   )
 }
 
-export default async function Home() {
-  let episodes = await getAllEpisodes()
+const EPISODES_PER_PAGE = 15
+
+export default async function Home({ searchParams }) {
+  let allEpisodes = await getAllEpisodes()
+  const params = await searchParams
+  const page = Math.max(1, Number(params?.page) || 1)
+  const totalPages = Math.ceil(allEpisodes.length / EPISODES_PER_PAGE)
+  const currentPage = Math.min(page, totalPages)
+  const episodes = allEpisodes.slice(
+    (currentPage - 1) * EPISODES_PER_PAGE,
+    currentPage * EPISODES_PER_PAGE,
+  )
 
   return (
     <>
@@ -124,6 +134,38 @@ export default async function Home() {
           <EpisodeEntry key={episode.id} episode={episode} />
         ))}
       </div>
+      {totalPages > 1 && (
+        <Container>
+          <nav
+            aria-label="Episode pagination"
+            className="mt-8 flex items-center justify-between border-t border-slate-100 pt-8 pb-4"
+          >
+            <div>
+              {currentPage > 1 && (
+                <Link
+                  href={currentPage === 2 ? '/' : `/?page=${currentPage - 1}`}
+                  className="text-sm font-bold text-pink-600 hover:text-pink-700"
+                >
+                  ← Newer episodes
+                </Link>
+              )}
+            </div>
+            <p className="text-sm text-slate-500">
+              Page {currentPage} of {totalPages}
+            </p>
+            <div>
+              {currentPage < totalPages && (
+                <Link
+                  href={`/?page=${currentPage + 1}`}
+                  className="text-sm font-bold text-pink-600 hover:text-pink-700"
+                >
+                  Older episodes →
+                </Link>
+              )}
+            </div>
+          </nav>
+        </Container>
+      )}
     </div>
     </>
   )

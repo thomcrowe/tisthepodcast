@@ -67,6 +67,11 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="preconnect"
+          href="https://api.fontshare.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
           href="https://cdn.fontshare.com"
           crossOrigin="anonymous"
         />
