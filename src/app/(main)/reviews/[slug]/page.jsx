@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import filmReviews from '@/data/film-reviews.json'
 
-const SITE_URL = 'https://www.tisthepodcast.com'
+const SITE_URL = 'https://tisthepodcast.com'
 
 function StarRating({ rating }) {
   return (

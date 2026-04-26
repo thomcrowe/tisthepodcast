@@ -33,7 +33,7 @@ function FilmIcon(props) {
   )
 }
 
-const SITE_URL = 'https://www.tisthepodcast.com'
+const SITE_URL = 'https://tisthepodcast.com'
 
 export default async function TheWatchListPage() {
   const episodes = await getAllEpisodesForList()
