@@ -47,6 +47,18 @@ export default async function sitemap() {
       priority: 1.0,
     },
     {
+      url: `${SITE_URL}/family-christmas-movies`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: `${SITE_URL}/underrated-christmas-movies`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${SITE_URL}/the-watch-list`,
       lastModified: new Date(),
       changeFrequency: 'weekly',

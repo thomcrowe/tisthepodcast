@@ -12,6 +12,8 @@ RSS: https://feed.podbean.com/tisthepodcast/feed.xml
 The definitive ranking of the best Christmas movies of all time, built from hundreds of hours of debate.
 
 - [Best Christmas Movies of All Time](https://tisthepodcast.com/best-christmas-movies): Full ranked list with editorial commentary — Elf, Home Alone, A Christmas Story, It's a Wonderful Life, Die Hard, Klaus, The Muppet Christmas Carol, Love Actually, Home Alone 2, Christmas Vacation.
+- [Best Family Christmas Movies](https://tisthepodcast.com/family-christmas-movies): The best Christmas movies to watch with the whole family, ranked by age-suitability. Top picks: Elf (all ages, PG), Klaus (all ages, PG), The Muppet Christmas Carol (all ages, G), Home Alone (ages 7+, PG), It's a Wonderful Life (ages 8+, G).
+- [Underrated Christmas Movies](https://tisthepodcast.com/underrated-christmas-movies): The best overlooked and underrated Christmas movies worth watching year-round. Top picks: Klaus (2019), The Muppet Christmas Carol (1992), Batman Returns (1992), Gremlins (1984), The Holiday (2006), The Ref (1994), While You Were Sleeping (1995).
 
 ## Is It a Christmas Movie? — Definitive Verdicts
 
