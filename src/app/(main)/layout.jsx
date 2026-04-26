@@ -81,7 +81,7 @@ export default function MainLayout({ children }) {
             <Image
               className="w-full"
               src={posterImage}
-              alt=""
+              alt="Tis the Podcast — Christmas movie podcast cover art"
               sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem"
               priority
             />

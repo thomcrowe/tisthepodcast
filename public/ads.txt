@@ -1,0 +1,4 @@
+# ads.txt — Tis the Podcast
+# https://iabtechlab.com/ads-txt/
+# Add your ad network entries here when monetizing with programmatic ads.
+# Example: google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

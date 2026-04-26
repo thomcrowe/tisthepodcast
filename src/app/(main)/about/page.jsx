@@ -6,6 +6,9 @@ export const metadata = {
   title: 'About',
   description:
     'Meet the elves behind Tis the Podcast — Anthony Caruso, Julia Colburn, and Thom Crowe — three Christmas obsessives keeping the holiday spirit alive 365 days a year.',
+  alternates: {
+    canonical: 'https://tisthepodcast.com/about',
+  },
   openGraph: {
     title: 'About | Tis the Podcast',
     description:

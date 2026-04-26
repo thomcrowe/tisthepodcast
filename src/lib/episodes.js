@@ -45,6 +45,17 @@ function stripHtmlBasic(html) {
   return html?.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() ?? ''
 }
 
+// Ensure every <img> in RSS-sourced HTML has an alt attribute.
+// Images without alt fail accessibility audits and hurt SEO scores.
+// We add alt="" (empty = decorative) when no alt is present.
+function fixImgAlt(html) {
+  if (!html) return html
+  return html.replace(/<img(\s[^>]*)?>/gi, (match, attrs = '') => {
+    if (/\balt\s*=/i.test(attrs)) return match // already has alt
+    return `<img${attrs} alt="">`
+  })
+}
+
 function fixVagueLinkText(html) {
   if (!html) return html
   return html.replace(
@@ -145,8 +156,8 @@ export async function getAllEpisodes() {
         year,
         episodeNumber: itunes_episode ? parseInt(itunes_episode, 10) : null,
         published: new Date(published),
-        description: fixVagueLinkText(description),
-        content: enrichedContent,
+        description: fixImgAlt(fixVagueLinkText(description)),
+        content: fixImgAlt(enrichedContent),
         audio: enclosures.map((enclosure) => ({
           src: enclosure.url,
           type: enclosure.type,

@@ -3,10 +3,15 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import filmReviews from '@/data/film-reviews.json'
 
+const SITE_URL = 'https://tisthepodcast.com'
+
 export const metadata = {
   title: 'Christmas Movie Reviews',
   description:
     'In-depth Christmas movie reviews from Tis the Podcast. Is it a Christmas movie? How does it rank? Anthony, Julia, and Thom have the definitive verdict.',
+  alternates: {
+    canonical: `${SITE_URL}/reviews`,
+  },
   openGraph: {
     title: 'Christmas Movie Reviews — Tis the Podcast',
     description:
@@ -21,7 +26,28 @@ const CHRISTMAS_BADGE = {
 }
 
 export default function ReviewsIndex() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Christmas Movie Reviews — Tis the Podcast',
+    description:
+      'In-depth Christmas movie reviews from Tis the Podcast. Every film reviewed by Anthony Caruso, Julia Colburn, and Thom Crowe.',
+    url: `${SITE_URL}/reviews`,
+    numberOfItems: filmReviews.length,
+    itemListElement: filmReviews.map((film, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: `${film.title}${film.year ? ` (${film.year})` : ''}`,
+      url: `${SITE_URL}/reviews/${film.slug}`,
+    })),
+  }
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
       <Container>
         <div className="mb-10">
@@ -81,6 +107,7 @@ export default function ReviewsIndex() {
         </div>
       </Container>
     </div>
+    </>
   )
 }
 

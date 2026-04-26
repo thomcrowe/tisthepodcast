@@ -5,7 +5,20 @@ import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { getAllEpisodes } from '@/lib/episodes'
 
-const SITE_URL = 'https://www.tisthepodcast.com'
+const SITE_URL = 'https://tisthepodcast.com'
+
+export async function generateMetadata({ searchParams }) {
+  const params = await searchParams
+  const page = Math.max(1, Number(params?.page) || 1)
+  const pageStr = page > 1 ? `?page=${page}` : ''
+  return {
+    alternates: {
+      canonical: `${SITE_URL}/${pageStr}`,
+    },
+    // Paginated pages beyond page 1 should not be indexed separately
+    ...(page > 1 && { robots: { index: false, follow: true } }),
+  }
+}
 
 function PauseIcon(props) {
   return (
@@ -134,7 +147,9 @@ export default async function Home({ searchParams }) {
     />
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
       <Container>
-        <h1 className="text-2xl/7 font-bold text-slate-900">Episodes</h1>
+        <h1 className="text-2xl/7 font-bold text-slate-900">
+          Christmas Movie Podcast — All Episodes
+        </h1>
       </Container>
       <div className="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
         {episodes.map((episode) => (

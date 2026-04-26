@@ -7,6 +7,9 @@ export const metadata = {
   title: 'Is It a Christmas Movie? — The Definitive Verdicts',
   description:
     'The definitive answer to the great Christmas movie debates — Is Die Hard a Christmas Movie? Is Love Actually? Tis the Podcast has the verdict on every film.',
+  alternates: {
+    canonical: 'https://tisthepodcast.com/is-it-a-christmas-movie',
+  },
   openGraph: {
     title: 'Is It a Christmas Movie? — Tis the Podcast',
     description:

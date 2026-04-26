@@ -8,6 +8,9 @@ export const metadata = {
   title: 'Christmas Movie Watch List — Every Film We\'ve Reviewed',
   description:
     'The definitive Christmas movie watch list. Every film, TV special, and holiday episode reviewed by Tis the Podcast since 2017 — hundreds of Christmas movies covered and ranked.',
+  alternates: {
+    canonical: 'https://tisthepodcast.com/the-watch-list',
+  },
   openGraph: {
     title: 'Christmas Movie Watch List — Tis the Podcast',
     description:

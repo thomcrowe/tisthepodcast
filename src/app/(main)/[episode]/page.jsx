@@ -23,23 +23,50 @@ function stripHtml(html) {
 }
 
 // Build an engaging meta description: find a clean sentence boundary near 155 chars.
+// Falls back to a synthetic description if the RSS content is missing or too short.
 function buildMetaDescription(episode) {
   const plain = stripHtml(episode.description)
-  if (!plain) return ''
-  if (plain.length <= 155) return plain
 
-  // Try to break at a sentence end within 155 chars
-  const chunk = plain.slice(0, 155)
-  const sentenceEnd = Math.max(
-    chunk.lastIndexOf('. '),
-    chunk.lastIndexOf('! '),
-    chunk.lastIndexOf('? '),
-  )
-  if (sentenceEnd > 80) return plain.slice(0, sentenceEnd + 1)
+  if (plain && plain.length >= 50) {
+    if (plain.length <= 155) return plain
 
-  // Fall back to word boundary
-  const wordEnd = chunk.lastIndexOf(' ')
-  return plain.slice(0, wordEnd > 0 ? wordEnd : 155) + '…'
+    // Try to break at a sentence end within 155 chars
+    const chunk = plain.slice(0, 155)
+    const sentenceEnd = Math.max(
+      chunk.lastIndexOf('. '),
+      chunk.lastIndexOf('! '),
+      chunk.lastIndexOf('? '),
+    )
+    if (sentenceEnd > 80) return plain.slice(0, sentenceEnd + 1)
+
+    // Fall back to word boundary
+    const wordEnd = chunk.lastIndexOf(' ')
+    return plain.slice(0, wordEnd > 0 ? wordEnd : 155) + '…'
+  }
+
+  // Synthetic fallback for episodes with empty or very short RSS descriptions
+  const year = episode.year ? ` (${episode.year})` : ''
+  const epLabel = episode.episodeNumber
+    ? `Episode ${episode.episodeNumber}`
+    : 'a bonus episode'
+  return `Tis the Podcast covers ${episode.showTitle}${year} in ${epLabel}. Anthony Caruso, Julia Colburn, and Thom Crowe debate whether it qualifies as a Christmas movie and where it ranks on the definitive Watch List.`
+}
+
+// Build an SEO-friendly title for an episode.
+// "Another Christmas Story" chapters get a cleaner format; everything else gets "Review".
+function buildSeoTitle(episode) {
+  // Detect Another Christmas Story chapters by ID prefix
+  if (episode.id?.startsWith('another-christmas-story')) {
+    // Pull the carol/song title out: everything after the last " - " or "- "
+    const rawTitle = episode.rawTitle ?? episode.showTitle
+    const dashMatch = rawTitle.match(/-\s+(.+?)(?:\s+as read by.+)?$/i)
+    const chapterTitle = dashMatch?.[1]?.trim() ?? episode.showTitle
+    return `${chapterTitle} | Another Christmas Story`
+  }
+
+  return episode.year
+    ? `${episode.showTitle} (${episode.year}) Review`
+    : `${episode.showTitle} Review`
 }
 
 const getEpisode = cache(async (id) => {
@@ -57,10 +84,8 @@ export async function generateMetadata({ params }) {
   let { episode: episodeId } = await params
   let episode = await getEpisode(episodeId)
 
-  // SEO title: "Elf (2003) Review" → rendered as "Elf (2003) Review | Tis the Podcast"
-  const seoTitle = episode.year
-    ? `${episode.showTitle} (${episode.year}) Review`
-    : `${episode.showTitle} Review`
+  // SEO title built by buildSeoTitle — handles Another Christmas Story chapters specially
+  const seoTitle = buildSeoTitle(episode)
   const metaDescription = buildMetaDescription(episode)
   let episodeUrl = `${SITE_URL}/${episode.id}`
   const reviewHubSlug = getReviewHubSlug(episode.id)
@@ -104,10 +129,7 @@ export default async function Episode({ params }) {
   let episode = await getEpisode(episodeId)
   let date = new Date(episode.published)
 
-  const seoTitle = episode.year
-    ? `${episode.showTitle} (${episode.year}) Review`
-    : `${episode.showTitle} Review`
-
+  const seoTitle = buildSeoTitle(episode)
   const episodeDescription = buildMetaDescription(episode)
 
   const jsonLd = {
