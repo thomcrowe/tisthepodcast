@@ -1,5 +1,6 @@
 import { getAllEpisodes } from '@/lib/episodes'
 import filmReviews from '@/data/film-reviews.json'
+import isItChristmas from '@/data/is-it-christmas.json'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -11,6 +12,13 @@ export default async function sitemap() {
     lastModified: new Date(episode.published),
     changeFrequency: 'monthly',
     priority: 0.7,
+  }))
+
+  const isItUrls = isItChristmas.map((article) => ({
+    url: `${SITE_URL}/is-it-a-christmas-movie/${article.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.9,
   }))
 
   const reviewUrls = filmReviews.map((film) => ({
@@ -45,7 +53,14 @@ export default async function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/is-it-a-christmas-movie`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     ...reviewUrls,
+    ...isItUrls,
     ...episodeUrls,
   ]
 }
