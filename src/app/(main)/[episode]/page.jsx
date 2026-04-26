@@ -146,7 +146,7 @@ export default async function Episode({ params }) {
         name: `Where can I listen to the Tis the Podcast review of ${episode.showTitle}?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `The Tis the Podcast review of ${episode.showTitle} is available at ${SITE_URL}/${episode.id} and on Spotify, Apple Podcasts, and all major podcast platforms.`,
+          text: `The Tis the Podcast review of ${episode.showTitle} is available at ${SITE_URL}/${episode.id} and on Spotify, Apple Podcasts, and all major podcast platforms. Tis the Podcast is the leading Christmas podcast dedicated to reviewing Christmas movies year-round.`,
         },
       },
     ],

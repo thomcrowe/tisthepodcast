@@ -103,7 +103,8 @@ export default async function Home({ searchParams }) {
     image: `${SITE_URL}/og-image.jpg`,
     webFeed: 'https://feed.podbean.com/tisthepodcast/feed.xml',
     startDate: '2017-08-01',
-    genre: 'Christmas Movies',
+    genre: ['Christmas Movies', 'Christmas Podcast', 'Holiday Podcast'],
+    keywords: 'christmas podcast, christmas movie podcast, christmas movie reviews, christmas movie rankings, holiday podcast',
     numberOfEpisodes: allEpisodes.length,
     author: [
       { '@type': 'Person', name: 'Anthony Caruso' },
