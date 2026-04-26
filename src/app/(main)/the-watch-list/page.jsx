@@ -5,13 +5,13 @@ import { Container } from '@/components/Container'
 import { getAllEpisodesForList, getPosterFromData } from '@/lib/episodes'
 
 export const metadata = {
-  title: 'The Watch List',
+  title: 'Christmas Movie Watch List — Every Film We\'ve Reviewed',
   description:
-    'Every movie, show, and special covered by Tis the Podcast — in episode order.',
+    'The definitive Christmas movie watch list. Every film, TV special, and holiday episode reviewed by Tis the Podcast since 2017 — hundreds of Christmas movies covered and ranked.',
   openGraph: {
-    title: 'The Watch List | Tis the Podcast',
+    title: 'Christmas Movie Watch List — Tis the Podcast',
     description:
-      'Every movie, show, and special covered by Tis the Podcast — in episode order.',
+      'The definitive Christmas movie watch list. Every film, TV special, and holiday episode reviewed by Tis the Podcast since 2017 — hundreds of Christmas movies covered and ranked.',
   },
 }
 
@@ -30,6 +30,8 @@ function FilmIcon(props) {
   )
 }
 
+const SITE_URL = 'https://www.tisthepodcast.com'
+
 export default async function TheWatchListPage() {
   const episodes = await getAllEpisodesForList()
   const items = episodes.map((ep) => ({
@@ -37,14 +39,55 @@ export default async function TheWatchListPage() {
     poster: getPosterFromData(ep.episodeNumber),
   }))
 
+  // Latest episode date for "Last updated" freshness signal
+  const latestDate = items.reduce((latest, item) => {
+    const d = new Date(item.published)
+    return d > latest ? d : latest
+  }, new Date(0))
+
+  const lastUpdated = latestDate.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  })
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Christmas Movie Watch List — Tis the Podcast',
+    description: `Every Christmas movie, TV special, and holiday episode reviewed on Tis the Podcast since 2017. ${items.length} films reviewed.`,
+    url: `${SITE_URL}/the-watch-list`,
+    numberOfItems: items.length,
+    itemListElement: items.map((item) => ({
+      '@type': 'ListItem',
+      position: item.episodeNumber,
+      name: item.showTitle,
+      url: `${SITE_URL}/${item.id}`,
+    })),
+  }
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
       <Container>
         <div className="mb-8">
-          <h1 className="text-2xl/7 font-bold text-slate-900">The Watch List</h1>
-          <p className="mt-2 text-base leading-7 text-slate-600">
-            Every movie, show, and special we&apos;ve covered — {items.length} episodes, in
-            order from the very first to the latest.
+          <h1 className="text-2xl/7 font-bold text-slate-900">
+            The Definitive Christmas Movie Watch List
+          </h1>
+          <p className="mt-3 text-base leading-7 text-slate-700">
+            Since 2017, Anthony, Julia, and Thom have reviewed Christmas movies,
+            TV specials, and holiday episodes every single week — year-round.
+            This is the living record of everything we&apos;ve watched and debated:{' '}
+            <strong>{items.length} titles</strong> and counting. Use it as your
+            Christmas movie guide, your watchlist, or your ammunition the next
+            time someone argues Die Hard isn&apos;t a Christmas movie.
+          </p>
+          <p className="mt-2 text-xs text-slate-400">
+            Last updated: {lastUpdated}
           </p>
         </div>
       </Container>
@@ -104,5 +147,6 @@ export default async function TheWatchListPage() {
         </div>
       </Container>
     </div>
+    </>
   )
 }

@@ -5,25 +5,7 @@ import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { getAllEpisodes } from '@/lib/episodes'
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'PodcastSeries',
-  name: 'Tis the Podcast',
-  url: 'https://tisthepodcast.com',
-  description:
-    'Keeping the Christmas spirit alive 365 days a year. Join Anthony, Julia, and Thom as they review and rank Christmas movies every week.',
-  image: 'https://tisthepodcast.com/og-image.jpg',
-  webFeed: 'https://feed.podbean.com/tisthepodcast/feed.xml',
-  author: [
-    { '@type': 'Person', name: 'Anthony Caruso' },
-    { '@type': 'Person', name: 'Julia Colburn' },
-    { '@type': 'Person', name: 'Thom Crowe' },
-  ],
-  sameAs: [
-    'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
-    'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
-  ],
-}
+const SITE_URL = 'https://www.tisthepodcast.com'
 
 function PauseIcon(props) {
   return (
@@ -110,6 +92,30 @@ const EPISODES_PER_PAGE = 15
 
 export default async function Home({ searchParams }) {
   let allEpisodes = await getAllEpisodes()
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'PodcastSeries',
+    name: 'Tis the Podcast',
+    url: SITE_URL,
+    description:
+      'A Christmas movie podcast that reviews and ranks Christmas films, TV specials, and holiday episodes every week, year-round. Hosted by Anthony Caruso, Julia Colburn, and Thom Crowe. Keeping the Christmas spirit alive 365 days a year since 2017.',
+    image: `${SITE_URL}/og-image.jpg`,
+    webFeed: 'https://feed.podbean.com/tisthepodcast/feed.xml',
+    startDate: '2017-08-01',
+    genre: 'Christmas Movies',
+    numberOfEpisodes: allEpisodes.length,
+    author: [
+      { '@type': 'Person', name: 'Anthony Caruso' },
+      { '@type': 'Person', name: 'Julia Colburn' },
+      { '@type': 'Person', name: 'Thom Crowe' },
+    ],
+    sameAs: [
+      'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
+      'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
+    ],
+  }
+
   const params = await searchParams
   const page = Math.max(1, Number(params?.page) || 1)
   const totalPages = Math.ceil(allEpisodes.length / EPISODES_PER_PAGE)

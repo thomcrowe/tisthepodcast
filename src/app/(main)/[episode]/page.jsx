@@ -96,13 +96,17 @@ export default async function Episode({ params }) {
     ? `${episode.showTitle} (${episode.year}) Review`
     : `${episode.showTitle} Review`
 
+  const episodeDescription = buildMetaDescription(episode)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'PodcastEpisode',
     url: `${SITE_URL}/${episode.id}`,
     name: seoTitle,
     datePublished: new Date(episode.published).toISOString(),
-    description: buildMetaDescription(episode),
+    description: episodeDescription,
+    episodeNumber: episode.episodeNumber ?? undefined,
+    genre: 'Christmas Movies',
     associatedMedia: {
       '@type': 'MediaObject',
       contentUrl: episode.audio?.src,
@@ -115,11 +119,48 @@ export default async function Episode({ params }) {
     },
   }
 
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: `Is ${episode.showTitle} a Christmas movie?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `Tis the Podcast covered ${episode.showTitle}${episode.year ? ` (${episode.year})` : ''} in Episode ${episode.episodeNumber ?? 'Bonus'}, with hosts Anthony Caruso, Julia Colburn, and Thom Crowe debating its merits as a Christmas movie. ${episodeDescription}`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `What do the hosts of Tis the Podcast think of ${episode.showTitle}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: episodeDescription
+            ? `${episodeDescription} Listen to the full episode at tisthepodcast.com.`
+            : `Anthony Caruso, Julia Colburn, and Thom Crowe reviewed ${episode.showTitle} on Tis the Podcast. Listen at tisthepodcast.com.`,
+        },
+      },
+      {
+        '@type': 'Question',
+        name: `Where can I listen to the Tis the Podcast review of ${episode.showTitle}?`,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: `The Tis the Podcast review of ${episode.showTitle} is available at ${SITE_URL}/${episode.id} and on Spotify, Apple Podcasts, and all major podcast platforms.`,
+        },
+      },
+    ],
+  }
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <article className="py-16 lg:py-36">
         <Container>
