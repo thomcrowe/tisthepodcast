@@ -1,12 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.tisthepodcast.com" }],
-      "destination": "https://tisthepodcast.com/:path*",
-      "permanent": true
-    }
-  ],
   "crons": [
     {
       "path": "/api/revalidate",
