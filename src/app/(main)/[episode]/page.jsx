@@ -8,8 +8,15 @@ import { FormattedDate } from '@/components/FormattedDate'
 import { PauseIcon } from '@/components/PauseIcon'
 import { PlayIcon } from '@/components/PlayIcon'
 import { getAllEpisodes } from '@/lib/episodes'
+import filmReviews from '@/data/film-reviews.json'
 
 const SITE_URL = 'https://tisthepodcast.com'
+
+// If this episode has a dedicated review hub page, return its slug
+function getReviewHubSlug(episodeId) {
+  const match = filmReviews.find((f) => f.episodeId === episodeId)
+  return match?.slug ?? null
+}
 
 function stripHtml(html) {
   return html?.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() ?? ''
@@ -56,12 +63,16 @@ export async function generateMetadata({ params }) {
     : `${episode.showTitle} Review`
   const metaDescription = buildMetaDescription(episode)
   let episodeUrl = `${SITE_URL}/${episode.id}`
+  const reviewHubSlug = getReviewHubSlug(episode.id)
+  const canonicalUrl = reviewHubSlug
+    ? `${SITE_URL}/reviews/${reviewHubSlug}`
+    : episodeUrl
 
   return {
     title: seoTitle,
     description: metaDescription,
     alternates: {
-      canonical: episodeUrl,
+      canonical: canonicalUrl,
     },
     openGraph: {
       type: 'music.song',

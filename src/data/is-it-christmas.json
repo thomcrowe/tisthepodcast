@@ -3,15 +3,17 @@
     "slug": "die-hard",
     "film": "Die Hard",
     "year": 1988,
+    "episodeId": "now-i-have-a-machine-gun-ho-ho-ho",
+    "episodeNumber": 5,
     "verdict": "yes",
-    "verdictStatement": "Yes — Die Hard is a Christmas movie.",
-    "verdictExplanation": "Set entirely on Christmas Eve, driven by a plot of family reunion and redemption, and scored throughout with holiday music, Die Hard qualifies as a Christmas movie by any meaningful definition. After debating it in full on Tis the Podcast, the elves landed firmly on yes — the Christmas setting isn't incidental, it's structural to the story.",
+    "verdictStatement": "Yes \u2014 Die Hard is a Christmas movie.",
+    "verdictExplanation": "Set entirely on Christmas Eve, driven by a plot of family reunion and redemption, and scored throughout with holiday music, Die Hard qualifies as a Christmas movie by any meaningful definition. After debating it in full on Tis the Podcast, the elves landed firmly on yes \u2014 the Christmas setting isn't incidental, it's structural to the story.",
     "caseFor": [
       "Set entirely on Christmas Eve at a Christmas office party",
-      "The central plot is John McClane trying to reconcile with his estranged wife — a classic Christmas theme of family and reunion",
+      "The central plot is John McClane trying to reconcile with his estranged wife \u2014 a classic Christmas theme of family and reunion",
       "Christmas music plays throughout, including 'Let It Snow' over the closing credits",
       "Director John McTiernan has confirmed the Christmas setting was a deliberate creative choice",
-      "The film's emotional arc — redemption, connection, coming home — mirrors the emotional grammar of Christmas movies"
+      "The film's emotional arc \u2014 redemption, connection, coming home \u2014 mirrors the emotional grammar of Christmas movies"
     ],
     "caseAgainst": [
       "The primary genre is action thriller, not holiday film",
@@ -19,17 +21,15 @@
       "Bruce Willis himself famously said it is not a Christmas movie",
       "No one watches Die Hard as part of a Christmas tradition the way they do Elf or Home Alone"
     ],
-    "podcastAngle": "The Tis the Podcast elves dedicated a full episode to the Die Hard debate — one of the most contentious in Christmas movie history. Anthony, Julia, and Thom each came in with strong positions and left with a verdict. Listen to the full episode to hear where they landed and how they ranked it on the canonical Watch List.",
-    "episodeId": null,
-    "episodeNumber": null,
+    "podcastAngle": "The Tis the Podcast elves dedicated a full episode to the Die Hard debate \u2014 one of the most contentious in Christmas movie history. Anthony, Julia, and Thom each came in with strong positions and left with a verdict. Listen to the full episode to hear where they landed and how they ranked it on the canonical Watch List.",
     "faqs": [
       {
         "q": "Is Die Hard a Christmas movie?",
-        "a": "Yes. According to Tis the Podcast, Die Hard qualifies as a Christmas movie. It is set on Christmas Eve, its emotional core involves family reunion and redemption, and Christmas music plays throughout — including over the final credits. The Christmas setting is not incidental; it is structural to the story."
+        "a": "Yes. According to Tis the Podcast, Die Hard qualifies as a Christmas movie. It is set on Christmas Eve, its emotional core involves family reunion and redemption, and Christmas music plays throughout \u2014 including over the final credits. The Christmas setting is not incidental; it is structural to the story."
       },
       {
         "q": "Did Bruce Willis say Die Hard is not a Christmas movie?",
-        "a": "Yes — Bruce Willis has publicly stated that Die Hard is not a Christmas movie. However, director John McTiernan has said the opposite. The debate continues, and Tis the Podcast has the definitive verdict."
+        "a": "Yes \u2014 Bruce Willis has publicly stated that Die Hard is not a Christmas movie. However, director John McTiernan has said the opposite. The debate continues, and Tis the Podcast has the definitive verdict."
       },
       {
         "q": "Where does Die Hard rank on the Tis the Podcast Watch List?",
@@ -37,21 +37,25 @@
       },
       {
         "q": "What other films are in the Die Hard Christmas movie debate?",
-        "a": "Other films frequently debated as Christmas movies include Iron Man 3, Lethal Weapon, Kiss Kiss Bang Bang, Batman Returns, and The Nightmare Before Christmas — all reviewed on Tis the Podcast."
+        "a": "Other films frequently debated as Christmas movies include Iron Man 3, Lethal Weapon, Kiss Kiss Bang Bang, Batman Returns, and The Nightmare Before Christmas \u2014 all reviewed on Tis the Podcast."
       }
     ],
-    "relatedSlugs": ["iron-man-3", "lethal-weapon", "the-nightmare-before-christmas"]
+    "relatedSlugs": [
+      "iron-man-3",
+      "lethal-weapon",
+      "the-nightmare-before-christmas"
+    ]
   },
   {
     "slug": "home-alone",
     "film": "Home Alone",
     "year": 1990,
     "verdict": "yes",
-    "verdictStatement": "Yes — Home Alone is unambiguously a Christmas movie.",
-    "verdictExplanation": "Home Alone (1990) is one of the most unambiguous Christmas movies ever made. Set entirely during the Christmas holiday, built around themes of family, belonging, and coming home, it has been a Christmas staple for over three decades. Tis the Podcast reviewed it in full — there was no debate on this one.",
+    "verdictStatement": "Yes \u2014 Home Alone is unambiguously a Christmas movie.",
+    "verdictExplanation": "Home Alone (1990) is one of the most unambiguous Christmas movies ever made. Set entirely during the Christmas holiday, built around themes of family, belonging, and coming home, it has been a Christmas staple for over three decades. Tis the Podcast reviewed it in full \u2014 there was no debate on this one.",
     "caseFor": [
       "Set entirely during the Christmas holiday season",
-      "The entire plot — a child accidentally left behind while his family travels for Christmas — is inseparable from the holiday",
+      "The entire plot \u2014 a child accidentally left behind while his family travels for Christmas \u2014 is inseparable from the holiday",
       "Features wall-to-wall Christmas music, decorations, and imagery",
       "Themes of family, belonging, and reunion are at the emotional heart of the film",
       "Has been a Christmas viewing tradition for millions of families since 1990"
@@ -60,9 +64,9 @@
       "Some argue it's primarily a slapstick comedy that happens to be set at Christmas",
       "The holiday setting could theoretically be swapped for any school break without changing the core plot"
     ],
-    "podcastAngle": "Tis the Podcast covered Home Alone in full — rating it, ranking it, and debating its place in the Christmas movie canon. Anthony, Julia, and Thom shared their takes on whether it holds up and where it sits on the all-time list. Listen to the full episode for the verdict.",
-    "episodeId": null,
-    "episodeNumber": null,
+    "podcastAngle": "Tis the Podcast covered Home Alone in full \u2014 rating it, ranking it, and debating its place in the Christmas movie canon. Anthony, Julia, and Thom shared their takes on whether it holds up and where it sits on the all-time list. Listen to the full episode for the verdict.",
+    "episodeId": "keep-the-change-ya-filthy-animal",
+    "episodeNumber": 3,
     "faqs": [
       {
         "q": "Is Home Alone a Christmas movie?",
@@ -73,139 +77,365 @@
         "a": "Home Alone is one of the highest-rated films on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
       }
     ],
-    "relatedSlugs": ["die-hard", "elf", "love-actually"]
+    "relatedSlugs": [
+      "die-hard",
+      "elf",
+      "love-actually"
+    ]
   },
   {
     "slug": "the-nightmare-before-christmas",
     "film": "The Nightmare Before Christmas",
     "year": 1993,
     "verdict": "debated",
-    "verdictStatement": "It depends — and that's exactly what makes it interesting.",
-    "verdictExplanation": "The Nightmare Before Christmas (1993) is genuinely two movies in one: a Halloween movie and a Christmas movie, depending on when you watch it. Jack Skellington's obsession with hijacking Christmas makes it Christmas-adjacent at minimum. Tis the Podcast debated exactly where it belongs — the answer might surprise you.",
+    "verdictStatement": "It depends \u2014 and that's exactly what makes it interesting.",
+    "verdictExplanation": "The Nightmare Before Christmas (1993) is genuinely two movies in one: a Halloween movie and a Christmas movie, depending on when you watch it. Jack Skellington's obsession with hijacking Christmas makes it Christmas-adjacent at minimum. Tis the Podcast debated exactly where it belongs \u2014 the answer might surprise you.",
     "caseFor": [
-      "Christmas is central to the entire plot — Jack Skellington becomes obsessed with Christmas and tries to take it over",
+      "Christmas is central to the entire plot \u2014 Jack Skellington becomes obsessed with Christmas and tries to take it over",
       "The third act is entirely Christmas-set, with Santa Claus as a major character",
       "Many families watch it specifically as a Christmas film",
       "It is included in most 'Christmas movie' streaming collections"
     ],
     "caseAgainst": [
-      "The film opens and is rooted in Halloween Town — it is fundamentally a Halloween movie",
+      "The film opens and is rooted in Halloween Town \u2014 it is fundamentally a Halloween movie",
       "The Christmas elements are portrayed as foreign and alien to the main characters",
-      "Jack ultimately fails to 'do' Christmas — the film ends with Halloween Town restored",
+      "Jack ultimately fails to 'do' Christmas \u2014 the film ends with Halloween Town restored",
       "Tim Burton has described it primarily as a Halloween film"
     ],
     "podcastAngle": "The Nightmare Before Christmas is one of the great battlegrounds of the 'is it a Christmas movie?' debate, and Tis the Podcast gave it a full hearing. Anthony, Julia, and Thom each came with strong positions. Listen to the full episode for the verdict and ranking.",
-    "episodeId": null,
-    "episodeNumber": null,
+    "episodeId": "this-is-halloween-1509328256",
+    "episodeNumber": 12,
     "faqs": [
       {
         "q": "Is The Nightmare Before Christmas a Christmas movie or a Halloween movie?",
-        "a": "It is genuinely both — and that ambiguity is what makes it a perennial debate. The Nightmare Before Christmas features Christmas as a central plot element and Santa Claus as a character, but it originates in and returns to Halloween Town. Tis the Podcast has the full verdict."
+        "a": "It is genuinely both \u2014 and that ambiguity is what makes it a perennial debate. The Nightmare Before Christmas features Christmas as a central plot element and Santa Claus as a character, but it originates in and returns to Halloween Town. Tis the Podcast has the full verdict."
       },
       {
         "q": "Is The Nightmare Before Christmas on the Tis the Podcast Watch List?",
-        "a": "Yes — The Nightmare Before Christmas is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
+        "a": "Yes \u2014 The Nightmare Before Christmas is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
       }
     ],
-    "relatedSlugs": ["die-hard", "iron-man-3", "love-actually"]
+    "relatedSlugs": [
+      "die-hard",
+      "iron-man-3",
+      "love-actually"
+    ]
   },
   {
     "slug": "iron-man-3",
     "film": "Iron Man 3",
     "year": 2013,
     "verdict": "debated",
-    "verdictStatement": "Debated — but director Shane Black says yes.",
-    "verdictExplanation": "Iron Man 3 (2013) is set during Christmas, features Christmas imagery throughout, and was directed by Shane Black — who famously sets all his films at Christmas. Whether that makes it a Christmas movie or simply an action film that happens to use Christmas as a backdrop is the debate Tis the Podcast tackled head-on.",
+    "verdictStatement": "Debated \u2014 but director Shane Black says yes.",
+    "verdictExplanation": "Iron Man 3 (2013) is set during Christmas, features Christmas imagery throughout, and was directed by Shane Black \u2014 who famously sets all his films at Christmas. Whether that makes it a Christmas movie or simply an action film that happens to use Christmas as a backdrop is the debate Tis the Podcast tackled head-on.",
     "caseFor": [
       "Set entirely during the Christmas season with pervasive holiday imagery",
       "Directed by Shane Black, who deliberately uses Christmas in all his films as a storytelling device",
-      "Tony Stark's emotional journey — isolation, fear, finding his way back — mirrors classic Christmas redemption arcs",
+      "Tony Stark's emotional journey \u2014 isolation, fear, finding his way back \u2014 mirrors classic Christmas redemption arcs",
       "Christmas music and decorations appear throughout the film"
     ],
     "caseAgainst": [
-      "It is primarily a superhero action film — Christmas is backdrop, not genre",
+      "It is primarily a superhero action film \u2014 Christmas is backdrop, not genre",
       "The MCU framing places it in a universe where Christmas has no special narrative weight",
       "No one watches Iron Man 3 as a Christmas tradition"
     ],
     "podcastAngle": "Iron Man 3 is a classic Tis the Podcast debate film. Anthony, Julia, and Thom went deep on the Shane Black Christmas theory and whether it earns a place on the canonical Watch List. Listen to the full episode for the verdict.",
-    "episodeId": null,
-    "episodeNumber": null,
+    "episodeId": "iron-man-3-title-tbd",
+    "episodeNumber": 95,
     "faqs": [
       {
         "q": "Is Iron Man 3 a Christmas movie?",
-        "a": "Iron Man 3 is a genuine debate. It is set during Christmas and directed by Shane Black, who intentionally sets his films at Christmas. Tis the Podcast covered it in full — listen to the episode for the elves' verdict."
+        "a": "Iron Man 3 is a genuine debate. It is set during Christmas and directed by Shane Black, who intentionally sets his films at Christmas. Tis the Podcast covered it in full \u2014 listen to the episode for the elves' verdict."
       },
       {
         "q": "Why does Shane Black set his movies at Christmas?",
-        "a": "Shane Black has said Christmas provides a unique backdrop — the contrast of warmth and family with danger and action. He used it in Lethal Weapon, Kiss Kiss Bang Bang, Iron Man 3, and The Nice Guys."
+        "a": "Shane Black has said Christmas provides a unique backdrop \u2014 the contrast of warmth and family with danger and action. He used it in Lethal Weapon, Kiss Kiss Bang Bang, Iron Man 3, and The Nice Guys."
       }
     ],
-    "relatedSlugs": ["die-hard", "lethal-weapon", "the-nightmare-before-christmas"]
+    "relatedSlugs": [
+      "die-hard",
+      "lethal-weapon",
+      "the-nightmare-before-christmas"
+    ]
   },
   {
     "slug": "love-actually",
     "film": "Love Actually",
     "year": 2003,
     "verdict": "debated",
-    "verdictStatement": "A Christmas movie, a romance, or both — the debate is real.",
-    "verdictExplanation": "Love Actually (2003) is set at Christmas and ends on Christmas Eve, but its emotional core is romantic love rather than the holiday itself. Is Christmas the point, or just the setting? Tis the Podcast debated it — and the answer is more nuanced than you might expect.",
+    "verdictStatement": "A Christmas movie, a romance, or both \u2014 the debate is real.",
+    "verdictExplanation": "Love Actually (2003) is set at Christmas and ends on Christmas Eve, but its emotional core is romantic love rather than the holiday itself. Is Christmas the point, or just the setting? Tis the Podcast debated it \u2014 and the answer is more nuanced than you might expect.",
     "caseFor": [
       "Set entirely in the weeks leading up to Christmas, ending on Christmas Eve at the airport",
-      "Christmas is woven into every storyline — school plays, Christmas parties, holiday travel",
+      "Christmas is woven into every storyline \u2014 school plays, Christmas parties, holiday travel",
       "The emotional themes of love, family, and connection align with the Christmas movie tradition",
       "It is one of the most-watched films during the Christmas season worldwide"
     ],
     "caseAgainst": [
-      "The primary genre is romantic comedy — Christmas is the setting, not the subject",
+      "The primary genre is romantic comedy \u2014 Christmas is the setting, not the subject",
       "The film's emotional core is about romantic relationships, not the holiday",
       "Several storylines have no meaningful Christmas element beyond timing"
     ],
     "podcastAngle": "Love Actually divides the Tis the Podcast elves more than almost any other film. Anthony, Julia, and Thom each have strong positions on whether it earns its Christmas movie status. Listen to the full episode for the full debate and final verdict.",
-    "episodeId": null,
-    "episodeNumber": null,
+    "episodeId": "christmas-is-all-around",
+    "episodeNumber": 29,
     "faqs": [
       {
         "q": "Is Love Actually a Christmas movie?",
-        "a": "Love Actually is set during Christmas and features the holiday throughout, but its genre is romantic comedy rather than Christmas film. Whether that qualifies it is a genuine debate — Tis the Podcast has the full verdict."
+        "a": "Love Actually is set during Christmas and features the holiday throughout, but its genre is romantic comedy rather than Christmas film. Whether that qualifies it is a genuine debate \u2014 Tis the Podcast has the full verdict."
       },
       {
         "q": "Where does Love Actually rank on the Tis the Podcast Watch List?",
         "a": "Love Actually is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
       }
     ],
-    "relatedSlugs": ["home-alone", "the-nightmare-before-christmas", "die-hard"]
+    "relatedSlugs": [
+      "home-alone",
+      "the-nightmare-before-christmas",
+      "die-hard"
+    ]
   },
   {
     "slug": "lethal-weapon",
     "film": "Lethal Weapon",
     "year": 1987,
     "verdict": "debated",
-    "verdictStatement": "Set at Christmas, built like an action film — the debate is on.",
-    "verdictExplanation": "Lethal Weapon (1987) opens with 'Jingle Bell Rock' and is set entirely during Christmas, but it is a hard-R action thriller first and foremost. Director Richard Donner used Christmas deliberately — does that intent make it a Christmas movie? Tis the Podcast weighed in.",
+    "verdictStatement": "Set at Christmas, built like an action film \u2014 the debate is on.",
+    "verdictExplanation": "Lethal Weapon (1987) opens with 'Jingle Bell Rock' and is set entirely during Christmas, but it is a hard-R action thriller first and foremost. Director Richard Donner used Christmas deliberately \u2014 does that intent make it a Christmas movie? Tis the Podcast weighed in.",
     "caseFor": [
       "Opens with 'Jingle Bell Rock' playing over the first scene",
       "Set entirely during the Christmas season with holiday imagery throughout",
-      "The emotional arc — Riggs finding a reason to live through a new family connection — reflects Christmas themes of hope and belonging",
+      "The emotional arc \u2014 Riggs finding a reason to live through a new family connection \u2014 reflects Christmas themes of hope and belonging",
       "Director Richard Donner deliberately set the film at Christmas"
     ],
     "caseAgainst": [
-      "It is a hard-R buddy cop action film — Christmas is atmosphere, not genre",
+      "It is a hard-R buddy cop action film \u2014 Christmas is atmosphere, not genre",
       "The holiday is never central to the plot or resolution",
       "No one includes Lethal Weapon in their Christmas movie watchlist by default"
     ],
-    "podcastAngle": "Lethal Weapon sits right at the edge of the Tis the Podcast debate zone — action film with genuine Christmas credentials. Anthony, Julia, and Thom gave it a full hearing. Listen to the episode for the verdict and Watch List ranking.",
+    "podcastAngle": "Lethal Weapon sits right at the edge of the Tis the Podcast debate zone \u2014 action film with genuine Christmas credentials. Anthony, Julia, and Thom gave it a full hearing. Listen to the episode for the verdict and Watch List ranking.",
+    "episodeId": "theres-no-more-heroes-left-in-the-world",
+    "episodeNumber": 160,
+    "faqs": [
+      {
+        "q": "Is Lethal Weapon a Christmas movie?",
+        "a": "Lethal Weapon (1987) is set during Christmas and opens with 'Jingle Bell Rock,' but its genre is action thriller. Whether the Christmas setting earns it a place in the Christmas movie canon is a genuine debate \u2014 Tis the Podcast has covered it in full."
+      },
+      {
+        "q": "What other Shane Black Christmas movies are there?",
+        "a": "Shane Black wrote Lethal Weapon and directed Kiss Kiss Bang Bang, Iron Man 3, and The Nice Guys \u2014 all of which are set at Christmas. Tis the Podcast has reviewed several of them."
+      }
+    ],
+    "relatedSlugs": [
+      "die-hard",
+      "iron-man-3",
+      "the-nightmare-before-christmas"
+    ]
+  },
+  {
+    "slug": "gremlins",
+    "film": "Gremlins",
+    "year": 1984,
+    "verdict": "yes",
+    "verdictStatement": "Yes \u2014 Gremlins is a Christmas movie, and a darkly brilliant one.",
+    "verdictExplanation": "Gremlins (1984) is set on Christmas Eve, opens with a Christmas gift, and uses every trapping of the holiday season \u2014 only to destroy them all in gleeful horror-comedy fashion. The Christmas setting isn't incidental; it's the entire joke. The contrast between holiday warmth and Gremlin chaos is the film. Tis the Podcast's verdict: it counts.",
+    "caseFor": [
+      "Set entirely on Christmas Eve in a snow-covered American small town",
+      "Gizmo is literally given as a Christmas present \u2014 the entire plot begins with a Christmas gift",
+      "Christmas decorations, carols, and holiday imagery are woven into every scene",
+      "The film deliberately subverts Christmas movie conventions \u2014 which only works because it IS a Christmas movie",
+      "Director Joe Dante has confirmed the Christmas setting was intentional and thematically central"
+    ],
+    "caseAgainst": [
+      "The genre is horror-comedy, not holiday film",
+      "The Christmas setting is used ironically \u2014 the film tears down the holiday rather than celebrating it",
+      "It is rarely included in mainstream 'Christmas movie' lists or streaming Christmas collections"
+    ],
+    "podcastAngle": "Gremlins sits right in the Tis the Podcast wheelhouse \u2014 a film that uses Christmas as a weapon against itself. Anthony, Julia, and Thom debated whether subverting the holiday is enough to count as celebrating it. Listen to the full episode for the verdict and Watch List ranking.",
+    "episodeId": "look-mister-there-are-some-rules-that-youve-got-to-follow",
+    "episodeNumber": 64,
+    "faqs": [
+      {
+        "q": "Is Gremlins a Christmas movie?",
+        "a": "Yes. Gremlins (1984) is set on Christmas Eve, begins with a Christmas gift, and is saturated with holiday imagery throughout. The Christmas setting is not incidental \u2014 the entire film is a dark subversion of the Christmas movie genre, which makes it, by definition, a Christmas movie."
+      },
+      {
+        "q": "Why is Gremlins set at Christmas?",
+        "a": "Director Joe Dante deliberately set Gremlins at Christmas to create ironic contrast between holiday warmth and Gremlin mayhem. The Christmas setting is thematically central \u2014 the horror only works because it violates the comfort and safety of the holiday."
+      },
+      {
+        "q": "Where does Gremlins rank on the Tis the Podcast Watch List?",
+        "a": "Gremlins is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
+      }
+    ],
+    "relatedSlugs": [
+      "batman-returns",
+      "die-hard",
+      "the-nightmare-before-christmas"
+    ]
+  },
+  {
+    "slug": "batman-returns",
+    "film": "Batman Returns",
+    "year": 1992,
+    "verdict": "yes",
+    "verdictStatement": "Yes \u2014 Batman Returns is one of the most visually and thematically Christmas films ever made.",
+    "verdictExplanation": "Batman Returns (1992) is set entirely at Christmas in a snow-blanketed Gotham City, and its emotional core \u2014 outcasts searching for belonging during the holidays \u2014 is profoundly Christmas in spirit. Tim Burton didn't just use Christmas as backdrop; he used it as the entire emotional grammar of the film. Tis the Podcast's verdict: absolutely yes.",
+    "caseFor": [
+      "Set entirely during Christmas in Gotham City, with snow and decorations in every frame",
+      "The Penguin, Catwoman, and Batman are all isolated outcasts \u2014 the film is about belonging during the holidays, the most Christmas theme possible",
+      "Christmas imagery \u2014 tree lightings, carols, holiday crowds \u2014 is central to the plot, not decoration",
+      "Tim Burton has described the Christmas setting as emotionally intentional, not incidental",
+      "The film opens and closes on Christmas, with the holiday anchoring the entire narrative"
+    ],
+    "caseAgainst": [
+      "It is a superhero film first \u2014 many viewers watch it with no sense of Christmas tradition",
+      "The dark, gothic tone is the opposite of conventional Christmas movie warmth",
+      "Its theatrical release was in June, not Christmas season"
+    ],
+    "podcastAngle": "Batman Returns is a Tis the Podcast favourite \u2014 dark, weird, Christmas-soaked, and deeply debated. Anthony, Julia, and Thom examined whether Burton's gothic Christmas vision earns full Christmas movie status or sits in a category of its own. Listen for the verdict.",
+    "episodeId": "mistletoe-can-be-deadily-if-you-eat-it-but-a-kiss-can-be-even-deadlier-if-you-mean-it",
+    "episodeNumber": 15,
+    "faqs": [
+      {
+        "q": "Is Batman Returns a Christmas movie?",
+        "a": "Yes. Batman Returns (1992) is set entirely at Christmas, uses the holiday as its central emotional setting, and explores themes of loneliness and belonging that are deeply rooted in the Christmas tradition. Tis the Podcast considers it a Christmas movie."
+      },
+      {
+        "q": "Why is Batman Returns set at Christmas?",
+        "a": "Tim Burton deliberately chose Christmas for Batman Returns to amplify the sense of isolation felt by the Penguin, Catwoman, and Batman \u2014 all outcasts during the season of togetherness. The contrast is the emotional engine of the film."
+      },
+      {
+        "q": "Where does Batman Returns rank on the Tis the Podcast Watch List?",
+        "a": "Batman Returns is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
+      }
+    ],
+    "relatedSlugs": [
+      "gremlins",
+      "the-nightmare-before-christmas",
+      "die-hard"
+    ]
+  },
+  {
+    "slug": "edward-scissorhands",
+    "film": "Edward Scissorhands",
+    "year": 1990,
+    "verdict": "debated",
+    "verdictStatement": "Debated \u2014 but Christmas is its emotional heartbeat.",
+    "verdictExplanation": "Edward Scissorhands (1990) is not set exclusively at Christmas, but its most iconic images \u2014 Edward sculpting ice angels in the snow while Kim dances below \u2014 are Christmas scenes. The film's themes of difference, longing, and belonging during the holidays give it a Christmas soul even if it isn't a Christmas movie in the traditional sense. Tis the Podcast went deep on this one.",
+    "caseFor": [
+      "The film's most emotionally resonant and iconic sequences are set at Christmas",
+      "Edward's alienation from suburban society mirrors the loneliness that Christmas can amplify \u2014 a classic holiday theme",
+      "Snow, ice sculptures, and Christmas imagery define the film's visual identity",
+      "Tim Burton again uses Christmas as the emotional climax of his story",
+      "The framing device \u2014 a grandmother telling the story to her granddaughter on a winter night \u2014 is classically Christmas"
+    ],
+    "caseAgainst": [
+      "The film is not primarily set at Christmas \u2014 the Christmas sequence is one part of a longer story",
+      "It is fundamentally a fairy tale about difference and acceptance, not a holiday film",
+      "No one schedules Edward Scissorhands as their Christmas movie night pick by default"
+    ],
+    "podcastAngle": "Edward Scissorhands is the rare film where the Christmas argument is about spirit rather than setting. Anthony, Julia, and Thom debated whether a film needs to be set at Christmas to be a Christmas movie, or whether Christmas soul is enough. Listen to the full episode for the verdict.",
+    "episodeId": "but-if-you-had-regular-hands-youd-be-like-everyone-else",
+    "episodeNumber": 122,
+    "faqs": [
+      {
+        "q": "Is Edward Scissorhands a Christmas movie?",
+        "a": "Edward Scissorhands is debated. While not set exclusively at Christmas, its most iconic and emotionally central scenes occur at Christmas, and its themes of loneliness and longing for belonging are deeply Christmas in spirit. Tis the Podcast has the full verdict."
+      },
+      {
+        "q": "What is the Christmas scene in Edward Scissorhands?",
+        "a": "The most famous Christmas scene in Edward Scissorhands features Edward sculpting ice topiaries while Kim dances in the falling snow \u2014 one of the most visually iconic Christmas images in cinema, even if the film is not exclusively a Christmas movie."
+      },
+      {
+        "q": "Where does Edward Scissorhands rank on the Tis the Podcast Watch List?",
+        "a": "Edward Scissorhands is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
+      }
+    ],
+    "relatedSlugs": [
+      "batman-returns",
+      "the-nightmare-before-christmas",
+      "gremlins"
+    ]
+  },
+  {
+    "slug": "the-holiday",
+    "film": "The Holiday",
+    "year": 2006,
+    "verdict": "yes",
+    "verdictStatement": "Yes \u2014 The Holiday is a Christmas movie through and through.",
+    "verdictExplanation": "The Holiday (2006) is set entirely during the Christmas holiday, built around a house swap that only happens because it's Christmas, and explores themes of new beginnings, love, and joy that are quintessentially Christmas. There is no version of The Holiday that isn't a Christmas movie. Tis the Podcast agrees.",
+    "caseFor": [
+      "Set entirely during the Christmas and New Year holiday period \u2014 the entire plot is impossible outside of it",
+      "The house swap premise is explicitly motivated by needing to escape for the holidays",
+      "Christmas imagery, music, and atmosphere are present in virtually every scene",
+      "Themes of new love, fresh starts, and unexpected joy mirror the emotional promise of Christmas",
+      "It is one of the most-watched Christmas comfort films in the world"
+    ],
+    "caseAgainst": [
+      "At its core it is a romantic comedy \u2014 Christmas is the setting, not the subject",
+      "Some argue any rom-com could be set at Christmas without becoming a 'Christmas movie'"
+    ],
+    "podcastAngle": "The Holiday is a Tis the Podcast crowd-pleaser \u2014 warm, romantic, and set squarely in the Christmas season. Anthony, Julia, and Thom rated it, ranked it, and debated its place in the Christmas movie canon. Listen to the full episode for the verdict.",
+    "episodeId": "youre-supposed-to-be-the-leading-lady-in-your-own-life-for-gods-sake",
+    "episodeNumber": 84,
+    "faqs": [
+      {
+        "q": "Is The Holiday a Christmas movie?",
+        "a": "Yes. The Holiday (2006) is set entirely during Christmas, its plot is inseparable from the holiday season, and its themes of new love and fresh beginnings are quintessentially Christmas. Tis the Podcast considers it a Christmas movie."
+      },
+      {
+        "q": "Where does The Holiday rank on the Tis the Podcast Watch List?",
+        "a": "The Holiday is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
+      }
+    ],
+    "relatedSlugs": [
+      "love-actually",
+      "home-alone",
+      "die-hard"
+    ]
+  },
+  {
+    "slug": "frozen",
+    "film": "Frozen",
+    "year": 2013,
+    "verdict": "no",
+    "verdictStatement": "No \u2014 Frozen is a winter movie, not a Christmas movie.",
+    "verdictExplanation": "Frozen (2013) is one of the most beloved animated films ever made, but it is not a Christmas movie. It is a winter movie \u2014 set in a fictional kingdom with no mention of Christmas, no Christmas imagery, and no holiday themes. The snow is incidental to the story, not the point of it. Tis the Podcast's verdict: beautiful, but not Christmas.",
+    "caseFor": [
+      "The winter aesthetic \u2014 snow, ice, cold \u2014 is visually associated with Christmas",
+      "Themes of family, love, and sacrifice have Christmas movie resonance",
+      "It is frequently marketed and watched during the Christmas season",
+      "The emotional climax involves an act of love that mirrors Christmas themes of selflessness"
+    ],
+    "caseAgainst": [
+      "Christmas is never mentioned in the film \u2014 not once",
+      "It is set in a fictional Scandinavian-inspired kingdom with no holidays of any kind",
+      "Winter does not equal Christmas \u2014 Frozen is a winter film, not a holiday film",
+      "The plot has nothing to do with Christmas traditions, themes, or imagery",
+      "By the 'winter = Christmas' logic, any snowy film would qualify"
+    ],
+    "podcastAngle": "Frozen forces Tis the Podcast to draw a clear line: is winter enough? Anthony, Julia, and Thom examined the distinction between winter movies and Christmas movies \u2014 and used Frozen as the test case. The verdict is clear, if perhaps controversial. Listen to the full episode.",
     "episodeId": null,
     "episodeNumber": null,
     "faqs": [
       {
-        "q": "Is Lethal Weapon a Christmas movie?",
-        "a": "Lethal Weapon (1987) is set during Christmas and opens with 'Jingle Bell Rock,' but its genre is action thriller. Whether the Christmas setting earns it a place in the Christmas movie canon is a genuine debate — Tis the Podcast has covered it in full."
+        "q": "Is Frozen a Christmas movie?",
+        "a": "No. Frozen (2013) is a winter movie, not a Christmas movie. Christmas is never mentioned in the film, it has no holiday themes or imagery, and its plot is entirely unrelated to Christmas. Tis the Podcast's verdict: Frozen is a great film, but it does not qualify as a Christmas movie."
       },
       {
-        "q": "What other Shane Black Christmas movies are there?",
-        "a": "Shane Black wrote Lethal Weapon and directed Kiss Kiss Bang Bang, Iron Man 3, and The Nice Guys — all of which are set at Christmas. Tis the Podcast has reviewed several of them."
+        "q": "Why do people think Frozen is a Christmas movie?",
+        "a": "People associate Frozen with Christmas primarily because of its winter setting and snow imagery, and because it is frequently watched and marketed during the Christmas season. However, association with winter is not the same as being a Christmas movie."
+      },
+      {
+        "q": "Where does Frozen rank on the Tis the Podcast Watch List?",
+        "a": "Frozen is reviewed and ranked on the Tis the Podcast canonical Christmas movie Watch List. Visit tisthepodcast.com/the-watch-list for the full ranking."
       }
     ],
-    "relatedSlugs": ["die-hard", "iron-man-3", "the-nightmare-before-christmas"]
+    "relatedSlugs": [
+      "the-nightmare-before-christmas",
+      "edward-scissorhands",
+      "home-alone"
+    ]
   }
 ]
