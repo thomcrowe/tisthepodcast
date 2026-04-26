@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "die-hard",
+    "title": "Die Hard",
+    "year": 1988,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": 5,
+    "verdict": "A Christmas movie by any meaningful definition — and one of the greatest action films ever made.",
+    "director": "John McTiernan",
+    "streaming": "Max, Peacock",
+    "runtime": 132,
+    "genres": ["Action", "Thriller", "Debate Film"],
+    "isChristmasMovie": "yes",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is Die Hard a Christmas movie?",
+        "a": "Yes. According to Tis the Podcast, Die Hard qualifies as a Christmas movie. Set entirely on Christmas Eve with themes of family reunion and redemption, and closing with 'Let It Snow,' the film earns its place in the Christmas canon."
+      },
+      {
+        "q": "Where does Die Hard rank on the Tis the Podcast Watch List?",
+        "a": "Listen to the full episode to hear where Die Hard lands on the Tis the Podcast canonical Christmas movie ranking."
+      },
+      {
+        "q": "What do the hosts of Tis the Podcast think of Die Hard?",
+        "a": "All three elves — Anthony Caruso, Julia Colburn, and Thom Crowe — debated Die Hard's Christmas credentials. Listen to the full episode for their verdict."
+      }
+    ],
+    "relatedFilms": ["lethal-weapon", "iron-man-3", "home-alone"]
+  },
+  {
+    "slug": "elf-2003",
+    "title": "Elf",
+    "year": 2003,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": 5,
+    "verdict": "The consensus greatest Christmas movie of the modern era — all three elves agree.",
+    "director": "Jon Favreau",
+    "streaming": "Max, Peacock",
+    "runtime": 97,
+    "genres": ["Comedy", "Family", "Live Action"],
+    "isChristmasMovie": "yes",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is Elf a Christmas movie?",
+        "a": "Absolutely yes. Elf (2003) is one of the most unambiguous Christmas movies ever made — a modern holiday classic reviewed and celebrated on Tis the Podcast."
+      },
+      {
+        "q": "Where does Elf rank on the Tis the Podcast Watch List?",
+        "a": "Elf is one of the highest-rated films on the Tis the Podcast canonical Christmas movie Watch List. See the full ranking at tisthepodcast.com/the-watch-list."
+      },
+      {
+        "q": "Who directed Elf (2003)?",
+        "a": "Elf was directed by Jon Favreau and stars Will Ferrell as Buddy the Elf, alongside James Caan, Mary Steenburgen, and Zooey Deschanel."
+      }
+    ],
+    "relatedFilms": ["home-alone", "a-christmas-story"]
+  },
+  {
+    "slug": "home-alone",
+    "title": "Home Alone",
+    "year": 1990,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": 5,
+    "verdict": "A perfect Christmas film that somehow gets better every rewatch.",
+    "director": "Chris Columbus",
+    "streaming": "Disney+",
+    "runtime": 103,
+    "genres": ["Comedy", "Family", "Live Action"],
+    "isChristmasMovie": "yes",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is Home Alone a Christmas movie?",
+        "a": "Yes, definitively. Home Alone (1990) is one of the most beloved Christmas movies of all time — a holiday staple reviewed and ranked on Tis the Podcast."
+      },
+      {
+        "q": "Where does Home Alone rank on the Tis the Podcast Watch List?",
+        "a": "Home Alone is one of the top-ranked films on the Tis the Podcast canonical Christmas movie Watch List. See the full ranking at tisthepodcast.com/the-watch-list."
+      }
+    ],
+    "relatedFilms": ["elf-2003", "a-christmas-story"]
+  },
+  {
+    "slug": "love-actually",
+    "title": "Love Actually",
+    "year": 2003,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": null,
+    "verdict": "",
+    "director": "Richard Curtis",
+    "streaming": "Peacock, Tubi",
+    "runtime": 135,
+    "genres": ["Romance", "Comedy", "Debate Film"],
+    "isChristmasMovie": "debated",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is Love Actually a Christmas movie?",
+        "a": "Love Actually is one of the most debated Christmas films — is it a Christmas movie or a romance that happens to be set at Christmas? The Tis the Podcast elves weighed in. Listen to the full episode for the verdict."
+      }
+    ],
+    "relatedFilms": ["die-hard", "elf-2003"]
+  },
+  {
+    "slug": "iron-man-3",
+    "title": "Iron Man 3",
+    "year": 2013,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": null,
+    "verdict": "",
+    "director": "Shane Black",
+    "streaming": "Disney+",
+    "runtime": 130,
+    "genres": ["Action", "Superhero", "Debate Film"],
+    "isChristmasMovie": "debated",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is Iron Man 3 a Christmas movie?",
+        "a": "Iron Man 3 is set during Christmas and directed by Shane Black, who famously sets all his films at Christmas. Whether that makes it a Christmas movie is hotly debated — Tis the Podcast weighed in on the full episode."
+      }
+    ],
+    "relatedFilms": ["die-hard", "lethal-weapon"]
+  },
+  {
+    "slug": "lethal-weapon",
+    "title": "Lethal Weapon",
+    "year": 1987,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": null,
+    "verdict": "",
+    "director": "Richard Donner",
+    "streaming": "Max",
+    "runtime": 110,
+    "genres": ["Action", "Thriller", "Debate Film"],
+    "isChristmasMovie": "debated",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is Lethal Weapon a Christmas movie?",
+        "a": "Lethal Weapon (1987) is set during Christmas and features holiday imagery throughout, but its action-thriller genre makes it a classic Christmas movie debate. Tis the Podcast covered it in full."
+      }
+    ],
+    "relatedFilms": ["die-hard", "iron-man-3"]
+  },
+  {
+    "slug": "a-christmas-story",
+    "title": "A Christmas Story",
+    "year": 1983,
+    "episodeId": null,
+    "episodeNumber": null,
+    "rating": null,
+    "verdict": "",
+    "director": "Bob Clark",
+    "streaming": "Max, Peacock",
+    "runtime": 94,
+    "genres": ["Comedy", "Family", "Classic"],
+    "isChristmasMovie": "yes",
+    "ourTake": "",
+    "isWorthWatching": "",
+    "theDebate": "",
+    "watchListRank": null,
+    "faqs": [
+      {
+        "q": "Is A Christmas Story a Christmas movie?",
+        "a": "Yes — A Christmas Story (1983) is a genuine holiday classic and one of the most-watched Christmas films of all time. Tis the Podcast reviewed it in full."
+      }
+    ],
+    "relatedFilms": ["elf-2003", "home-alone"]
+  }
+]
