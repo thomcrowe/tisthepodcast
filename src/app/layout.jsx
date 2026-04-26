@@ -6,13 +6,13 @@ import '@/styles/tailwind.css'
 const SITE_URL = 'https://tisthepodcast.com'
 const SITE_NAME = 'Tis the Podcast'
 const SITE_DESCRIPTION =
-  'Keeping the Christmas spirit alive 365 days a year. Join Anthony, Julia, and Thom as they review and rank Christmas movies every week.'
+  'Keeping the Christmas spirit alive 365 days a year. Anthony Caruso, Julia Colburn, and Thom Crowe review and rank Christmas movies, TV specials, and holiday episodes every week — year-round since 2017.'
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: `%s | ${SITE_NAME}`,
-    default: `${SITE_NAME} | Keeping the Christmas spirit alive 365 days a year`,
+    default: `${SITE_NAME} | Christmas Movie Reviews & Rankings`,
   },
   description: SITE_DESCRIPTION,
   keywords: [
@@ -32,7 +32,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     siteName: SITE_NAME,
-    title: `${SITE_NAME} | Keeping the Christmas spirit alive 365 days a year`,
+    title: `${SITE_NAME} | Christmas Movie Reviews & Rankings`,
     description: SITE_DESCRIPTION,
     url: SITE_URL,
     images: [
@@ -40,13 +40,13 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Tis the Podcast',
+        alt: 'Tis the Podcast — Christmas Movie Podcast',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${SITE_NAME} | Keeping the Christmas spirit alive 365 days a year`,
+    title: `${SITE_NAME} | Christmas Movie Reviews & Rankings`,
     description: SITE_DESCRIPTION,
     images: ['/og-image.jpg'],
   },

@@ -50,12 +50,12 @@ function EpisodeEntry({ episode }) {
     >
       <Container>
         <div className="flex flex-col items-start">
-          <h2
+          <h3
             id={`episode-${episode.id}-title`}
             className="mt-2 text-lg font-bold text-slate-900"
           >
             <Link href={`/${episode.id}`}>{episode.title}</Link>
-          </h2>
+          </h3>
           <FormattedDate
             date={date}
             className="order-first font-mono text-sm leading-7 text-slate-500"
