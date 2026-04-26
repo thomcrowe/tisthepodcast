@@ -1,5 +1,45 @@
-# *
+# robots.txt — Tis the Podcast
+# https://tisthepodcast.com
+
+# All crawlers
 User-agent: *
+Allow: /
+
+# ── AI / LLM crawlers — explicitly welcome ──────────────────────────────────
+# We want to be cited by AI engines and search assistants.
+# See /llms.txt for a structured summary of this site's content.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Applebot-Extended
 Allow: /
 
 # Host
@@ -7,3 +47,7 @@ Host: https://tisthepodcast.com
 
 # Sitemaps
 Sitemap: https://tisthepodcast.com/sitemap.xml
+
+# LLM context file
+# https://llmstxt.org
+# llms.txt: https://tisthepodcast.com/llms.txt
