@@ -66,6 +66,7 @@ export default function MainLayout({ children }) {
       <header className="bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
         <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:flex-col lg:items-center lg:gap-6 lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
           <Link href="/" className="font-mono text-slate-900 hover:text-slate-700">Home</Link>
+          <Link href="/best-christmas-movies" className="font-mono text-slate-900 hover:text-slate-700">Best Films</Link>
           <Link href="/reviews" className="font-mono text-slate-900 hover:text-slate-700">Reviews</Link>
           <Link href="/is-it-a-christmas-movie" className="font-mono text-slate-900 hover:text-slate-700">Is It Christmas?</Link>
           <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
@@ -95,6 +96,7 @@ export default function MainLayout({ children }) {
             </p>
             <div className="mt-6 flex justify-center gap-6 lg:hidden">
               <Link href="/" className="font-mono text-slate-900 hover:text-slate-700">Home</Link>
+              <Link href="/best-christmas-movies" className="font-mono text-slate-900 hover:text-slate-700">Best Films</Link>
               <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
               <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
             </div>
@@ -160,6 +162,7 @@ export default function MainLayout({ children }) {
           </div>
           <div className="mt-6 flex justify-center gap-6">
             <Link href="/" className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
+            <Link href="/best-christmas-movies" className="font-mono text-slate-500 hover:text-slate-900">Best Films</Link>
             <Link href="/about" className="font-mono text-slate-500 hover:text-slate-900">About</Link>
             <Link href="/the-watch-list" className="font-mono text-slate-500 hover:text-slate-900">The Watch List</Link>
           </div>

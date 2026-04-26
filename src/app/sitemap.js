@@ -48,6 +48,12 @@ export default async function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${SITE_URL}/best-christmas-movies`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 1.0,
+    },
+    {
       url: `${SITE_URL}/reviews`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
