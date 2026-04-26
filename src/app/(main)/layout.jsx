@@ -6,6 +6,7 @@ import { AboutSection } from '@/components/AboutSection'
 import { AudioProvider } from '@/components/AudioProvider'
 import { AudioPlayer } from '@/components/player/AudioPlayer'
 import { TinyWaveFormIcon } from '@/components/TinyWaveFormIcon'
+import { UpcomingEpisodes } from '@/components/UpcomingEpisodes'
 import { Waveform } from '@/components/Waveform'
 import posterImage from '@/images/poster.jpg'
 
@@ -97,6 +98,9 @@ export default function MainLayout({ children }) {
             </div>
           </div>
           <AboutSection className="mt-12 hidden lg:block" />
+          <div className="hidden lg:block">
+            <UpcomingEpisodes />
+          </div>
           <section className="mt-10 lg:mt-12">
             <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">
               <TinyWaveFormIcon
