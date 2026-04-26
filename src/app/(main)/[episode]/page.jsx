@@ -1,5 +1,6 @@
 import { cache } from 'react'
 import { notFound } from 'next/navigation'
+import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { EpisodePlayButton } from '@/components/EpisodePlayButton'
@@ -188,6 +189,15 @@ export default async function Episode({ params }) {
             </div>
           </header>
           <hr className="my-12 border-gray-200" />
+          <div className="mb-10">
+            <Link
+              href="/the-watch-list"
+              className="inline-flex items-center gap-2 text-sm font-bold text-pink-600 hover:text-pink-700"
+            >
+              See where {episode.showTitle} ranks on our Watch List
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
           <div
             className="prose prose-slate mt-14 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-medium [&>h2]:leading-7 [&>h2]:text-slate-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2:nth-of-type(3n)]:before:bg-violet-200"
             dangerouslySetInnerHTML={{ __html: episode.content }}
