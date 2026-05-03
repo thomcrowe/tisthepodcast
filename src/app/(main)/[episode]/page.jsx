@@ -22,6 +22,12 @@ function stripHtml(html) {
   return html?.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() ?? ''
 }
 
+// Extract first 200 chars of plain text from HTML (for "About this episode" section)
+function stripHtmlDescription(html) {
+  const plain = stripHtml(html)
+  return plain.length > 200 ? plain.slice(0, 200).trim() + '…' : plain
+}
+
 // Build an engaging meta description: find a clean sentence boundary near 155 chars.
 // Falls back to a synthetic description if the RSS content is missing or too short.
 function buildMetaDescription(episode) {
@@ -231,6 +237,23 @@ export default async function Episode({ params }) {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
+
+          <section className="prose prose-slate mt-14 mb-14 max-w-3xl">
+            <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900 before:mr-3 before:h-3 before:w-1.5 before:rounded-r-full before:bg-cyan-200">About this episode</h2>
+            <p>
+              In this episode, Anthony Caruso, Julia Colburn, and Thom Crowe dive into <strong>{episode.showTitle}</strong>
+              {episode.year && <>{' '}<strong>({episode.year})</strong></>}
+              {episode.episodeNumber && <>, Episode {episode.episodeNumber}</>}
+              . The hosts debate whether it qualifies as a Christmas movie and discuss where it ranks on the definitive <em>Tis the Podcast</em> Watch List.
+            </p>
+            {episode.description && episode.description.length > 0 && (
+              <p>{stripHtmlDescription(episode.description)}</p>
+            )}
+            <p>
+              <em>Tis the Podcast</em> has been reviewing Christmas movies, TV specials, and holiday episodes year-round since 2017. New episodes drop every week on all major podcast platforms, including Spotify, Apple Podcasts, and more.
+            </p>
+          </section>
+
           <div
             className="prose prose-slate mt-14 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-medium [&>h2]:leading-7 [&>h2]:text-slate-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2:nth-of-type(3n)]:before:bg-violet-200"
             dangerouslySetInnerHTML={{ __html: episode.content }}
