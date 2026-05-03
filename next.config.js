@@ -57,6 +57,20 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // www → non-www redirect (permanent 301)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.tisthepodcast.com' }],
+        destination: 'https://tisthepodcast.com/:path*',
+        permanent: true,
+      },
+      // Remove trailing slashes (permanent 301)
+      {
+        source: '/:path+/',
+        destination: '/:path+',
+        permanent: true,
+      },
+      // Rename The List to The Watch List
       {
         source: '/the-list',
         destination: '/the-watch-list',
