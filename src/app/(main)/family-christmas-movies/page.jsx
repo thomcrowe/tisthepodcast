@@ -1,19 +1,20 @@
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
 export const metadata = {
-  title: 'Best Family Christmas Movies to Watch Together — Ranked',
+  title: '10 Best Family Christmas Movies to Watch in 2026',
   description:
-    'The best Christmas movies to watch with the whole family — ranked and reviewed by Tis the Podcast. From Elf and Home Alone to Klaus and The Muppet Christmas Carol, every pick is family-tested.',
+    'The 10 best family Christmas movies for 2026, with age guides: Elf, Klaus, The Muppet Christmas Carol and more, plus our take from each podcast episode.',
   alternates: {
     canonical: `${SITE_URL}/family-christmas-movies`,
   },
   openGraph: {
     type: 'article',
-    title: 'Best Family Christmas Movies — Tis the Podcast',
+    title: '10 Best Family Christmas Movies to Watch in 2026 — Tis the Podcast',
     description:
       'The best Christmas movies to watch with the whole family — ranked by Tis the Podcast, the show that watches Christmas movies year-round.',
     url: `${SITE_URL}/family-christmas-movies`,
@@ -21,7 +22,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Family Christmas Movies — Tis the Podcast',
+    title: '10 Best Family Christmas Movies to Watch in 2026 — Tis the Podcast',
     description: 'The best Christmas movies to watch with the whole family — ranked.',
     images: ['/og-image.jpg'],
   },
@@ -61,7 +62,7 @@ const FAMILY_FILMS = [
     director: 'Sergio Pablos',
     streaming: 'Netflix',
     ageGuide: 'All ages · Rated PG',
-    episodeId: null,
+    episodeId: 'a-true-selfless-act-always-sparks-another',
     reviewSlug: null,
     why: 'The Oscar-nominated Netflix animated film that reinvents the Santa Claus origin story with stunning 2D animation, genuine warmth, and a surprisingly moving emotional arc. One of the few modern Christmas films that genuinely earns its ending. Adults will cry. Kids will be enchanted.',
     ageNotes: 'Suitable for all ages. Mild themes of loss and loneliness handled gently.',
@@ -73,7 +74,7 @@ const FAMILY_FILMS = [
     director: 'Brian Henson',
     streaming: 'Disney+',
     ageGuide: 'All ages · Rated G',
-    episodeId: null,
+    episodeId: 'it-feels-like-christmas-1508758888',
     reviewSlug: null,
     why: 'The definitive film adaptation of A Christmas Carol — not just the best Muppet movie, not just the best Christmas movie of 1992, but genuinely the best version of Dickens\' story ever put on screen. Michael Caine plays Scrooge with full commitment; the Muppets provide levity without ever undermining the stakes. The song "It Feels Like Christmas" is a perfect piece of music.',
     ageNotes: 'Rated G. The ghost of Christmas Future sequence is atmospheric but not too scary for young children.',
@@ -85,7 +86,7 @@ const FAMILY_FILMS = [
     director: 'Frank Capra',
     streaming: 'Amazon Prime, Peacock',
     ageGuide: 'Ages 8+ · Rated G',
-    episodeId: null,
+    episodeId: 'every-time-a-bell-rings-an-angel-gets-his-wings',
     reviewSlug: null,
     why: 'The emotional foundation of the American Christmas movie. Jimmy Stewart\'s George Bailey is cinema\'s most complete portrait of despair turning to grace — and the reason this film still works on families who watch it together is that every age group connects with a different part of it. Children feel the adventure; teenagers feel the frustration of dreams deferred; adults feel the weight of a life lived for others.',
     ageNotes: 'Black and white, slower pace. Best for older kids and adults. The "darker" middle section may be heavy for very young children.',
@@ -97,7 +98,7 @@ const FAMILY_FILMS = [
     director: 'Chris Columbus',
     streaming: 'Disney+',
     ageGuide: 'Ages 7+ · Rated PG',
-    episodeId: null,
+    episodeId: 'merry-christmas-ya-filthy-animal-1541871809',
     reviewSlug: null,
     why: 'The rare sequel that knows exactly what it is and commits fully. New York City at Christmas, the Plaza Hotel, Tim Curry at peak Tim Curry, and Kevin McCallister getting an even better trap sequence than the original. Not as tight as the first — nothing could be — but a legitimate Christmas classic in its own right.',
     ageNotes: 'Same slapstick violence as the original. Fine for the same ages.',
@@ -109,7 +110,7 @@ const FAMILY_FILMS = [
     director: 'Jeremiah S. Chechik',
     streaming: 'Max',
     ageGuide: 'Ages 12+ · Rated PG-13',
-    episodeId: null,
+    episodeId: 'you-serious-clark',
     reviewSlug: null,
     why: 'Clark Griswold is the patron saint of Christmas over-ambition, and Chevy Chase\'s performance is a masterclass in physical comedy and barely-contained desperation. The squirrel scene, the rant, the Jelly of the Month Club speech — it\'s a catalog of the best Christmas movie moments ever committed to film. Older families will quote it for years.',
     ageNotes: 'PG-13 — some adult humor and language. Better for teens and above.',
@@ -145,7 +146,7 @@ const FAMILY_FILMS = [
     director: 'Robert Zemeckis',
     streaming: 'Max',
     ageGuide: 'All ages · Rated G',
-    episodeId: null,
+    episodeId: 'this-is-the-polar-express',
     reviewSlug: null,
     why: 'Visually unlike anything else in the Christmas movie canon — the motion-capture animation is eerie and dreamlike in a way that perfectly matches the source material\'s tone. The Polar Express is about the moment childhood belief becomes a choice rather than a given, and it handles that theme with genuine care. The "believe" message lands because the film earns it.',
     ageNotes: 'The motion-capture style unsettles some young children ("uncanny valley"). Generally fine for all ages.',
@@ -238,7 +239,7 @@ export default function FamilyChristmasMoviesPage() {
               Tis the Podcast · Family Viewing Guide
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-              Best Family Christmas Movies to Watch Together
+              The 10 Best Family Christmas Movies to Watch Together in 2026
             </h1>
             <p className="mt-6 text-xl leading-8 text-slate-600 max-w-3xl">
               Finding a Christmas movie the whole family can watch — from small kids to
@@ -310,6 +311,7 @@ export default function FamilyChristmasMoviesPage() {
                       Directed by {film.director} · Streaming on {film.streaming}
                     </p>
                     <p className="text-base leading-7 text-slate-700 mb-3">{film.why}</p>
+                    <FilmTake film={film} />
                     <p className="text-sm text-slate-500">
                       <span className="font-semibold text-slate-700">Age notes:</span>{' '}
                       {film.ageNotes}
@@ -372,6 +374,7 @@ export default function FamilyChristmasMoviesPage() {
               ))}
             </dl>
           </section>
+        <ListCrossLinks current="/family-christmas-movies" />
         </Container>
       </article>
     </>

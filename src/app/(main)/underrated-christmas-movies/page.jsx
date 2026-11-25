@@ -1,19 +1,20 @@
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
 export const metadata = {
-  title: 'Underrated Christmas Movies Worth Watching Year-Round',
+  title: '10 Underrated Christmas Movies to Watch in 2026',
   description:
-    'The best underrated Christmas movies you\'ve probably overlooked — curated by Tis the Podcast, the show that watches Christmas movies 365 days a year. From dark comedies to forgotten classics.',
+    '10 underrated Christmas movies to watch in 2026, from Klaus and The Ref to Batman Returns, each with our take from the episode where we covered it.',
   alternates: {
     canonical: `${SITE_URL}/underrated-christmas-movies`,
   },
   openGraph: {
     type: 'article',
-    title: 'Underrated Christmas Movies Worth Watching Year-Round — Tis the Podcast',
+    title: '10 Underrated Christmas Movies to Watch in 2026 — Tis the Podcast',
     description:
       'The best underrated Christmas movies you\'ve probably overlooked — curated by Tis the Podcast, the show that watches Christmas movies 365 days a year.',
     url: `${SITE_URL}/underrated-christmas-movies`,
@@ -21,7 +22,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Underrated Christmas Movies Worth Watching Year-Round — Tis the Podcast',
+    title: '10 Underrated Christmas Movies to Watch in 2026 — Tis the Podcast',
     description: 'The best underrated Christmas movies you\'ve probably overlooked.',
     images: ['/og-image.jpg'],
   },
@@ -36,7 +37,7 @@ const FILMS = [
     year: 2019,
     director: 'Sergio Pablos',
     streaming: 'Netflix',
-    episodeId: null,
+    episodeId: 'a-true-selfless-act-always-sparks-another',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'The most visually stunning Christmas movie of the last decade, and one of the most emotionally honest origin stories for Santa Claus ever put to screen. Klaus is the first Netflix animated film to receive an Oscar nomination for Best Animated Feature — and it earned it. Almost no one watched it. Almost everyone who does cries. If you\'ve somehow missed it, this is the one to fix first.',
@@ -48,7 +49,7 @@ const FILMS = [
     year: 1992,
     director: 'Brian Henson',
     streaming: 'Disney+',
-    episodeId: null,
+    episodeId: 'it-feels-like-christmas-1508758888',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'Michael Caine plays Ebenezer Scrooge completely straight opposite a cast of Muppets — a creative decision that has no right to work and yet produces the definitive screen adaptation of A Christmas Carol. "It Feels Like Christmas" is the most underrated Christmas song ever written. People overlook this because it\'s "a Muppet movie," which is the wrongest possible take.',
@@ -96,7 +97,7 @@ const FILMS = [
     year: 1994,
     director: 'Ted Demme',
     streaming: 'Amazon Prime',
-    episodeId: null,
+    episodeId: 'i-have-never-heard-of-such-a-christmas-sex-and-drugs-and-women-being-set-on-fire',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'Denis Leary plays a burglar who takes a deeply dysfunctional married couple (Kevin Spacey, Judy Davis) hostage on Christmas Eve and ends up inadvertently fixing their marriage. One of the sharpest, darkest Christmas comedies ever made — genuinely funny, genuinely uncomfortable, genuinely moving. Almost completely forgotten. Should be in every Christmas rotation.',
@@ -108,7 +109,7 @@ const FILMS = [
     year: 1995,
     director: 'Jon Turteltaub',
     streaming: 'Disney+, Tubi',
-    episodeId: null,
+    episodeId: 'and-i-told-him-it-was-while-you-were-sleeping',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'Sandra Bullock at her absolute best as a lonely transit worker who accidentally gets mistaken for the fiancée of a comatose stranger — and falls for his brother instead. Set across Christmas and New Year\'s, it captures the particular loneliness and warmth of the holidays better than almost any film. Massively underappreciated.',
@@ -120,7 +121,7 @@ const FILMS = [
     year: 1942,
     director: 'Mark Sandrich',
     streaming: 'Peacock',
-    episodeId: null,
+    episodeId: 'you-sound-sweet-but-you-dont-make-sense-holiday-inn',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'This is the film that introduced "White Christmas" — Bing Crosby and Fred Astaire, a song that became the best-selling single of the 20th century, and a movie almost nobody watches anymore. Holiday Inn is charming, funny, and historically essential. The fact that White Christmas (1954) eclipsed it in cultural memory doesn\'t make it any less great.',
@@ -227,7 +228,7 @@ export default function UnderratedChristmasMoviesPage() {
               Tis the Podcast · Hidden Gems
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-              Underrated Christmas Movies Worth Watching Year-Round
+              10 Underrated Christmas Movies to Watch in 2026
             </h1>
             <p className="mt-6 text-xl leading-8 text-slate-600 max-w-3xl">
               Everyone knows Elf. Everyone knows Home Alone. These aren&apos;t those films.
@@ -277,6 +278,7 @@ export default function UnderratedChristmasMoviesPage() {
                       Directed by {film.director} · Streaming on {film.streaming}
                     </p>
                     <p className="text-base leading-7 text-slate-700 mb-3">{film.why}</p>
+                    <FilmTake film={film} />
                     <p className="text-sm text-slate-500 italic">
                       <span className="font-semibold not-italic text-slate-700">Perfect for:</span>{' '}
                       {film.perfectFor}
@@ -327,6 +329,7 @@ export default function UnderratedChristmasMoviesPage() {
               ))}
             </dl>
           </section>
+        <ListCrossLinks current="/underrated-christmas-movies" />
         </Container>
       </article>
     </>

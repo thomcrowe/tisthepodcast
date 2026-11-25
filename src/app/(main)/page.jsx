@@ -150,6 +150,27 @@ export default async function Home({ searchParams }) {
         <h1 className="text-2xl/7 font-bold text-slate-900">
           Christmas Movie Podcast — All Episodes
         </h1>
+        {currentPage === 1 && (
+          <nav aria-label="Start here" className="mt-6">
+            <h2 className="font-mono text-sm font-medium text-slate-500">Start here</h2>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              {[
+                ['/best-christmas-movies', 'Best Christmas Movies of All Time'],
+                ['/family-christmas-movies', 'Best Family Christmas Movies'],
+                ['/underrated-christmas-movies', 'Underrated Christmas Movies'],
+                ['/the-watch-list', 'The Watch List: Everything We\'ve Covered'],
+                ['/christmas-episodes', 'TV Christmas Episodes, Show by Show'],
+                ['/is-it-a-christmas-movie', 'Is It a Christmas Movie? Our Verdicts'],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} className="text-sm font-bold text-pink-600 hover:text-pink-700">
+                    {label} →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
       </Container>
       <div className="divide-y divide-slate-100 sm:mt-4 lg:mt-8 lg:border-t lg:border-slate-100">
         {episodes.map((episode) => (
