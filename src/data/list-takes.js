@@ -38,13 +38,13 @@ export const LIST_TAKES = {
   'youre-supposed-to-be-the-leading-lady-in-your-own-life-for-gods-sake':
     'We talked rom-coms as a genre, sentimentality, and what can keep a movie from being a Christmas movie.',
   'but-if-you-had-regular-hands-youd-be-like-everyone-else':
-    "Fair warning: this one got contentious, and the elves didn't reach a consensus.",
+    "It got contentious, but we agreed on the big question: it's not a Christmas movie, and it doesn't pass the Linus test.",
   'christmas-is-all-around':
-    'We broke down all eight storylines, the characters, and the movie as a whole.',
+    'We broke down all eight storylines and agreed it passes the Linus test on every level.',
   'iron-man-3-title-tbd':
-    "We debated whether Shane Black's holiday-set Marvel movie is a Christmas movie or merely set at Christmas.",
+    "Shane Black set it at Christmas on purpose, but all three of us agreed: it's a film set at Christmas, not a Christmas movie.",
   'theres-no-more-heroes-left-in-the-world':
-    'With Todd Killian of Christmas Clatter, we asked whether it has enough Christmas feels to join Die Hard or is merely set at Christmas.',
+    'With Todd Killian of Christmas Clatter, we put it head-to-head with Die Hard and decided it\'s merely set at Christmas. Todd disagreed.',
 }
 
 // Verdict pages that exist for films on the lists.

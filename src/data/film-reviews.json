@@ -10,7 +10,11 @@
     "director": "John McTiernan",
     "streaming": "Max, Peacock",
     "runtime": 132,
-    "genres": ["Action", "Thriller", "Debate Film"],
+    "genres": [
+      "Action",
+      "Thriller",
+      "Debate Film"
+    ],
     "isChristmasMovie": "yes",
     "ourTake": "",
     "isWorthWatching": "",
@@ -30,7 +34,11 @@
         "a": "All three elves — Anthony Caruso, Julia Colburn, and Thom Crowe — debated Die Hard's Christmas credentials. Listen to the full episode for their verdict."
       }
     ],
-    "relatedFilms": ["lethal-weapon", "iron-man-3", "home-alone"]
+    "relatedFilms": [
+      "lethal-weapon",
+      "iron-man-3",
+      "home-alone"
+    ]
   },
   {
     "slug": "elf-2003",
@@ -43,7 +51,11 @@
     "director": "Jon Favreau",
     "streaming": "Max, Peacock",
     "runtime": 97,
-    "genres": ["Comedy", "Family", "Live Action"],
+    "genres": [
+      "Comedy",
+      "Family",
+      "Live Action"
+    ],
     "isChristmasMovie": "yes",
     "ourTake": "",
     "isWorthWatching": "",
@@ -63,7 +75,10 @@
         "a": "Elf was directed by Jon Favreau and stars Will Ferrell as Buddy the Elf, alongside James Caan, Mary Steenburgen, and Zooey Deschanel."
       }
     ],
-    "relatedFilms": ["home-alone", "a-christmas-story"]
+    "relatedFilms": [
+      "home-alone",
+      "a-christmas-story"
+    ]
   },
   {
     "slug": "home-alone",
@@ -76,7 +91,11 @@
     "director": "Chris Columbus",
     "streaming": "Disney+",
     "runtime": 103,
-    "genres": ["Comedy", "Family", "Live Action"],
+    "genres": [
+      "Comedy",
+      "Family",
+      "Live Action"
+    ],
     "isChristmasMovie": "yes",
     "ourTake": "",
     "isWorthWatching": "",
@@ -92,7 +111,10 @@
         "a": "Home Alone is one of the top-ranked films on the Tis the Podcast canonical Christmas movie Watch List. See the full ranking at tisthepodcast.com/the-watch-list."
       }
     ],
-    "relatedFilms": ["elf-2003", "a-christmas-story"]
+    "relatedFilms": [
+      "elf-2003",
+      "a-christmas-story"
+    ]
   },
   {
     "slug": "love-actually",
@@ -105,8 +127,12 @@
     "director": "Richard Curtis",
     "streaming": "Peacock, Tubi",
     "runtime": 135,
-    "genres": ["Romance", "Comedy", "Debate Film"],
-    "isChristmasMovie": "debated",
+    "genres": [
+      "Romance",
+      "Comedy",
+      "Debate Film"
+    ],
+    "isChristmasMovie": "yes",
     "ourTake": "",
     "isWorthWatching": "",
     "theDebate": "",
@@ -114,10 +140,13 @@
     "faqs": [
       {
         "q": "Is Love Actually a Christmas movie?",
-        "a": "Love Actually is one of the most debated Christmas films — is it a Christmas movie or a romance that happens to be set at Christmas? The Tis the Podcast elves weighed in. Listen to the full episode for the verdict."
+        "a": "Yes. When Tis the Podcast covered Love Actually, the hosts said it passes the Linus test \"on every level\" and called it the perfect Christmas movie for people who aren't as obsessed with the holidays."
       }
     ],
-    "relatedFilms": ["die-hard", "elf-2003"]
+    "relatedFilms": [
+      "die-hard",
+      "elf-2003"
+    ]
   },
   {
     "slug": "iron-man-3",
@@ -130,8 +159,12 @@
     "director": "Shane Black",
     "streaming": "Disney+",
     "runtime": 130,
-    "genres": ["Action", "Superhero", "Debate Film"],
-    "isChristmasMovie": "debated",
+    "genres": [
+      "Action",
+      "Superhero",
+      "Debate Film"
+    ],
+    "isChristmasMovie": "no",
     "ourTake": "",
     "isWorthWatching": "",
     "theDebate": "",
@@ -139,10 +172,13 @@
     "faqs": [
       {
         "q": "Is Iron Man 3 a Christmas movie?",
-        "a": "Iron Man 3 is set during Christmas and directed by Shane Black, who famously sets all his films at Christmas. Whether that makes it a Christmas movie is hotly debated — Tis the Podcast weighed in on the full episode."
+        "a": "No. Iron Man 3 is set at Christmas and directed by Shane Black, but Tis the Podcast's hosts unanimously agreed it's a film set at Christmas, not a Christmas movie."
       }
     ],
-    "relatedFilms": ["die-hard", "lethal-weapon"]
+    "relatedFilms": [
+      "die-hard",
+      "lethal-weapon"
+    ]
   },
   {
     "slug": "lethal-weapon",
@@ -155,8 +191,12 @@
     "director": "Richard Donner",
     "streaming": "Max",
     "runtime": 110,
-    "genres": ["Action", "Thriller", "Debate Film"],
-    "isChristmasMovie": "debated",
+    "genres": [
+      "Action",
+      "Thriller",
+      "Debate Film"
+    ],
+    "isChristmasMovie": "no",
     "ourTake": "",
     "isWorthWatching": "",
     "theDebate": "",
@@ -164,10 +204,13 @@
     "faqs": [
       {
         "q": "Is Lethal Weapon a Christmas movie?",
-        "a": "Lethal Weapon (1987) is set during Christmas and features holiday imagery throughout, but its action-thriller genre makes it a classic Christmas movie debate. Tis the Podcast covered it in full."
+        "a": "No. Tis the Podcast's hosts agreed Lethal Weapon is a movie set at Christmas rather than a Christmas movie. Guest Todd Killian of Christmas Clatter was the lone vote for yes."
       }
     ],
-    "relatedFilms": ["die-hard", "iron-man-3"]
+    "relatedFilms": [
+      "die-hard",
+      "iron-man-3"
+    ]
   },
   {
     "slug": "a-christmas-story",
@@ -180,7 +223,11 @@
     "director": "Bob Clark",
     "streaming": "Max, Peacock",
     "runtime": 94,
-    "genres": ["Comedy", "Family", "Classic"],
+    "genres": [
+      "Comedy",
+      "Family",
+      "Classic"
+    ],
     "isChristmasMovie": "yes",
     "ourTake": "",
     "isWorthWatching": "",
@@ -192,6 +239,9 @@
         "a": "Yes — A Christmas Story (1983) is a genuine holiday classic and one of the most-watched Christmas films of all time. Tis the Podcast reviewed it in full."
       }
     ],
-    "relatedFilms": ["elf-2003", "home-alone"]
+    "relatedFilms": [
+      "elf-2003",
+      "home-alone"
+    ]
   }
 ]

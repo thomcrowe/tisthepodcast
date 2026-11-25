@@ -147,8 +147,8 @@ const FILMS = [
     streaming: 'Disney+',
     episodeId: 'but-if-you-had-regular-hands-youd-be-like-everyone-else',
     reviewSlug: null,
-    isChristmasMovie: 'debated',
-    why: 'Debated, yes — but the climax is Christmas, the snow is ice sculptures, and the loneliness at the film\'s heart is a specifically Christmas loneliness. Edward Scissorhands is a fairy tale about belonging, and it reaches its most devastating emotional moment at Christmas. Whether it "counts" is worth arguing about. Either way, it\'s worth watching.',
+    isChristmasMovie: 'no',
+    why: 'Our verdict: not technically a Christmas movie — but the climax is Christmas, the snow is ice sculptures, and the loneliness at the film\'s heart is a specifically Christmas loneliness. Edward Scissorhands is a fairy tale about belonging, and it reaches its most devastating emotional moment at Christmas. It doesn\'t pass the Linus test, and it\'s still worth watching every December.',
     perfectFor: 'Fans of Tim Burton, dark fairy tales, and Christmas movies that make you feel things.',
   },
 ]

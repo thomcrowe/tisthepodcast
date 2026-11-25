@@ -119,8 +119,8 @@ const BEST_FILMS = [
     year: 2003,
     episodeId: 'christmas-is-all-around',
     reviewSlug: 'love-actually',
-    isChristmasMovie: 'debated',
-    why: 'Richard Curtis\'s interconnected romance anthology is either the best Christmas movie ever made or a deeply flawed film that happens to be set at Christmas, depending on who you ask. The Tis the Podcast elves have strong opinions. Listen to find out whose side you\'re on.',
+    isChristmasMovie: 'yes',
+    why: 'Richard Curtis\'s interconnected romance anthology gets argued about every December, but our verdict is in: it passes the Linus test on every level. It\'s the perfect Christmas movie for people who aren\'t as obsessed with the holidays as we are.',
     director: 'Richard Curtis',
     streaming: 'Peacock, Tubi',
   },
@@ -163,7 +163,7 @@ const DEBATE_FILMS = [
     year: 2003,
     episodeId: 'christmas-is-all-around',
     reviewSlug: 'love-actually',
-    verdict: 'debated',
+    verdict: 'yes',
     aeoSlug: 'love-actually',
   },
   {
@@ -171,7 +171,7 @@ const DEBATE_FILMS = [
     year: 2013,
     episodeId: 'iron-man-3-title-tbd',
     reviewSlug: 'iron-man-3',
-    verdict: 'debated',
+    verdict: 'no',
     aeoSlug: 'iron-man-3',
   },
   {
@@ -179,7 +179,7 @@ const DEBATE_FILMS = [
     year: 1987,
     episodeId: 'theres-no-more-heroes-left-in-the-world',
     reviewSlug: 'lethal-weapon',
-    verdict: 'debated',
+    verdict: 'no',
     aeoSlug: 'lethal-weapon',
   },
 ]

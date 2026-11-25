@@ -93,9 +93,9 @@
     "slug": "the-nightmare-before-christmas",
     "film": "The Nightmare Before Christmas",
     "year": 1993,
-    "verdict": "debated",
-    "verdictStatement": "It depends — and that's exactly what makes it interesting.",
-    "verdictExplanation": "The Nightmare Before Christmas (1993) is genuinely two movies in one: a Halloween movie and a Christmas movie, depending on when you watch it. Jack Skellington's obsession with hijacking Christmas makes it Christmas-adjacent at minimum. Tis the Podcast debated exactly where it belongs — the answer might surprise you.",
+    "verdict": "yes",
+    "verdictStatement": "Yes — a Christmas movie starring Halloween characters, but only just.",
+    "verdictExplanation": "The Nightmare Before Christmas (1993) is a Christmas movie starring Halloween characters: the whole plot is Jack and Halloween Town discovering Christmas and trying to make it their own. When Tis the Podcast covered it, the majority said yes, though it only scrapes by the Linus test. Julia disagreed, arguing Jack's big realization is about who he is, not what Christmas is all about.",
     "caseFor": [
       "Christmas is central to the entire plot — Jack Skellington becomes obsessed with Christmas and tries to take it over",
       "The third act is entirely Christmas-set, with Santa Claus as a major character",
@@ -108,13 +108,13 @@
       "Jack ultimately fails to 'do' Christmas — the film ends with Halloween Town restored",
       "Tim Burton has described it primarily as a Halloween film"
     ],
-    "podcastAngle": "The Nightmare Before Christmas is one of the great battlegrounds of the 'is it a Christmas movie?' debate, and Tis the Podcast gave it a full hearing. Anthony, Julia, and Thom each came with strong positions. Listen to the full episode for the verdict and ranking.",
+    "podcastAngle": "The Nightmare Before Christmas got a full episode with guest Casey Maute of Parkbound Buttons. Two hosts and the guest called it a Christmas movie; Julia called it Halloween, and a listener poll sided with her. Listen for the full debate.",
     "episodeId": "this-is-halloween-1509328256",
     "episodeNumber": 12,
     "faqs": [
       {
         "q": "Is The Nightmare Before Christmas a Christmas movie or a Halloween movie?",
-        "a": "It is genuinely both — and that ambiguity is what makes it a perennial debate. The Nightmare Before Christmas features Christmas as a central plot element and Santa Claus as a character, but it originates in and returns to Halloween Town. Tis the Podcast has the full verdict."
+        "a": "Our verdict: it's a Christmas movie starring Halloween characters. Most of the Tis the Podcast hosts and their guest said it's a Christmas movie, though it only scrapes by the Linus test; Julia votes Halloween."
       },
       {
         "q": "Is The Nightmare Before Christmas on the Tis the Podcast Watch List?",
@@ -126,18 +126,17 @@
       "iron-man-3",
       "love-actually"
     ],
-    "verdictLine": null,
-    "verdictReason": null,
-    "verdictTodo": "TODO: verdict not in page data or episode notes — add Yes/No + one-sentence reason",
-    "metaDescription": "Is The Nightmare Before Christmas a Christmas movie or a Halloween movie? Our verdict on the 1993 classic and the best case for each side."
+    "verdictLine": "Yes, The Nightmare Before Christmas is a Christmas movie, but only just.",
+    "verdictReason": "It's Halloween Town discovering Christmas; most of us say it scrapes by the Linus test, while Julia votes Halloween.",
+    "metaDescription": "Yes, The Nightmare Before Christmas is a Christmas movie, but only just. Why most of us say it scrapes by the Linus test, and why Julia disagrees."
   },
   {
     "slug": "iron-man-3",
     "film": "Iron Man 3",
     "year": 2013,
-    "verdict": "debated",
-    "verdictStatement": "Debated — but director Shane Black says yes.",
-    "verdictExplanation": "Iron Man 3 (2013) is set during Christmas, features Christmas imagery throughout, and was directed by Shane Black — who famously sets all his films at Christmas. Whether that makes it a Christmas movie or simply an action film that happens to use Christmas as a backdrop is the debate Tis the Podcast tackled head-on.",
+    "verdict": "no",
+    "verdictStatement": "No — Iron Man 3 is set at Christmas, but it's not a Christmas movie.",
+    "verdictExplanation": "Iron Man 3 (2013) is set at Christmas and directed by Shane Black, who sets many of his films at Christmastime. When Tis the Podcast covered it, the hosts were unanimous: \"It's a film set at Christmas… It's not a Christmas movie.\" Tony Stark's arc gave them something close to a Linus moment, but not quite.",
     "caseFor": [
       "Set entirely during the Christmas season with pervasive holiday imagery",
       "Directed by Shane Black, who deliberately uses Christmas in all his films as a storytelling device",
@@ -149,7 +148,7 @@
       "The MCU framing places it in a universe where Christmas has no special narrative weight",
       "No one watches Iron Man 3 as a Christmas tradition"
     ],
-    "podcastAngle": "Iron Man 3 is a classic Tis the Podcast debate film. Anthony, Julia, and Thom went deep on the Shane Black Christmas theory and whether it earns a place on the canonical Watch List. Listen to the full episode for the verdict.",
+    "podcastAngle": "Iron Man 3 got a full episode on Tis the Podcast, covering Shane Black's habit of setting films at Christmas, the MCU as a whole, and Batman vs. Iron Man. On the big question, all three hosts agreed: set at Christmas, not a Christmas movie.",
     "episodeId": "iron-man-3-title-tbd",
     "episodeNumber": 95,
     "faqs": [
@@ -167,18 +166,17 @@
       "lethal-weapon",
       "the-nightmare-before-christmas"
     ],
-    "verdictLine": null,
-    "verdictReason": null,
-    "verdictTodo": "TODO: verdict not in page data or episode notes — add Yes/No + one-sentence reason",
-    "metaDescription": "Is Iron Man 3 a Christmas movie? Shane Black set it at Christmas on purpose. Our verdict on the 2013 Marvel film and the case for and against."
+    "verdictLine": "No, Iron Man 3 is not a Christmas movie.",
+    "verdictReason": "Shane Black set it at Christmas on purpose, but the hosts all agreed it's a film set at Christmas, not a Christmas movie.",
+    "metaDescription": "No, Iron Man 3 isn't a Christmas movie: Shane Black set it at Christmas, but our hosts agreed that's all it is. Our verdict on the 2013 Marvel film."
   },
   {
     "slug": "love-actually",
     "film": "Love Actually",
     "year": 2003,
-    "verdict": "debated",
-    "verdictStatement": "A Christmas movie, a romance, or both — the debate is real.",
-    "verdictExplanation": "Love Actually (2003) is set at Christmas and ends on Christmas Eve, but its emotional core is romantic love rather than the holiday itself. Is Christmas the point, or just the setting? Tis the Podcast debated it — and the answer is more nuanced than you might expect.",
+    "verdict": "yes",
+    "verdictStatement": "Yes — Love Actually is a Christmas movie.",
+    "verdictExplanation": "Love Actually (2003) plays out in the weeks before Christmas. When Tis the Podcast covered it, the hosts said it passes the Linus test \"on every level\" and called it the perfect Christmas movie for people who aren't as obsessed with the holidays: the Christmas stuff is there, it just isn't smacking you in the face the way Elf or Christmas Vacation does.",
     "caseFor": [
       "Set entirely in the weeks leading up to Christmas, ending on Christmas Eve at the airport",
       "Christmas is woven into every storyline — school plays, Christmas parties, holiday travel",
@@ -190,7 +188,7 @@
       "The film's emotional core is about romantic relationships, not the holiday",
       "Several storylines have no meaningful Christmas element beyond timing"
     ],
-    "podcastAngle": "Love Actually divides the Tis the Podcast elves more than almost any other film. Anthony, Julia, and Thom each have strong positions on whether it earns its Christmas movie status. Listen to the full episode for the full debate and final verdict.",
+    "podcastAngle": "Love Actually got a full Valentine's-season episode of Tis the Podcast. The hosts broke down all eight storylines, agreed it passes the Linus test, and admitted it could stand to be a bit more Christmassy. Listen for the full discussion and where it ranks.",
     "episodeId": "christmas-is-all-around",
     "episodeNumber": 29,
     "faqs": [
@@ -208,18 +206,17 @@
       "the-nightmare-before-christmas",
       "die-hard"
     ],
-    "verdictLine": null,
-    "verdictReason": null,
-    "verdictTodo": "TODO: verdict not in page data or episode notes — add Yes/No + one-sentence reason",
-    "metaDescription": "Is Love Actually a Christmas movie or just a rom-com set in December? Our verdict on the 2003 ensemble film and the best arguments on both sides."
+    "verdictLine": "Yes, Love Actually is a Christmas movie.",
+    "verdictReason": "On our episode the hosts said it passes the Linus test \"on every level,\" even if the Christmas never smacks you in the face.",
+    "metaDescription": "Yes, Love Actually is a Christmas movie: our hosts say it passes the Linus test \"on every level.\" Our verdict on the 2003 film, plus the case against it."
   },
   {
     "slug": "lethal-weapon",
     "film": "Lethal Weapon",
     "year": 1987,
-    "verdict": "debated",
-    "verdictStatement": "Set at Christmas, built like an action film — the debate is on.",
-    "verdictExplanation": "Lethal Weapon (1987) opens with 'Jingle Bell Rock' and is set entirely during Christmas, but it is a hard-R action thriller first and foremost. Director Richard Donner used Christmas deliberately — does that intent make it a Christmas movie? Tis the Podcast weighed in.",
+    "verdict": "no",
+    "verdictStatement": "No — Lethal Weapon is set at Christmas, but it's not a Christmas movie.",
+    "verdictExplanation": "Lethal Weapon (1987) opens with 'Jingle Bell Rock' and takes place at Christmas, but when Tis the Podcast covered it, the hosts agreed it's a movie set at Christmas rather than a Christmas movie, and docked its score for it. Guest Todd Killian of Christmas Clatter Podcast was the lone vote for yes.",
     "caseFor": [
       "Opens with 'Jingle Bell Rock' playing over the first scene",
       "Set entirely during the Christmas season with holiday imagery throughout",
@@ -231,7 +228,7 @@
       "The holiday is never central to the plot or resolution",
       "No one includes Lethal Weapon in their Christmas movie watchlist by default"
     ],
-    "podcastAngle": "Lethal Weapon sits right at the edge of the Tis the Podcast debate zone — action film with genuine Christmas credentials. Anthony, Julia, and Thom gave it a full hearing. Listen to the episode for the verdict and Watch List ranking.",
+    "podcastAngle": "Lethal Weapon got a full episode with Todd Killian of Christmas Clatter Podcast. The hosts compared it head-to-head with Die Hard and decided it's merely set at Christmas; Todd was the only one who ranked it as a Christmas movie. Listen for the full debate.",
     "episodeId": "theres-no-more-heroes-left-in-the-world",
     "episodeNumber": 160,
     "faqs": [
@@ -249,10 +246,9 @@
       "iron-man-3",
       "the-nightmare-before-christmas"
     ],
-    "verdictLine": null,
-    "verdictReason": null,
-    "verdictTodo": "TODO: verdict not in page data or episode notes — add Yes/No + one-sentence reason",
-    "metaDescription": "Is Lethal Weapon a Christmas movie like Die Hard, or just set at Christmas? Our verdict on the 1987 buddy-cop film and the case for and against."
+    "verdictLine": "No, Lethal Weapon is not a Christmas movie.",
+    "verdictReason": "It's set at Christmas, but on our episode the hosts agreed that isn't enough. Only our guest ranked it as a Christmas movie.",
+    "metaDescription": "No, Lethal Weapon isn't a Christmas movie: it's set at Christmas, but our hosts say that's not enough. Our verdict on the 1987 film, plus the case for it."
   },
   {
     "slug": "gremlins",
@@ -348,9 +344,9 @@
     "slug": "edward-scissorhands",
     "film": "Edward Scissorhands",
     "year": 1990,
-    "verdict": "debated",
-    "verdictStatement": "Debated — but Christmas is its emotional heartbeat.",
-    "verdictExplanation": "Edward Scissorhands (1990) is not set exclusively at Christmas, but its most iconic images — Edward sculpting ice angels in the snow while Kim dances below — are Christmas scenes. The film's themes of difference, longing, and belonging during the holidays give it a Christmas soul even if it isn't a Christmas movie in the traditional sense. Tis the Podcast went deep on this one.",
+    "verdict": "no",
+    "verdictStatement": "No — Edward Scissorhands has Christmas in it, but it's not a Christmas movie.",
+    "verdictExplanation": "Edward Scissorhands (1990) has its most famous scenes at Christmas — Edward sculpting ice while Kim dances in the falling snow — but when Tis the Podcast covered it, the hosts put the question to bed: it's not a Christmas movie, and it doesn't pass the Linus test. The episode got contentious, but on this question they landed in the same place.",
     "caseFor": [
       "The film's most emotionally resonant and iconic sequences are set at Christmas",
       "Edward's alienation from suburban society mirrors the loneliness that Christmas can amplify — a classic holiday theme",
@@ -363,7 +359,7 @@
       "It is fundamentally a fairy tale about difference and acceptance, not a holiday film",
       "No one schedules Edward Scissorhands as their Christmas movie night pick by default"
     ],
-    "podcastAngle": "Edward Scissorhands is the rare film where the Christmas argument is about spirit rather than setting. Anthony, Julia, and Thom debated whether a film needs to be set at Christmas to be a Christmas movie, or whether Christmas soul is enough. Listen to the full episode for the verdict.",
+    "podcastAngle": "Edward Scissorhands got a full (and fairly contentious) episode of Tis the Podcast. The hosts agreed it isn't a Christmas movie and scored it accordingly. Listen for the full discussion.",
     "episodeId": "but-if-you-had-regular-hands-youd-be-like-everyone-else",
     "episodeNumber": 122,
     "faqs": [
@@ -385,10 +381,9 @@
       "the-nightmare-before-christmas",
       "gremlins"
     ],
-    "verdictLine": null,
-    "verdictReason": null,
-    "verdictTodo": "TODO: verdict not in page data or episode notes — add Yes/No + one-sentence reason",
-    "metaDescription": "Is Edward Scissorhands a Christmas movie? The elves didn't all agree. Our verdict on Tim Burton's 1990 fairy tale and the case for and against."
+    "verdictLine": "No, Edward Scissorhands is not a Christmas movie.",
+    "verdictReason": "Part of it is set at Christmas, but the hosts agreed it doesn't pass the Linus test.",
+    "metaDescription": "No, Edward Scissorhands isn't a Christmas movie: part of it is set at Christmas, but it fails the Linus test. Our verdict on Tim Burton's 1990 film."
   },
   {
     "slug": "the-holiday",
