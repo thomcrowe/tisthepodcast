@@ -13,6 +13,8 @@ import { buildMetaDescription, buildSeoTitle } from '@/lib/episode-seo'
 import { formatEpisodeCode, getShowHref, getTvCoverageForEpisode } from '@/data/tv-shows'
 import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
 import { getTranscript } from '@/lib/transcripts'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -66,7 +68,7 @@ export async function generateMetadata({ params }) {
       title: seoTitle,
       description: metaDescription,
       url: episodeUrl,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: seoTitle }],
+      images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: seoTitle }],
       audio: episode.audio?.src,
       publishedTime: new Date(episode.published).toISOString(),
     },
@@ -187,6 +189,17 @@ export default async function Episode({ params }) {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd(
+          tv
+            ? [
+                { name: 'TV Christmas Episodes', href: '/christmas-episodes' },
+                ...(tv.show.landingPage
+                  ? [{ name: `${tv.show.name} Christmas Episodes`, href: `/christmas-episodes/${tv.show.slug}` }]
+                  : []),
+                { name: seoTitle, href: `/${episode.id}` },
+              ]
+            : [{ name: seoTitle, href: `/${episode.id}` }],
+        )} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

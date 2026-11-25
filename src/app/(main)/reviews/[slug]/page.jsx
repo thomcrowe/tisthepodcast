@@ -5,6 +5,8 @@ import { Container } from '@/components/Container'
 import filmReviews from '@/data/film-reviews.json'
 import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
 import { getTranscript } from '@/lib/transcripts'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -65,7 +67,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: `${SITE_URL}/reviews/${film.slug}`,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
+      images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: title }],
     },
     twitter: { card: 'summary_large_image', title, description, images: ['/og-image.jpg'] },
   }
@@ -138,6 +140,10 @@ export default async function FilmReviewPage({ params }) {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([
+          { name: 'Reviews', href: '/reviews' },
+          { name: `${film.title} Review`, href: `/reviews/${film.slug}` },
+        ])} />
       {reviewLd && (
         <script
           type="application/ld+json"

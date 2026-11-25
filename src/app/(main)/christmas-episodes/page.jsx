@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { TV_SHOWS, getShowHref } from '@/data/tv-shows'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -17,7 +19,7 @@ export const metadata = {
     title: "TV Christmas Episodes: Every Show We've Covered",
     description,
     url: `${SITE_URL}/christmas-episodes`,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'TV Christmas Episodes — Tis the Podcast' }],
+    images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: 'TV Christmas Episodes — Tis the Podcast' }],
   },
 }
 
@@ -45,6 +47,7 @@ export default function ChristmasEpisodesHub() {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: 'TV Christmas Episodes', href: '/christmas-episodes' }])} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
       <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
         <Container>

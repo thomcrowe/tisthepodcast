@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -18,7 +20,7 @@ export const metadata = {
     description:
       'The best Christmas movies to watch with the whole family — ranked by Tis the Podcast, the show that watches Christmas movies year-round.',
     url: `${SITE_URL}/family-christmas-movies`,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Best Family Christmas Movies — Tis the Podcast' }],
+    images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: 'Best Family Christmas Movies — Tis the Podcast' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -229,6 +231,7 @@ const jsonLd = {
 export default function FamilyChristmasMoviesPage() {
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: 'Family Christmas Movies', href: '/family-christmas-movies' }])} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
 

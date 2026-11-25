@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import filmReviews from '@/data/film-reviews.json'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -44,6 +46,7 @@ export default function ReviewsIndex() {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: 'Reviews', href: '/reviews' }])} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
