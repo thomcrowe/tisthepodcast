@@ -13,6 +13,7 @@ import { buildMetaDescription, buildSeoTitle } from '@/lib/episode-seo'
 import { formatEpisodeCode, getShowHref, getTvCoverageForEpisode } from '@/data/tv-shows'
 import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
 import { getTranscript } from '@/lib/transcripts'
+import { getRelatedEpisodes } from '@/lib/related'
 import { JsonLd } from '@/components/JsonLd'
 import { breadcrumbLd } from '@/lib/schema'
 
@@ -99,6 +100,7 @@ export default async function Episode({ params }) {
   const tvEpisodes = tv?.coverage.episodes ?? []
   const transcript = getTranscript(episode.id)
   const reviewHubSlug = getReviewHubSlug(episode.id)
+  const related = getRelatedEpisodes(episode, await getAllEpisodes())
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -320,6 +322,29 @@ export default async function Episode({ params }) {
             className="prose prose-slate mt-14 [&>h2]:mt-12 [&>h2]:flex [&>h2]:items-center [&>h2]:font-mono [&>h2]:text-sm [&>h2]:font-medium [&>h2]:leading-7 [&>h2]:text-slate-900 [&>h2]:before:mr-3 [&>h2]:before:h-3 [&>h2]:before:w-1.5 [&>h2]:before:rounded-r-full [&>h2]:before:bg-cyan-200 [&>ul]:mt-6 [&>ul]:list-['\2013\20'] [&>ul]:pl-5 [&>h2:nth-of-type(3n+2)]:before:bg-indigo-200 [&>h2:nth-of-type(3n)]:before:bg-violet-200"
             dangerouslySetInnerHTML={{ __html: episode.content }}
           />
+
+          {related.length > 0 && (
+            <section aria-labelledby="related-heading" className="mt-16 max-w-3xl">
+              <h2 id="related-heading" className="text-xl font-bold text-slate-900">
+                More episodes like this
+              </h2>
+              <ul className="mt-4 divide-y divide-slate-100 rounded-lg border border-slate-200">
+                {related.map(({ episode: rel, reason }) => (
+                  <li key={rel.id}>
+                    <Link
+                      href={`/${rel.id}`}
+                      className="group flex flex-col gap-0.5 px-5 py-3 hover:bg-slate-50 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+                    >
+                      <span className="font-semibold text-slate-900 group-hover:text-pink-600">
+                        {buildSeoTitle(rel)}
+                      </span>
+                      <span className="shrink-0 text-xs text-slate-500">{reason}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
           {transcript && <TranscriptSection transcript={transcript} />}
         </Container>

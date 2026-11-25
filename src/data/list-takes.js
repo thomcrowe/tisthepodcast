@@ -66,3 +66,7 @@ export const LIST_PAGES = [
   { href: '/underrated-christmas-movies', label: 'Underrated Christmas Movies' },
   { href: '/the-watch-list', label: 'The Watch List: every movie we\'ve covered' },
 ]
+
+// Shown as "Updated …" on the ranked list pages and used as dateModified in
+// their ItemList markup. Bump it when a list's picks or takes change.
+export const LISTS_UPDATED = '2026-11-24'

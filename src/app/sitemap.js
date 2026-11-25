@@ -5,8 +5,16 @@ import { TV_SHOWS } from '@/data/tv-shows'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
+// Bump this when editorial pages (lists, verdicts, reviews, TV guides,
+// about) actually change. Using the build time for every page teaches
+// Google to ignore lastmod.
+const CONTENT_UPDATED = new Date('2026-11-24T00:00:00Z')
+
 export default async function sitemap() {
   const episodes = await getAllEpisodes()
+  const newestEpisode = new Date(
+    Math.max(...episodes.map((e) => new Date(e.published).getTime())),
+  )
 
   // Give numbered episodes slightly higher priority than bonus/unnumbered ones.
   // Use the real publish date as lastModified — Google trusts date accuracy.
@@ -26,21 +34,21 @@ export default async function sitemap() {
   // list them first so Googlebot encounters them early in the sitemap.
   const reviewUrls = filmReviews.map((film) => ({
     url: `${SITE_URL}/reviews/${film.slug}`,
-    lastModified: new Date(),
+    lastModified: CONTENT_UPDATED,
     changeFrequency: 'monthly',
     priority: 0.9,
   }))
 
   const isItUrls = isItChristmas.map((article) => ({
     url: `${SITE_URL}/is-it-a-christmas-movie/${article.slug}`,
-    lastModified: new Date(),
+    lastModified: CONTENT_UPDATED,
     changeFrequency: 'monthly',
     priority: 0.9,
   }))
 
   const showUrls = TV_SHOWS.filter((s) => s.landingPage).map((show) => ({
     url: `${SITE_URL}/christmas-episodes/${show.slug}`,
-    lastModified: new Date(),
+    lastModified: CONTENT_UPDATED,
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
@@ -49,49 +57,49 @@ export default async function sitemap() {
     // Pillar pages first — highest crawl priority
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: newestEpisode,
       changeFrequency: 'daily',
       priority: 1.0,
     },
     {
       url: `${SITE_URL}/best-christmas-movies`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'monthly',
       priority: 1.0,
     },
     {
       url: `${SITE_URL}/family-christmas-movies`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/underrated-christmas-movies`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/the-watch-list`,
-      lastModified: new Date(),
+      lastModified: newestEpisode,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/reviews`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/is-it-a-christmas-movie`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/christmas-episodes`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
@@ -102,7 +110,7 @@ export default async function sitemap() {
     // Supporting pages
     {
       url: `${SITE_URL}/about`,
-      lastModified: new Date(),
+      lastModified: CONTENT_UPDATED,
       changeFrequency: 'yearly',
       priority: 0.4,
     },

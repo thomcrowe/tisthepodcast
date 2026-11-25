@@ -17,15 +17,6 @@ export const metadata = {
     default: `${SITE_NAME} | Christmas Movie Reviews & Rankings`,
   },
   description: SITE_DESCRIPTION,
-  keywords: [
-    'Christmas podcast',
-    'Christmas movies',
-    'holiday podcast',
-    'Christmas movie reviews',
-    'Christmas movie rankings',
-    'Tis the Podcast',
-    'Christmas spirit',
-  ],
   authors: [
     { name: 'Anthony Caruso' },
     { name: 'Julia Colburn' },
@@ -110,23 +101,18 @@ export default function RootLayout({ children }) {
       <head>
         <link
           rel="preconnect"
-          href="https://api.fontshare.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
           href="https://cdn.fontshare.com"
           crossOrigin="anonymous"
         />
+        {/* Bold is the headline weight (the LCP element on most pages). */}
+        <link rel="preload" href="https://cdn.fontshare.com/wf/LAFFD4SDUCDVQEXFPDC7C53EQ4ZELWQI/PXCT3G6LO6ICM5I3NTYENYPWJAECAWDD/GHM6WVH6MILNYOOCXHXB5GTSGNTMGXZR.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="https://cdn.fontshare.com/wf/TTX2Z3BF3P6Y5BQT3IV2VNOK6FL22KUT/7QYRJOI3JIMYHGY6CH7SOIFRQLZOLNJ6/KFIAZD4RUMEZIYV6FQ3T3GP5PDBDB6JY.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body className="flex min-h-full">
         <JsonLd data={siteLd} />
         <div className="w-full">{children}</div>
         <Analytics />
         <SpeedInsights />
-        <Script id="load-fontshare" strategy="afterInteractive">{`
-          (function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap';document.head.appendChild(l)})();
-        `}</Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G6WVFWNYX0"
           strategy="lazyOnload"

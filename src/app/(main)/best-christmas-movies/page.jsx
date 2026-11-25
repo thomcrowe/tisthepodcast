@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
+import { LISTS_UPDATED } from '@/data/list-takes'
 import filmReviews from '@/data/film-reviews.json'
 import { JsonLd } from '@/components/JsonLd'
 import { breadcrumbLd } from '@/lib/schema'
@@ -218,6 +219,7 @@ export default function BestChristmasMoviesPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
+    dateModified: LISTS_UPDATED,
     name: 'Best Christmas Movies of All Time — Tis the Podcast',
     description:
       'The definitive ranking of the best Christmas movies of all time, curated by Tis the Podcast — the show that watches Christmas movies year-round.',
@@ -312,6 +314,12 @@ export default function BestChristmasMoviesPage() {
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               The 10 Best Christmas Movies of All Time, Ranked for 2026
             </h1>
+            <p className="mt-3 text-sm text-slate-500">
+              Updated{' '}
+              <time dateTime={LISTS_UPDATED}>
+                {new Date(`${LISTS_UPDATED}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </time>
+            </p>
             <p className="mt-6 text-xl leading-8 text-slate-600 max-w-3xl">
               Since 2017, Anthony Caruso, Julia Colburn, and Thom Crowe have watched and
               debated Christmas movies every single week — year-round, not just in

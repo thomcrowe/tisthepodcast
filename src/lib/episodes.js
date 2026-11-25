@@ -41,6 +41,19 @@ export function extractShowTitle(rawTitle) {
   return rawTitle.trim()
 }
 
+// Episode id = last path segment of the RSS <link>, whatever the host.
+// Works for https://tisthepodcast.podbean.com/e/<slug>/ today and keeps the
+// same ids if Podbean's episode links are pointed at tisthepodcast.com/<slug>
+// or a custom domain later.
+export function episodeIdFromLink(link) {
+  try {
+    const parts = new URL(link).pathname.split('/').filter(Boolean)
+    return parts[parts.length - 1] ?? ''
+  } catch {
+    return String(link).replace(/\/+$/, '').split('/').pop()
+  }
+}
+
 function stripHtmlBasic(html) {
   return html?.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim() ?? ''
 }
@@ -106,9 +119,7 @@ export async function getAllEpisodesForList() {
   return feed.items
     .filter((item) => item.itunes_episode) // skip bonus/unnumbered episodes
     .map(({ title, description, published, link, itunes_episode }) => ({
-      id: link
-        .replace('https://tisthepodcast.podbean.com/e/', '')
-        .replace(/\/+$/, ''),
+      id: episodeIdFromLink(link),
       episodeNumber: parseInt(itunes_episode, 10),
       rawTitle: title,
       showTitle: extractShowTitle(title),
@@ -142,9 +153,7 @@ export async function getAllEpisodes() {
           ? null
           : (extractYearFromDescription(description) ?? SHOW_YEAR_OVERRIDES[showTitle] ?? null)
 
-      const id = link
-        .replace('https://tisthepodcast.podbean.com/e/', '')
-        .replace(/\/+$/, '')
+      const id = episodeIdFromLink(link)
 
       const addition = CONTENT_ADDITIONS[id]
       const enrichedContent = addition ? (content ?? '') + addition : content
