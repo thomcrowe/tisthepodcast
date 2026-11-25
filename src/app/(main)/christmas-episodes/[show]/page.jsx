@@ -7,6 +7,8 @@ import { PauseIcon } from '@/components/PauseIcon'
 import { PlayIcon } from '@/components/PlayIcon'
 import { getAllEpisodes } from '@/lib/episodes'
 import { TV_SHOWS, formatEpisodeCode, getShowBySlug } from '@/data/tv-shows'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -41,7 +43,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
+      images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: title }],
     },
     twitter: { card: 'summary_large_image', title, description, images: ['/og-image.jpg'] },
   }
@@ -84,6 +86,10 @@ export default async function ShowChristmasEpisodesPage({ params }) {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([
+          { name: 'TV Christmas Episodes', href: '/christmas-episodes' },
+          { name: `${show.name} Christmas Episodes`, href: `/christmas-episodes/${show.slug}` },
+        ])} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}

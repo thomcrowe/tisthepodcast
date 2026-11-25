@@ -1,6 +1,8 @@
 import Image from 'next/image'
 
 import { Container } from '@/components/Container'
+import { JsonLd } from '@/components/JsonLd'
+import { ORG_ID, SITE_URL, breadcrumbLd } from '@/lib/schema'
 
 export const metadata = {
   title: 'About',
@@ -69,6 +71,17 @@ const Blog = ({ title = '', url = '', children }) => (
 export default function About() {
   return (
     <Container className="pt-16 pb-12 sm:pb-4 lg:pt-12">
+      <JsonLd data={breadcrumbLd([{ name: 'About', href: '/about' }])} />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'AboutPage',
+          name: 'About Tis the Podcast',
+          url: `${SITE_URL}/about`,
+          about: { '@id': ORG_ID },
+          mainEntity: { '@id': ORG_ID },
+        }}
+      />
       <div className="grid">
         <div>
           <h1 className="mb-6 text-2xl font-bold uppercase leading-7 text-slate-900">

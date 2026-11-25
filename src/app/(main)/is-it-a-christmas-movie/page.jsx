@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import articles from '@/data/is-it-christmas.json'
+import { JsonLd } from '@/components/JsonLd'
+import { SITE_URL, breadcrumbLd } from '@/lib/schema'
 
 export const metadata = {
   title: 'Is It a Christmas Movie? — The Definitive Verdicts',
@@ -26,6 +28,22 @@ const VERDICT_STYLES = {
 export default function IsItAChristmasMovieIndex() {
   return (
     <div className="pt-16 pb-12 sm:pb-4 lg:pt-12">
+      <JsonLd data={breadcrumbLd([{ name: 'Is It a Christmas Movie?', href: '/is-it-a-christmas-movie' }])} />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          name: 'Is It a Christmas Movie? Verdicts from Tis the Podcast',
+          url: `${SITE_URL}/is-it-a-christmas-movie`,
+          numberOfItems: articles.length,
+          itemListElement: articles.map((a, i) => ({
+            '@type': 'ListItem',
+            position: i + 1,
+            name: `Is ${a.film} a Christmas Movie?`,
+            url: `${SITE_URL}/is-it-a-christmas-movie/${a.slug}`,
+          })),
+        }}
+      />
       <Container>
         <div className="mb-10">
           <h1 className="text-2xl/7 font-bold text-slate-900">

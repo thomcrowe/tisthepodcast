@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
 import filmReviews from '@/data/film-reviews.json'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -19,7 +21,7 @@ export const metadata = {
     description:
       'The definitive ranking of the best Christmas movies of all time, curated by Tis the Podcast — the show that watches Christmas movies year-round.',
     url: `${SITE_URL}/best-christmas-movies`,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Best Christmas Movies — Tis the Podcast' }],
+    images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: 'Best Christmas Movies — Tis the Podcast' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -290,6 +292,7 @@ export default function BestChristmasMoviesPage() {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: 'Best Christmas Movies', href: '/best-christmas-movies' }])} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

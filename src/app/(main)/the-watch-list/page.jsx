@@ -5,6 +5,8 @@ import { Container } from '@/components/Container'
 import { getAllEpisodesForList, getPosterFromData } from '@/lib/episodes'
 import { buildMetaDescription } from '@/lib/episode-seo'
 import { ListCrossLinks } from '@/components/FilmTake'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 export const metadata = {
   title: "Christmas Movie Watch List 2026: Everything We've Covered",
@@ -75,6 +77,7 @@ export default async function TheWatchListPage() {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: 'The Watch List', href: '/the-watch-list' }])} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import articles from '@/data/is-it-christmas.json'
+import { JsonLd } from '@/components/JsonLd'
+import { breadcrumbLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -52,7 +54,7 @@ export async function generateMetadata({ params }) {
       title,
       description,
       url: `${SITE_URL}/is-it-a-christmas-movie/${article.slug}`,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: title }],
+      images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: title }],
     },
     twitter: { card: 'summary_large_image', title, description, images: ['/og-image.jpg'] },
   }
@@ -100,6 +102,10 @@ export default async function IsItAChristmasMoviePage({ params }) {
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([
+          { name: 'Is It a Christmas Movie?', href: '/is-it-a-christmas-movie' },
+          { name: `Is ${article.film} a Christmas Movie?`, href: `/is-it-a-christmas-movie/${article.slug}` },
+        ])} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}

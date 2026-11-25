@@ -2,6 +2,8 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/styles/tailwind.css'
+import { JsonLd } from '@/components/JsonLd'
+import { ORG_ID, WEBSITE_ID } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 const SITE_NAME = 'Tis the Podcast'
@@ -38,8 +40,8 @@ export const metadata = {
     images: [
       {
         url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        width: 800,
+        height: 800,
         alt: 'Tis the Podcast — Christmas Movie Podcast',
       },
     ],
@@ -61,6 +63,47 @@ export const metadata = {
   },
 }
 
+// Sitewide identity: lets Google show "Tis the Podcast" as the site name
+// and ties the podcast's profiles together.
+const siteLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': ORG_ID,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/og-image.jpg`,
+        width: 800,
+        height: 800,
+      },
+      description: SITE_DESCRIPTION,
+      foundingDate: '2017-08',
+      founder: [
+        { '@type': 'Person', name: 'Anthony Caruso' },
+        { '@type': 'Person', name: 'Julia Colburn' },
+        { '@type': 'Person', name: 'Thom Crowe' },
+      ],
+      sameAs: [
+        'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
+        'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
+        'https://www.patreon.com/tisthepodcast',
+      ],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': WEBSITE_ID,
+      name: SITE_NAME,
+      alternateName: ["'Tis the Podcast", 'Tis the Podcast Christmas Movie Podcast'],
+      url: SITE_URL,
+      inLanguage: 'en-US',
+      publisher: { '@id': ORG_ID },
+    },
+  ],
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="h-full bg-white antialiased">
@@ -77,6 +120,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="flex min-h-full">
+        <JsonLd data={siteLd} />
         <div className="w-full">{children}</div>
         <Analytics />
         <SpeedInsights />
