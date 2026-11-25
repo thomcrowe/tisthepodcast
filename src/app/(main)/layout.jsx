@@ -69,6 +69,7 @@ export default function MainLayout({ children }) {
           <Link href="/best-christmas-movies" className="font-mono text-slate-900 hover:text-slate-700">Best Films</Link>
           <Link href="/reviews" className="font-mono text-slate-900 hover:text-slate-700">Reviews</Link>
           <Link href="/is-it-a-christmas-movie" className="font-mono text-slate-900 hover:text-slate-700">Is It Christmas?</Link>
+          <Link href="/christmas-episodes" className="font-mono text-slate-900 hover:text-slate-700">TV Episodes</Link>
           <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
           <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
         </div>
@@ -94,9 +95,10 @@ export default function MainLayout({ children }) {
             <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
               Keeping the Christmas spirit alive 365 days a year.
             </p>
-            <div className="mt-6 flex justify-center gap-6 lg:hidden">
+            <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 lg:hidden">
               <Link href="/" className="font-mono text-slate-900 hover:text-slate-700">Home</Link>
               <Link href="/best-christmas-movies" className="font-mono text-slate-900 hover:text-slate-700">Best Films</Link>
+              <Link href="/christmas-episodes" className="font-mono text-slate-900 hover:text-slate-700">TV Episodes</Link>
               <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
               <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
             </div>
@@ -160,9 +162,13 @@ export default function MainLayout({ children }) {
               </Fragment>
             ))}
           </div>
-          <div className="mt-6 flex justify-center gap-6">
+          <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2">
             <Link href="/" className="font-mono text-slate-500 hover:text-slate-900">Home</Link>
             <Link href="/best-christmas-movies" className="font-mono text-slate-500 hover:text-slate-900">Best Films</Link>
+            <Link href="/family-christmas-movies" className="font-mono text-slate-500 hover:text-slate-900">Family Films</Link>
+            <Link href="/underrated-christmas-movies" className="font-mono text-slate-500 hover:text-slate-900">Underrated Films</Link>
+            <Link href="/christmas-episodes" className="font-mono text-slate-500 hover:text-slate-900">TV Episodes</Link>
+            <Link href="/is-it-a-christmas-movie" className="font-mono text-slate-500 hover:text-slate-900">Is It Christmas?</Link>
             <Link href="/about" className="font-mono text-slate-500 hover:text-slate-900">About</Link>
             <Link href="/the-watch-list" className="font-mono text-slate-500 hover:text-slate-900">The Watch List</Link>
           </div>

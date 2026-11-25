@@ -3,18 +3,21 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { getAllEpisodesForList, getPosterFromData } from '@/lib/episodes'
+import { buildMetaDescription } from '@/lib/episode-seo'
+import { ListCrossLinks } from '@/components/FilmTake'
 
 export const metadata = {
-  title: 'Christmas Movie Watch List — Every Film We\'ve Reviewed',
+  title: "Christmas Movie Watch List 2026: Everything We've Covered",
   description:
-    'The definitive Christmas movie watch list. Every film, TV special, and holiday episode reviewed by Tis the Podcast since 2017 — hundreds of Christmas movies covered and ranked.',
+    'Every Christmas movie, TV special and holiday episode Tis the Podcast has covered since 2017, updated for 2026, with our take and a link to each episode.',
   alternates: {
     canonical: 'https://tisthepodcast.com/the-watch-list',
   },
   openGraph: {
-    title: 'Christmas Movie Watch List — Tis the Podcast',
+    title: 'Christmas Movie Watch List 2026 — Tis the Podcast',
     description:
-      'The definitive Christmas movie watch list. Every film, TV special, and holiday episode reviewed by Tis the Podcast since 2017 — hundreds of Christmas movies covered and ranked.',
+      'Every Christmas movie, TV special and holiday episode Tis the Podcast has covered since 2017, updated for 2026, with our take and a link to each episode.',
+    url: 'https://tisthepodcast.com/the-watch-list',
   },
 }
 
@@ -40,6 +43,7 @@ export default async function TheWatchListPage() {
   const items = episodes.map((ep) => ({
     ...ep,
     poster: getPosterFromData(ep.episodeNumber),
+    take: buildMetaDescription({ id: ep.id, showTitle: ep.showTitle, description: ep.description, year: null }),
   }))
 
   // Latest episode date for "Last updated" freshness signal
@@ -79,7 +83,7 @@ export default async function TheWatchListPage() {
       <Container>
         <div className="mb-8">
           <h1 className="text-2xl/7 font-bold text-slate-900">
-            The Definitive Christmas Movie Watch List
+            The Christmas Movie Watch List: Everything We&apos;ve Covered (2026)
           </h1>
           <p className="mt-3 text-base leading-7 text-slate-700">
             Since 2017, Anthony, Julia, and Thom have reviewed Christmas movies,
@@ -144,10 +148,14 @@ export default async function TheWatchListPage() {
                 <p className="mt-0.5 text-[11px] text-slate-400">
                   Ep. {item.episodeNumber}
                 </p>
+                <p className="mt-1 text-[11px] leading-snug text-slate-500 line-clamp-2">
+                  {item.take}
+                </p>
               </div>
             </Link>
           ))}
         </div>
+        <ListCrossLinks current="/the-watch-list" />
       </Container>
     </div>
     </>

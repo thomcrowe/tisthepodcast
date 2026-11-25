@@ -64,6 +64,15 @@ const nextConfig = {
         destination: 'https://tisthepodcast.com/:path*',
         permanent: true,
       },
+      // The default *.vercel.app production alias serves full duplicate pages —
+      // send it to the canonical host. (www → apex is handled at the Vercel
+      // domain level as a 308; the rule above is a belt-and-braces fallback.)
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'tisthepodcast.vercel.app' }],
+        destination: 'https://tisthepodcast.com/:path*',
+        permanent: true,
+      },
       // Remove trailing slashes (permanent 301)
       {
         source: '/:path+/',

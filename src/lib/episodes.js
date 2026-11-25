@@ -105,13 +105,14 @@ export async function getAllEpisodesForList() {
 
   return feed.items
     .filter((item) => item.itunes_episode) // skip bonus/unnumbered episodes
-    .map(({ title, published, link, itunes_episode }) => ({
+    .map(({ title, description, published, link, itunes_episode }) => ({
       id: link
         .replace('https://tisthepodcast.podbean.com/e/', '')
         .replace(/\/+$/, ''),
       episodeNumber: parseInt(itunes_episode, 10),
       rawTitle: title,
       showTitle: extractShowTitle(title),
+      description,
       published: new Date(published),
     }))
     .sort((a, b) => a.episodeNumber - b.episodeNumber)

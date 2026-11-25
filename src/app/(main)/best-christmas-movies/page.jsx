@@ -1,20 +1,21 @@
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
+import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
 import filmReviews from '@/data/film-reviews.json'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
 export const metadata = {
-  title: 'Best Christmas Movies of All Time — Ranked by Tis the Podcast',
+  title: 'The 10 Best Christmas Movies of All Time (2026 Ranking)',
   description:
-    'The definitive ranking of the best Christmas movies of all time, curated by Tis the Podcast — the show that watches Christmas movies year-round. From Elf and Home Alone to Die Hard and Love Actually.',
+    'Our 2026 ranking of the 10 best Christmas movies of all time, from Elf and Home Alone to Klaus, each with our take from the episode where we reviewed it.',
   alternates: {
     canonical: `${SITE_URL}/best-christmas-movies`,
   },
   openGraph: {
     type: 'article',
-    title: 'Best Christmas Movies of All Time — Tis the Podcast',
+    title: 'The 10 Best Christmas Movies of All Time (2026 Ranking) — Tis the Podcast',
     description:
       'The definitive ranking of the best Christmas movies of all time, curated by Tis the Podcast — the show that watches Christmas movies year-round.',
     url: `${SITE_URL}/best-christmas-movies`,
@@ -22,7 +23,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Best Christmas Movies of All Time — Tis the Podcast',
+    title: 'The 10 Best Christmas Movies of All Time (2026 Ranking) — Tis the Podcast',
     description:
       'The definitive ranking of the best Christmas movies of all time, from the podcast that watches Christmas movies year-round.',
     images: ['/og-image.jpg'],
@@ -72,7 +73,7 @@ const BEST_FILMS = [
     rank: 4,
     title: "It's a Wonderful Life",
     year: 1946,
-    episodeId: null,
+    episodeId: 'every-time-a-bell-rings-an-angel-gets-his-wings',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: "Frank Capra's masterpiece is the emotional foundation of the Christmas movie genre. Jimmy Stewart's George Bailey is cinema's most complete portrayal of despair turning to grace. No list is complete without it.",
@@ -94,7 +95,7 @@ const BEST_FILMS = [
     rank: 6,
     title: 'Klaus',
     year: 2019,
-    episodeId: null,
+    episodeId: 'a-true-selfless-act-always-sparks-another',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'The first Netflix animated film to receive an Oscar nomination for Best Animated Feature, and it earned every bit of that recognition. Klaus reinvents the Santa Claus origin story with stunning 2D animation and genuine emotional weight.',
@@ -105,7 +106,7 @@ const BEST_FILMS = [
     rank: 7,
     title: 'The Muppet Christmas Carol',
     year: 1992,
-    episodeId: null,
+    episodeId: 'it-feels-like-christmas-1508758888',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'Michael Caine playing Scrooge entirely straight opposite a cast of Muppets is a creative decision that should not work — and yet it produces the definitive screen adaptation of A Christmas Carol. "It Feels Like Christmas" is the perfect Christmas song.',
@@ -127,7 +128,7 @@ const BEST_FILMS = [
     rank: 9,
     title: 'Home Alone 2: Lost in New York',
     year: 1992,
-    episodeId: null,
+    episodeId: 'merry-christmas-ya-filthy-animal-1541871809',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'The rare sequel that justifies its existence by scaling everything up. New York City at Christmas, the Plaza Hotel, Tim Curry at peak Tim Curry — it\'s not as tight as the original, but it delivers exactly what a Christmas sequel should.',
@@ -138,7 +139,7 @@ const BEST_FILMS = [
     rank: 10,
     title: 'National Lampoon\'s Christmas Vacation',
     year: 1989,
-    episodeId: null,
+    episodeId: 'you-serious-clark',
     reviewSlug: null,
     isChristmasMovie: 'yes',
     why: 'Chevy Chase\'s Clark Griswold is the patron saint of Christmas over-ambition, and this film is his monument. The squirrel scene, the rant, the Jelly of the Month Club speech — a catalog of the best Christmas movie moments ever committed to film.',
@@ -306,7 +307,7 @@ export default function BestChristmasMoviesPage() {
               Tis the Podcast · Christmas Movie Rankings
             </p>
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-              The Best Christmas Movies of All Time
+              The 10 Best Christmas Movies of All Time, Ranked for 2026
             </h1>
             <p className="mt-6 text-xl leading-8 text-slate-600 max-w-3xl">
               Since 2017, Anthony Caruso, Julia Colburn, and Thom Crowe have watched and
@@ -388,6 +389,7 @@ export default function BestChristmasMoviesPage() {
 
                       {/* Why it made the list */}
                       <p className="text-base leading-7 text-slate-700">{film.why}</p>
+                    <FilmTake film={film} />
 
                       {/* CTA links */}
                       <div className="mt-4 flex flex-wrap gap-4">
@@ -554,6 +556,7 @@ export default function BestChristmasMoviesPage() {
               , or wherever you get your podcasts.
             </p>
           </section>
+        <ListCrossLinks current="/best-christmas-movies" />
         </Container>
       </article>
     </>

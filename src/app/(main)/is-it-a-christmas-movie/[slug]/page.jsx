@@ -24,6 +24,14 @@ const VERDICT_CONFIG = {
   },
 }
 
+// "Is [Movie] a Christmas Movie? Our Verdict | Tis the Podcast" — one brand
+// mention. Very long film names drop "Our Verdict" to stay near 60 chars.
+function buildTitle(article) {
+  const full = `Is ${article.film} a Christmas Movie? Our Verdict | Tis the Podcast`
+  if (full.length <= 70) return full
+  return `Is ${article.film} a Christmas Movie? | Tis the Podcast`
+}
+
 export async function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }))
 }
@@ -33,11 +41,11 @@ export async function generateMetadata({ params }) {
   const article = articles.find((a) => a.slug === slug)
   if (!article) return {}
 
-  const title = `Is ${article.film} a Christmas Movie? | Tis the Podcast's Definitive Verdict`
-  const description = `${article.verdictStatement} ${article.verdictExplanation.slice(0, 120)}…`
+  const title = buildTitle(article)
+  const description = article.metaDescription
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: `${SITE_URL}/is-it-a-christmas-movie/${article.slug}` },
     openGraph: {
@@ -61,14 +69,33 @@ export default async function IsItAChristmasMoviePage({ params }) {
     .map((s) => articles.find((a) => a.slug === s))
     .filter(Boolean)
 
+  // Verdict-first FAQ: the headline question is answered with the one-line
+  // verdict, then the existing FAQ content follows (minus any duplicate of the
+  // headline question).
+  const headlineQ = `Is ${article.film} a Christmas movie?`
+  const faqs = article.verdictLine
+    ? [
+        { q: headlineQ, a: `${article.verdictLine} ${article.verdictReason}` },
+        ...article.faqs.filter((f) => f.q.toLowerCase() !== headlineQ.toLowerCase()),
+      ]
+    : article.faqs
+
   const faqLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: article.faqs.map((faq) => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.q,
       acceptedAnswer: { '@type': 'Answer', text: faq.a },
     })),
+  }
+
+  const movieLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Movie',
+    name: article.film,
+    ...(article.year ? { dateCreated: String(article.year) } : {}),
+    url: `${SITE_URL}/is-it-a-christmas-movie/${article.slug}`,
   }
 
   return (
@@ -76,6 +103,10 @@ export default async function IsItAChristmasMoviePage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(movieLd) }}
       />
 
       <article className="py-16 lg:py-36">
@@ -89,6 +120,11 @@ export default async function IsItAChristmasMoviePage({ params }) {
             <h1 className="text-4xl font-bold text-slate-900 leading-tight">
               Is {article.film}{article.year ? ` (${article.year})` : ''} a Christmas Movie?
             </h1>
+            {article.verdictLine && (
+              <p className="mt-4 text-xl leading-8 text-slate-800">
+                <strong>{article.verdictLine}</strong> {article.verdictReason}
+              </p>
+            )}
           </header>
 
           {/* ── Opening verdict — first 100 words, AI-pullable ── */}
@@ -177,13 +213,13 @@ export default async function IsItAChristmasMoviePage({ params }) {
           </div>
 
           {/* ── FAQ block ── */}
-          {article.faqs?.length > 0 && (
+          {faqs?.length > 0 && (
             <section className="mb-10">
               <h2 className="text-xl font-bold text-slate-900 mb-6">
                 Frequently Asked Questions
               </h2>
               <dl className="space-y-6">
-                {article.faqs.map((faq) => (
+                {faqs.map((faq) => (
                   <div key={faq.q} className="border-l-2 border-slate-200 pl-5">
                     <dt className="font-bold text-slate-900 mb-1">{faq.q}</dt>
                     <dd className="text-slate-600 leading-relaxed">{faq.a}</dd>

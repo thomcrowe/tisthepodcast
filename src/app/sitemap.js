@@ -1,6 +1,7 @@
 import { getAllEpisodes } from '@/lib/episodes'
 import filmReviews from '@/data/film-reviews.json'
 import isItChristmas from '@/data/is-it-christmas.json'
+import { TV_SHOWS } from '@/data/tv-shows'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -9,7 +10,12 @@ export default async function sitemap() {
 
   // Give numbered episodes slightly higher priority than bonus/unnumbered ones.
   // Use the real publish date as lastModified — Google trusts date accuracy.
-  const episodeUrls = episodes.map((episode) => ({
+  // Only canonical URLs belong in the sitemap. Episodes that have a review hub
+  // declare that hub as canonical, so they're left out here.
+  const reviewHubEpisodeIds = new Set(filmReviews.map((f) => f.episodeId))
+  const episodeUrls = episodes
+    .filter((episode) => !reviewHubEpisodeIds.has(episode.id))
+    .map((episode) => ({
     url: `${SITE_URL}/${episode.id}`,
     lastModified: new Date(episode.published),
     changeFrequency: 'yearly',
@@ -30,6 +36,13 @@ export default async function sitemap() {
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.9,
+  }))
+
+  const showUrls = TV_SHOWS.filter((s) => s.landingPage).map((show) => ({
+    url: `${SITE_URL}/christmas-episodes/${show.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
   }))
 
   return [
@@ -76,8 +89,15 @@ export default async function sitemap() {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/christmas-episodes`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     // SEO hub pages — individual reviews and AEO articles
     ...reviewUrls,
+    ...showUrls,
     ...isItUrls,
     // Supporting pages
     {
