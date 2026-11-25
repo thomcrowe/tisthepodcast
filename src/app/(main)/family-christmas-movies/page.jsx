@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
+import { LISTS_UPDATED } from '@/data/list-takes'
 import { JsonLd } from '@/components/JsonLd'
 import { breadcrumbLd } from '@/lib/schema'
 
@@ -212,6 +213,7 @@ const faqLd = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
+    dateModified: LISTS_UPDATED,
   name: 'Best Family Christmas Movies — Tis the Podcast',
   description: 'The best Christmas movies to watch with the whole family, ranked by Tis the Podcast.',
   url: `${SITE_URL}/family-christmas-movies`,
@@ -244,6 +246,12 @@ export default function FamilyChristmasMoviesPage() {
             <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
               The 10 Best Family Christmas Movies to Watch Together in 2026
             </h1>
+            <p className="mt-3 text-sm text-slate-500">
+              Updated{' '}
+              <time dateTime={LISTS_UPDATED}>
+                {new Date(`${LISTS_UPDATED}T12:00:00Z`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+              </time>
+            </p>
             <p className="mt-6 text-xl leading-8 text-slate-600 max-w-3xl">
               Finding a Christmas movie the whole family can watch — from small kids to
               grandparents — is harder than it sounds. These are the ones that actually

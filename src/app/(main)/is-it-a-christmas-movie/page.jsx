@@ -16,6 +16,7 @@ export const metadata = {
     title: 'Is It a Christmas Movie? — Tis the Podcast',
     description:
       'The definitive answer to the great Christmas movie debates — Is Die Hard a Christmas Movie? Is Love Actually? Tis the Podcast has the verdict on every film.',
+    images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: 'Tis the Podcast' }],
   },
 }
 

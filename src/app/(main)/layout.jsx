@@ -123,7 +123,6 @@ export default function MainLayout({ children }) {
               {[
                 ['Spotify', SpotifyIcon, 'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal'],
                 ['Apple Podcast', ApplePodcastIcon, 'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416'],
-                ['Google Podcast', PodcastIcon, 'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkLnBvZGJlYW4uY29tL3Rpc3RoZXBvZGNhc3QvZmVlZC54bWw'],
                 ['RSS Feed', RSSIcon, 'https://feed.podbean.com/tisthepodcast/feed.xml'],
               ].map(([label, Icon, href]) => (
                 <li key={label} className="flex">

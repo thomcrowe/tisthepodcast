@@ -18,6 +18,7 @@ export const metadata = {
     title: 'Christmas Movie Reviews — Tis the Podcast',
     description:
       'In-depth Christmas movie reviews from Tis the Podcast. Is it a Christmas movie? How does it rank? Anthony, Julia, and Thom have the definitive verdict.',
+    images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: 'Tis the Podcast' }],
   },
 }
 

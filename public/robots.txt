@@ -42,8 +42,6 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Host
-Host: https://tisthepodcast.com
 
 # Sitemaps
 Sitemap: https://tisthepodcast.com/sitemap.xml

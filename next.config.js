@@ -79,6 +79,13 @@ const nextConfig = {
         destination: '/:path+',
         permanent: true,
       },
+      // Old homepage pagination (/?page=N) moved to static /page/N
+      {
+        source: '/',
+        has: [{ type: 'query', key: 'page', value: '(?<n>\\d+)' }],
+        destination: '/page/:n',
+        permanent: true,
+      },
       // Rename The List to The Watch List
       {
         source: '/the-list',
