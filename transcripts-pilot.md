@@ -2,8 +2,8 @@
 
 **Question:** do full transcripts on episode pages earn more search impressions and clicks?
 
-**Transcripts went live:** _2026-11-25 (fill in the actual production deploy date if the PR merges later)_
-**Compare in Search Console on:** 2026-12-23 (4 weeks) and 2027-01-06 (6 weeks)
+**Transcripts went live:** 2026-11-24 (merged and deployed to production)
+**Compare in Search Console on:** 2026-12-22 (4 weeks) and 2027-01-05 (6 weeks)
 
 ## Pilot pages (10)
 
