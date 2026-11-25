@@ -25,7 +25,7 @@ export const metadata = {
 }
 
 // Revalidate once a day so new episodes appear automatically
-export const revalidate = 86400
+export const revalidate = 3600
 
 
 const SITE_URL = 'https://tisthepodcast.com'
