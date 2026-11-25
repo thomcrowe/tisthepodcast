@@ -3,6 +3,8 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import filmReviews from '@/data/film-reviews.json'
+import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
+import { getTranscript } from '@/lib/transcripts'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -73,6 +75,7 @@ export default async function FilmReviewPage({ params }) {
   const { slug } = await params
   const film = filmReviews.find((f) => f.slug === slug)
   if (!film) notFound()
+  const transcript = film.episodeId ? getTranscript(film.episodeId) : null
 
   const pageTitle = film.year
     ? `${film.title} (${film.year}) Review`
@@ -168,6 +171,8 @@ export default async function FilmReviewPage({ params }) {
                 {film.verdict}
               </p>
             )}
+
+            {transcript && <TranscriptJumpLink />}
 
             {film.rating && (
               <div className="mt-3">
@@ -300,6 +305,7 @@ export default async function FilmReviewPage({ params }) {
             </div>
           )}
 
+          {transcript && <TranscriptSection transcript={transcript} />}
         </Container>
       </article>
     </>

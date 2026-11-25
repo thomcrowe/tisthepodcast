@@ -160,9 +160,16 @@ export function buildMetaDescription(episode) {
   )
 }
 
+// Hand-written titles where the generated one is unwieldy.
+export const TITLE_OVERRIDES = {
+  'youre-a-mean-one-mr-grinch': 'How the Grinch Stole Christmas: 1966 vs. 2000 Review',
+}
+
 // Title used for both <title> (before the " | Tis the Podcast" template)
 // and the on-page H1.
 export function buildSeoTitle(episode) {
+  if (TITLE_OVERRIDES[episode.id]) return TITLE_OVERRIDES[episode.id]
+
   if (episode.id?.startsWith('another-christmas-story')) {
     const rawTitle = episode.rawTitle ?? episode.showTitle
     const dashMatch = rawTitle.match(/-\s+(.+?)(?:\s+as read by.+)?$/i)
@@ -187,5 +194,7 @@ export function buildSeoTitle(episode) {
     return `${show.name} ${show.holiday} Episodes${fullList ? ' (Full List)' : ''}`
   }
 
-  return episode.year ? `${episode.showTitle} (${episode.year}) Review` : `${episode.showTitle} Review`
+  // "Nosferatu [2024]" → "Nosferatu (2024)"
+  const show = episode.showTitle.replace(/\s*\[(\d{4})\]/g, ' ($1)')
+  return episode.year ? `${show} (${episode.year}) Review` : `${show} Review`
 }
