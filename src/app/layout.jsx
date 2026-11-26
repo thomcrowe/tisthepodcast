@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import '@/styles/tailwind.css'
 import { JsonLd } from '@/components/JsonLd'
-import { ORG_ID, WEBSITE_ID } from '@/lib/schema'
+import { HOST_REFS, ORG_ID, SERIES_ID, WEBSITE_ID, hostsLd } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 const SITE_NAME = 'Tis the Podcast'
@@ -72,11 +72,7 @@ const siteLd = {
       },
       description: SITE_DESCRIPTION,
       foundingDate: '2017-08',
-      founder: [
-        { '@type': 'Person', name: 'Anthony Caruso' },
-        { '@type': 'Person', name: 'Julia Colburn' },
-        { '@type': 'Person', name: 'Thom Crowe' },
-      ],
+      founder: HOST_REFS,
       sameAs: [
         'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
         'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
@@ -92,6 +88,24 @@ const siteLd = {
       inLanguage: 'en-US',
       publisher: { '@id': ORG_ID },
     },
+    {
+      '@type': 'PodcastSeries',
+      '@id': SERIES_ID,
+      name: SITE_NAME,
+      url: SITE_URL,
+      description: SITE_DESCRIPTION,
+      webFeed: 'https://feed.podbean.com/tisthepodcast/feed.xml',
+      inLanguage: 'en-US',
+      genre: ['Christmas Movies', 'Film Reviews', 'TV'],
+      startDate: '2017-08',
+      publisher: { '@id': ORG_ID },
+      author: HOST_REFS,
+      sameAs: [
+        'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
+        'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
+      ],
+    },
+    ...hostsLd,
   ],
 }
 

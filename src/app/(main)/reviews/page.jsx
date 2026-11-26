@@ -2,6 +2,7 @@ import Link from 'next/link'
 
 import { Container } from '@/components/Container'
 import filmReviews from '@/data/film-reviews.json'
+import { reviewHref } from '@/lib/film-links'
 import { JsonLd } from '@/components/JsonLd'
 import { breadcrumbLd } from '@/lib/schema'
 
@@ -15,7 +16,7 @@ export const metadata = {
     canonical: `${SITE_URL}/reviews`,
   },
   openGraph: {
-    title: 'Christmas Movie Reviews — Tis the Podcast',
+    title: 'Christmas Movie Reviews | Tis the Podcast',
     description:
       'In-depth Christmas movie reviews from Tis the Podcast. Is it a Christmas movie? How does it rank? Anthony, Julia, and Thom have the definitive verdict.',
     images: [{ url: '/og-image.jpg', width: 800, height: 800, alt: 'Tis the Podcast' }],
@@ -41,7 +42,7 @@ export default function ReviewsIndex() {
       '@type': 'ListItem',
       position: i + 1,
       name: `${film.title}${film.year ? ` (${film.year})` : ''}`,
-      url: `${SITE_URL}/reviews/${film.slug}`,
+      url: `${SITE_URL}${reviewHref(film.slug)}`,
     })),
   }
 
@@ -73,7 +74,7 @@ export default function ReviewsIndex() {
             return (
               <Link
                 key={film.slug}
-                href={`/reviews/${film.slug}`}
+                href={reviewHref(film.slug)}
                 className="group flex items-start justify-between gap-6 py-6 hover:bg-slate-50 -mx-4 px-4 rounded-lg transition-colors"
               >
                 <div className="flex-1 min-w-0">

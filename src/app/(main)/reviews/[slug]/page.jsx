@@ -1,4 +1,4 @@
-import { notFound } from 'next/navigation'
+import { notFound, permanentRedirect } from 'next/navigation'
 import Link from 'next/link'
 
 import { Container } from '@/components/Container'
@@ -6,7 +6,8 @@ import filmReviews from '@/data/film-reviews.json'
 import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
 import { getTranscript } from '@/lib/transcripts'
 import { JsonLd } from '@/components/JsonLd'
-import { breadcrumbLd } from '@/lib/schema'
+import { breadcrumbLd, HOST_REFS, ORG_ID } from '@/lib/schema'
+import { isMergedReview, reviewHref, standaloneReviews } from '@/lib/film-links'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -44,7 +45,7 @@ function ChristmasMovieBadge({ verdict }) {
 }
 
 export async function generateStaticParams() {
-  return filmReviews.map((film) => ({ slug: film.slug }))
+  return standaloneReviews.map((film) => ({ slug: film.slug }))
 }
 
 export async function generateMetadata({ params }) {
@@ -52,9 +53,10 @@ export async function generateMetadata({ params }) {
   const film = filmReviews.find((f) => f.slug === slug)
   if (!film) return {}
 
+  // The root layout appends "| Tis the Podcast"; don't add it twice.
   const title = film.year
-    ? `${film.title} (${film.year}) Review — Tis the Podcast`
-    : `${film.title} Review — Tis the Podcast`
+    ? `${film.title} (${film.year}) Review`
+    : `${film.title} Review`
   const description =
     film.verdict ||
     `Tis the Podcast's full review and verdict on ${film.title}${film.year ? ` (${film.year})` : ''}. Is it a Christmas movie? Where does it rank? Anthony, Julia, and Thom debate it all.`
@@ -75,6 +77,7 @@ export async function generateMetadata({ params }) {
 
 export default async function FilmReviewPage({ params }) {
   const { slug } = await params
+  if (isMergedReview(slug)) permanentRedirect(reviewHref(slug))
   const film = filmReviews.find((f) => f.slug === slug)
   if (!film) notFound()
   const transcript = film.episodeId ? getTranscript(film.episodeId) : null
@@ -105,18 +108,10 @@ export default async function FilmReviewPage({ params }) {
           bestRating: '5',
           worstRating: '1',
         },
-        author: {
-          '@type': 'Organization',
-          name: 'Tis the Podcast',
-          url: SITE_URL,
-        },
+        author: HOST_REFS,
         reviewBody: reviewDescription,
         url: `${SITE_URL}/reviews/${film.slug}`,
-        publisher: {
-          '@type': 'Organization',
-          name: 'Tis the Podcast',
-          url: SITE_URL,
-        },
+        publisher: { '@id': ORG_ID },
       }
     : null
 
@@ -300,7 +295,7 @@ export default async function FilmReviewPage({ params }) {
                 {relatedFilms.map((related) => (
                   <Link
                     key={related.slug}
-                    href={`/reviews/${related.slug}`}
+                    href={reviewHref(related.slug)}
                     className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-slate-700 hover:border-pink-300 hover:text-pink-600 transition-colors"
                   >
                     {related.title}

@@ -71,6 +71,7 @@ export default function MainLayout({ children }) {
           <Link href="/reviews" className="font-mono text-slate-900 hover:text-slate-700">Reviews</Link>
           <Link href="/is-it-a-christmas-movie" className="font-mono text-slate-900 hover:text-slate-700">Is It Christmas?</Link>
           <Link href="/christmas-episodes" className="font-mono text-slate-900 hover:text-slate-700">TV Episodes</Link>
+          <Link href="/episodes" className="font-mono text-slate-900 hover:text-slate-700">All Episodes</Link>
           <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
         </div>
         <div className="relative z-10 mx-auto px-4 pb-4 pt-10 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:px-8 lg:py-12 xl:px-12">
@@ -100,6 +101,7 @@ export default function MainLayout({ children }) {
               <Link href="/about" className="font-mono text-slate-900 hover:text-slate-700">About</Link>
               <Link href="/best-christmas-movies" className="font-mono text-slate-900 hover:text-slate-700">Best Films</Link>
               <Link href="/christmas-episodes" className="font-mono text-slate-900 hover:text-slate-700">TV Episodes</Link>
+          <Link href="/episodes" className="font-mono text-slate-900 hover:text-slate-700">All Episodes</Link>
               <Link href="/the-watch-list" className="font-mono text-slate-900 hover:text-slate-700">The Watch List</Link>
             </div>
           </div>
@@ -168,6 +170,7 @@ export default function MainLayout({ children }) {
             <Link href="/family-christmas-movies" className="font-mono text-slate-500 hover:text-slate-900">Family Films</Link>
             <Link href="/underrated-christmas-movies" className="font-mono text-slate-500 hover:text-slate-900">Underrated Films</Link>
             <Link href="/christmas-episodes" className="font-mono text-slate-500 hover:text-slate-900">TV Episodes</Link>
+            <Link href="/episodes" className="font-mono text-slate-500 hover:text-slate-900">All Episodes</Link>
             <Link href="/is-it-a-christmas-movie" className="font-mono text-slate-500 hover:text-slate-900">Is It Christmas?</Link>
             <Link href="/the-watch-list" className="font-mono text-slate-500 hover:text-slate-900">The Watch List</Link>
           </div>

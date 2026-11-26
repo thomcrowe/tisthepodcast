@@ -1,7 +1,8 @@
 import { parse as parseFeed } from 'rss-to-json'
 import posterData from '@/data/episode-posters.json'
 
-const FEED_URL = 'https://feed.podbean.com/tisthepodcast/feed.xml'
+// TTP_FEED_URL lets a local build run against a sample feed.
+const FEED_URL = process.env.TTP_FEED_URL || 'https://feed.podbean.com/tisthepodcast/feed.xml'
 
 // Manual year overrides for early episodes whose descriptions predate the
 // "the YYYY film" convention. Add entries here as needed.
@@ -46,12 +47,37 @@ export function extractShowTitle(rawTitle) {
 // same ids if Podbean's episode links are pointed at tisthepodcast.com/<slug>
 // or a custom domain later.
 export function episodeIdFromLink(link) {
+  let raw
   try {
     const parts = new URL(link).pathname.split('/').filter(Boolean)
-    return parts[parts.length - 1] ?? ''
+    raw = parts[parts.length - 1] ?? ''
   } catch {
-    return String(link).replace(/\/+$/, '').split('/').pop()
+    raw = String(link).replace(/\/+$/, '').split('/').pop()
   }
+  return toAsciiSlug(raw)
+}
+
+// A few Podbean slugs contain non-ASCII characters ("noël", "it’s"), and the
+// RSS link carries them percent-encoded. Next decodes the route param, so the
+// encoded id never matched and those pages 404'd. Every episode id is now
+// plain ASCII: decode, strip accents, drop apostrophes. Ids that are already
+// ASCII come back unchanged, so no existing URL moves.
+export function toAsciiSlug(value) {
+  let s = String(value ?? '')
+  try {
+    s = decodeURIComponent(s)
+  } catch {
+    // leave malformed escapes as-is
+  }
+  if (!/[^\x00-\x7f]/.test(s)) return s
+  return s
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/['\u2018\u2019\u02bc]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-|-$/g, '')
 }
 
 function stripHtmlBasic(html) {
@@ -130,9 +156,7 @@ export async function getAllEpisodesForList() {
 }
 
 export async function getAllEpisodes() {
-  let feed = await parseFeed(
-    'https://feed.podbean.com/tisthepodcast/feed.xml',
-  )
+  let feed = await parseFeed(FEED_URL)
 
   let episodes = feed.items.map(
     ({ title, description, content, enclosures, published, link, itunes_episode }) => {

@@ -4,6 +4,7 @@ import { Container } from '@/components/Container'
 import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { getAllEpisodes } from '@/lib/episodes'
+import { HOST_REFS, SERIES_ID } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -103,6 +104,7 @@ export async function EpisodeListPage({ page }) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'PodcastSeries',
+    '@id': SERIES_ID,
     name: 'Tis the Podcast',
     url: SITE_URL,
     description:
@@ -113,11 +115,7 @@ export async function EpisodeListPage({ page }) {
     genre: ['Christmas Movies', 'Christmas Podcast', 'Holiday Podcast'],
     keywords: 'christmas podcast, christmas movie podcast, christmas movie reviews, christmas movie rankings, holiday podcast',
     numberOfEpisodes: allEpisodes.length,
-    author: [
-      { '@type': 'Person', name: 'Anthony Caruso' },
-      { '@type': 'Person', name: 'Julia Colburn' },
-      { '@type': 'Person', name: 'Thom Crowe' },
-    ],
+    author: HOST_REFS,
     sameAs: [
       'https://open.spotify.com/show/1oVhOnOULzGZbRYTEBGEal',
       'https://podcasts.apple.com/us/podcast/tis-the-podcast/id1272483416',
@@ -155,6 +153,7 @@ export async function EpisodeListPage({ page }) {
                 ['/the-watch-list', 'The Watch List: Everything We\'ve Covered'],
                 ['/christmas-episodes', 'TV Christmas Episodes, Show by Show'],
                 ['/is-it-a-christmas-movie', 'Is It a Christmas Movie? Our Verdicts'],
+                ['/episodes', 'Every Episode Since 2017, by Year'],
               ].map(([href, label]) => (
                 <li key={href}>
                   <Link href={href} className="text-sm font-bold text-pink-600 hover:text-pink-700">
@@ -188,7 +187,10 @@ export async function EpisodeListPage({ page }) {
               )}
             </div>
             <p className="text-sm text-slate-500">
-              Page {currentPage} of {totalPages}
+              Page {currentPage} of {totalPages} ·{' '}
+              <Link href="/episodes" className="font-bold text-pink-600 hover:text-pink-700">
+                Browse by year
+              </Link>
             </p>
             <div>
               {currentPage < totalPages && (

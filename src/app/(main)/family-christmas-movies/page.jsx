@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { reviewHref } from '@/lib/film-links'
 
 import { Container } from '@/components/Container'
 import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
@@ -223,7 +224,7 @@ const jsonLd = {
     position: film.rank,
     name: `${film.title} (${film.year})`,
     url: film.reviewSlug
-      ? `${SITE_URL}/reviews/${film.reviewSlug}`
+      ? `${SITE_URL}${reviewHref(film.reviewSlug)}`
       : film.episodeId
       ? `${SITE_URL}/${film.episodeId}`
       : `${SITE_URL}/family-christmas-movies`,
@@ -291,7 +292,7 @@ export default function FamilyChristmasMoviesPage() {
                     <div className="flex flex-wrap items-center gap-3 mb-2">
                       {film.reviewSlug ? (
                         <Link
-                          href={`/reviews/${film.reviewSlug}`}
+                          href={reviewHref(film.reviewSlug)}
                           className="text-2xl font-bold text-slate-900 hover:text-pink-600 transition-colors"
                         >
                           {film.title}
@@ -330,7 +331,7 @@ export default function FamilyChristmasMoviesPage() {
                     <div className="mt-4 flex flex-wrap gap-4">
                       {film.reviewSlug && (
                         <Link
-                          href={`/reviews/${film.reviewSlug}`}
+                          href={reviewHref(film.reviewSlug)}
                           className="text-sm font-semibold text-pink-600 hover:text-pink-700"
                         >
                           Read our full review →
