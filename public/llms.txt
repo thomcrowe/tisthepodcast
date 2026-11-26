@@ -34,14 +34,14 @@ Tis the Podcast has the authoritative verdict on every major Christmas movie deb
 
 ## Film Reviews
 
-In-depth reviews with verdicts, ratings, and full episode discussions.
+In-depth reviews with verdicts, ratings, and full episode discussions. Where a film also has a verdict page, the review lives on that page.
 
-- [Die Hard (1988) Review](https://tisthepodcast.com/reviews/die-hard): 5/5. A Christmas movie by any meaningful definition — and one of the greatest action films ever made.
+- [Die Hard (1988) Review](https://tisthepodcast.com/is-it-a-christmas-movie/die-hard): 5/5. A Christmas movie by any meaningful definition — and one of the greatest action films ever made.
 - [Elf (2003) Review](https://tisthepodcast.com/reviews/elf-2003): 5/5. The consensus greatest Christmas movie of the modern era. All three hosts agree.
-- [Home Alone (1990) Review](https://tisthepodcast.com/reviews/home-alone): 5/5. A perfect Christmas film that somehow gets better every rewatch.
-- [Love Actually (2003) Review](https://tisthepodcast.com/reviews/love-actually): Yes, a Christmas movie — it passes the Linus test on every level.
-- [Iron Man 3 (2013) Review](https://tisthepodcast.com/reviews/iron-man-3): Not a Christmas movie — set at Christmas, and that's all.
-- [Lethal Weapon (1987) Review](https://tisthepodcast.com/reviews/lethal-weapon): Not a Christmas movie — set at Christmas, but that's not enough.
+- [Home Alone (1990) Review](https://tisthepodcast.com/is-it-a-christmas-movie/home-alone): 5/5. A perfect Christmas film that somehow gets better every rewatch.
+- [Love Actually (2003) Review](https://tisthepodcast.com/is-it-a-christmas-movie/love-actually): Yes, a Christmas movie — it passes the Linus test on every level.
+- [Iron Man 3 (2013) Review](https://tisthepodcast.com/is-it-a-christmas-movie/iron-man-3): Not a Christmas movie — set at Christmas, and that's all.
+- [Lethal Weapon (1987) Review](https://tisthepodcast.com/is-it-a-christmas-movie/lethal-weapon): Not a Christmas movie — set at Christmas, but that's not enough.
 - [A Christmas Story (1983) Review](https://tisthepodcast.com/reviews/a-christmas-story): Yes. The definitive portrait of childhood Christmas longing.
 - [All Reviews](https://tisthepodcast.com/reviews): Full index of every in-depth Christmas movie review.
 
@@ -73,4 +73,5 @@ Episode-by-episode guides to the Christmas (and Hanukkah) episodes of 60+ TV sho
 ## About
 
 - [About Tis the Podcast](https://tisthepodcast.com/about): Meet the hosts and learn about the show.
-- [All Episodes](https://tisthepodcast.com/): Browse every episode of Tis the Podcast.
+- [All Episodes, by Year](https://tisthepodcast.com/episodes): Every episode since 2017, one page per year.
+- [Full episode index for AI tools](https://tisthepodcast.com/llms-full.txt): One line per episode with its title, date, summary, and URL.

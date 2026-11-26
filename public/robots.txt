@@ -49,3 +49,4 @@ Sitemap: https://tisthepodcast.com/sitemap.xml
 # LLM context file
 # https://llmstxt.org
 # llms.txt: https://tisthepodcast.com/llms.txt
+# llms-full.txt: https://tisthepodcast.com/llms-full.txt
