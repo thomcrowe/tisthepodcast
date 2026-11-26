@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { reviewHref } from '@/lib/film-links'
 
 import { Container } from '@/components/Container'
 import { FilmTake, ListCrossLinks } from '@/components/FilmTake'
@@ -230,7 +231,7 @@ export default function BestChristmasMoviesPage() {
       position: film.rank,
       name: `${film.title} (${film.year})`,
       url: film.reviewSlug
-        ? `${SITE_URL}/reviews/${film.reviewSlug}`
+        ? `${SITE_URL}${reviewHref(film.reviewSlug)}`
         : film.episodeId
         ? `${SITE_URL}/${film.episodeId}`
         : `${SITE_URL}/best-christmas-movies`,
@@ -344,7 +345,7 @@ export default function BestChristmasMoviesPage() {
                 const review = filmReviews.find((r) => r.slug === film.reviewSlug)
                 const verdict = VERDICT_STYLES[film.isChristmasMovie]
                 const href = film.reviewSlug
-                  ? `/reviews/${film.reviewSlug}`
+                  ? reviewHref(film.reviewSlug)
                   : film.episodeId
                   ? `/${film.episodeId}`
                   : null
@@ -406,7 +407,7 @@ export default function BestChristmasMoviesPage() {
                       <div className="mt-4 flex flex-wrap gap-4">
                         {film.reviewSlug && (
                           <Link
-                            href={`/reviews/${film.reviewSlug}`}
+                            href={reviewHref(film.reviewSlug)}
                             className="text-sm font-semibold text-pink-600 hover:text-pink-700"
                           >
                             Read our full review →

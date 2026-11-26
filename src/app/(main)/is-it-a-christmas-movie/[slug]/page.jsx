@@ -4,7 +4,28 @@ import Link from 'next/link'
 import { Container } from '@/components/Container'
 import articles from '@/data/is-it-christmas.json'
 import { JsonLd } from '@/components/JsonLd'
-import { breadcrumbLd } from '@/lib/schema'
+import { breadcrumbLd, HOST_REFS, ORG_ID } from '@/lib/schema'
+import { getReviewForVerdict } from '@/lib/film-links'
+import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
+import { getTranscript } from '@/lib/transcripts'
+
+function StarRating({ rating }) {
+  return (
+    <div className="flex items-center gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <svg
+          key={star}
+          className={`h-5 w-5 ${star <= rating ? 'text-yellow-400' : 'text-slate-200'}`}
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          aria-hidden="true"
+        >
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+        </svg>
+      ))}
+    </div>
+  )
+}
 
 const SITE_URL = 'https://tisthepodcast.com'
 
@@ -66,6 +87,12 @@ export default async function IsItAChristmasMoviePage({ params }) {
   if (!article) notFound()
 
   const verdict = VERDICT_CONFIG[article.verdict]
+  // When this film also had a /reviews page, its rating, take and transcript
+  // live here now (the old review URL 301s to this page).
+  const review = getReviewForVerdict(article.slug)
+  const transcriptId = article.episodeId ?? review?.episodeId
+  const transcript = transcriptId ? getTranscript(transcriptId) : null
+  const pageUrl = `${SITE_URL}/is-it-a-christmas-movie/${article.slug}`
 
   const relatedArticles = (article.relatedSlugs ?? [])
     .map((s) => articles.find((a) => a.slug === s))
@@ -75,12 +102,17 @@ export default async function IsItAChristmasMoviePage({ params }) {
   // verdict, then the existing FAQ content follows (minus any duplicate of the
   // headline question).
   const headlineQ = `Is ${article.film} a Christmas movie?`
+  const baseFaqs = [...(article.faqs ?? []), ...(review?.faqs ?? [])]
+  const seenQ = new Set([headlineQ.toLowerCase()])
+  const dedupedFaqs = baseFaqs.filter((f) => {
+    const k = f.q.toLowerCase()
+    if (seenQ.has(k)) return false
+    seenQ.add(k)
+    return true
+  })
   const faqs = article.verdictLine
-    ? [
-        { q: headlineQ, a: `${article.verdictLine} ${article.verdictReason}` },
-        ...article.faqs.filter((f) => f.q.toLowerCase() !== headlineQ.toLowerCase()),
-      ]
-    : article.faqs
+    ? [{ q: headlineQ, a: `${article.verdictLine} ${article.verdictReason}` }, ...dedupedFaqs]
+    : dedupedFaqs
 
   const faqLd = {
     '@context': 'https://schema.org',
@@ -95,10 +127,31 @@ export default async function IsItAChristmasMoviePage({ params }) {
   const movieLd = {
     '@context': 'https://schema.org',
     '@type': 'Movie',
+    '@id': `${pageUrl}#movie`,
     name: article.film,
     ...(article.year ? { dateCreated: String(article.year) } : {}),
-    url: `${SITE_URL}/is-it-a-christmas-movie/${article.slug}`,
+    ...(review?.director ? { director: { '@type': 'Person', name: review.director } } : {}),
+    url: pageUrl,
   }
+
+  const reviewLd = review?.rating
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Review',
+        name: `Is ${article.film} a Christmas movie? Tis the Podcast's verdict`,
+        itemReviewed: { '@id': `${pageUrl}#movie` },
+        reviewRating: {
+          '@type': 'Rating',
+          ratingValue: String(review.rating),
+          bestRating: '5',
+          worstRating: '1',
+        },
+        author: HOST_REFS,
+        publisher: { '@id': ORG_ID },
+        reviewBody: article.verdictStatement,
+        url: pageUrl,
+      }
+    : null
 
   return (
     <>
@@ -114,6 +167,12 @@ export default async function IsItAChristmasMoviePage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(movieLd) }}
       />
+      {reviewLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewLd) }}
+        />
+      )}
 
       <article className="py-16 lg:py-36">
         <Container>
@@ -131,6 +190,15 @@ export default async function IsItAChristmasMoviePage({ params }) {
                 <strong>{article.verdictLine}</strong> {article.verdictReason}
               </p>
             )}
+            {review?.rating && (
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-slate-500">
+                <StarRating rating={review.rating} />
+                {review.director && <span>Dir. {review.director}</span>}
+                {review.runtime && <span>{review.runtime} min</span>}
+                {review.streaming && <span>Streaming: {review.streaming}</span>}
+              </div>
+            )}
+            {transcript && <TranscriptJumpLink />}
           </header>
 
           {/* ── Opening verdict — first 100 words, AI-pullable ── */}
@@ -182,6 +250,32 @@ export default async function IsItAChristmasMoviePage({ params }) {
 
           <hr className="border-slate-200 mb-10" />
 
+          {/* ── Merged review ── */}
+          {review && (review.ourTake || review.isWorthWatching || review.theDebate) && (
+            <section className="mb-10 space-y-6">
+              {review.ourTake && (
+                <div>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">Our Review</h2>
+                  <p className="text-slate-700 leading-relaxed">{review.ourTake}</p>
+                </div>
+              )}
+              {review.isWorthWatching && (
+                <div>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">
+                    Is {article.film} Worth Watching?
+                  </h2>
+                  <p className="text-slate-700 leading-relaxed">{review.isWorthWatching}</p>
+                </div>
+              )}
+              {review.theDebate && (
+                <div>
+                  <h2 className="text-xl font-bold text-slate-900 mb-3">The Debate on the Show</h2>
+                  <p className="text-slate-700 leading-relaxed">{review.theDebate}</p>
+                </div>
+              )}
+            </section>
+          )}
+
           {/* ── Podcast angle ── */}
           <section className="mb-10">
             <h2 className="text-xl font-bold text-slate-900 mb-3">
@@ -214,7 +308,9 @@ export default async function IsItAChristmasMoviePage({ params }) {
               href="/the-watch-list"
               className="text-base font-bold text-pink-600 hover:text-pink-700"
             >
-              Where does {article.film} rank on the Tis the Podcast Watch List? →
+              {review?.watchListRank
+                ? `${article.film} is ranked #${review.watchListRank} on the Tis the Podcast Watch List →`
+                : `Where does ${article.film} rank on the Tis the Podcast Watch List? →`}
             </Link>
           </div>
 
@@ -255,6 +351,7 @@ export default async function IsItAChristmasMoviePage({ params }) {
             </section>
           )}
 
+          {transcript && <TranscriptSection transcript={transcript} />}
         </Container>
       </article>
     </>

@@ -1,3 +1,17 @@
+const filmReviews = require('./src/data/film-reviews.json')
+const isItChristmas = require('./src/data/is-it-christmas.json')
+
+// Films with both a review and a verdict page: the verdict page is canonical
+// and the review content lives there (see src/lib/film-links.js).
+const isItSlugs = new Set(isItChristmas.map((a) => a.slug))
+const mergedReviewRedirects = filmReviews
+  .filter((f) => isItSlugs.has(f.slug))
+  .map((f) => ({
+    source: `/reviews/${f.slug}`,
+    destination: `/is-it-a-christmas-movie/${f.slug}`,
+    permanent: true,
+  }))
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -86,6 +100,7 @@ const nextConfig = {
         destination: '/page/:n',
         permanent: true,
       },
+      ...mergedReviewRedirects,
       // Rename The List to The Watch List
       {
         source: '/the-list',
