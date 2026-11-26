@@ -7,29 +7,28 @@ import { EpisodePlayButton } from '@/components/EpisodePlayButton'
 import { FormattedDate } from '@/components/FormattedDate'
 import { PauseIcon } from '@/components/PauseIcon'
 import { PlayIcon } from '@/components/PlayIcon'
-import { getAllEpisodes } from '@/lib/episodes'
-import filmReviews from '@/data/film-reviews.json'
+import { hubHrefForEpisode, hubLabelForEpisode } from '@/lib/film-links'
+import { getAllEpisodes, toAsciiSlug } from '@/lib/episodes'
 import { buildMetaDescription, buildSeoTitle } from '@/lib/episode-seo'
 import { formatEpisodeCode, getShowHref, getTvCoverageForEpisode } from '@/data/tv-shows'
 import { TranscriptSection, TranscriptJumpLink } from '@/components/TranscriptSection'
 import { getTranscript } from '@/lib/transcripts'
 import { getRelatedEpisodes } from '@/lib/related'
 import { JsonLd } from '@/components/JsonLd'
-import { breadcrumbLd } from '@/lib/schema'
+import { breadcrumbLd, HOST_REFS, SERIES_ID } from '@/lib/schema'
 
 const SITE_URL = 'https://tisthepodcast.com'
-
-// If this episode has a dedicated review hub page, return its slug
-function getReviewHubSlug(episodeId) {
-  const match = filmReviews.find((f) => f.episodeId === episodeId)
-  return match?.slug ?? null
-}
 
 const getEpisode = cache(async (id) => {
   let allEpisodes = await getAllEpisodes()
   let episode = allEpisodes.find((episode) => episode.id === id)
 
   if (!episode) {
+    // Non-ASCII slugs ("noël", "it’s") now live at an ASCII id.
+    const ascii = toAsciiSlug(id)
+    if (ascii !== id && allEpisodes.some((e) => e.id === ascii)) {
+      permanentRedirect(`/${ascii}`)
+    }
     // Older Podbean slugs were prefixed "episode-NNN-" and still get Google
     // traffic. Send them to the current slug when the rest of it matches.
     const legacy = id.match(/^episode-\d+-(.+)$/)
@@ -53,10 +52,8 @@ export async function generateMetadata({ params }) {
   const seoTitle = buildSeoTitle(episode)
   const metaDescription = buildMetaDescription(episode)
   let episodeUrl = `${SITE_URL}/${episode.id}`
-  const reviewHubSlug = getReviewHubSlug(episode.id)
-  const canonicalUrl = reviewHubSlug
-    ? `${SITE_URL}/reviews/${reviewHubSlug}`
-    : episodeUrl
+  const hubHref = hubHrefForEpisode(episode.id)
+  const canonicalUrl = hubHref ? `${SITE_URL}${hubHref}` : episodeUrl
 
   return {
     title: seoTitle,
@@ -99,7 +96,8 @@ export default async function Episode({ params }) {
   const tv = getTvCoverageForEpisode(episode.id)
   const tvEpisodes = tv?.coverage.episodes ?? []
   const transcript = getTranscript(episode.id)
-  const reviewHubSlug = getReviewHubSlug(episode.id)
+  const hubHref = hubHrefForEpisode(episode.id)
+  const hubLabel = hubLabelForEpisode(episode.id)
   const related = getRelatedEpisodes(episode, await getAllEpisodes())
 
   const jsonLd = {
@@ -120,12 +118,8 @@ export default async function Episode({ params }) {
           },
         }
       : {}),
-    partOfSeries: {
-      '@type': 'PodcastSeries',
-      name: 'Tis the Podcast',
-      url: SITE_URL,
-      webFeed: 'https://feed.podbean.com/tisthepodcast/feed.xml',
-    },
+    partOfSeries: { '@id': SERIES_ID },
+    actor: HOST_REFS,
     ...(tv
       ? {
           about: {
@@ -147,48 +141,6 @@ export default async function Episode({ params }) {
       : {}),
   }
 
-  const firstFaq = tv
-    ? {
-        '@type': 'Question',
-        name: `Which ${tv.show.name} Christmas episodes does Tis the Podcast cover?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text:
-            tvEpisodes.length > 0
-              ? `This episode covers ${tvEpisodes
-                  .map((e) => {
-                    const code = formatEpisodeCode(e)
-                    return `${e.show && e.show !== tv.show.name ? `${e.show} ` : ''}"${e.title}"${code ? ` (${code})` : ''}`
-                  })
-                  .join(', ')}.`
-              : `This episode covers the Christmas episodes of ${tv.show.name}.`,
-        },
-      }
-    : {
-        '@type': 'Question',
-        name: `Is ${episode.showTitle} a Christmas movie?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Tis the Podcast covered ${episode.showTitle}${episode.year ? ` (${episode.year})` : ''} in ${episode.episodeNumber ? `Episode ${episode.episodeNumber}` : 'a bonus episode'}, with hosts Anthony Caruso, Julia Colburn, and Thom Crowe debating its merits as a Christmas movie. ${episodeDescription}`,
-        },
-      }
-
-  const faqLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      firstFaq,
-      {
-        '@type': 'Question',
-        name: `Where can I listen to the Tis the Podcast episode on ${tv ? `${tv.show.name}'s Christmas episodes` : episode.showTitle}?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `It is available at ${SITE_URL}/${episode.id} and on Spotify, Apple Podcasts, and all major podcast platforms.`,
-        },
-      },
-    ],
-  }
-
   return (
     <>
       <JsonLd data={breadcrumbLd(
@@ -200,18 +152,33 @@ export default async function Episode({ params }) {
                   : []),
                 { name: seoTitle, href: `/${episode.id}` },
               ]
-            : [{ name: seoTitle, href: `/${episode.id}` }],
+            : [
+                { name: 'All Episodes', href: '/episodes' },
+                { name: `${date.getUTCFullYear()} Episodes`, href: `/episodes/${date.getUTCFullYear()}` },
+                { name: seoTitle, href: `/${episode.id}` },
+              ],
         )} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-      />
       <article className="py-16 lg:py-36">
         <Container>
+          <nav aria-label="Breadcrumb" className="mb-6 font-mono text-xs text-slate-500">
+            <Link href="/" className="hover:text-pink-600">Home</Link>
+            <span aria-hidden="true"> › </span>
+            {tv ? (
+              <Link href="/christmas-episodes" className="hover:text-pink-600">TV Christmas Episodes</Link>
+            ) : (
+              <>
+                <Link href="/episodes" className="hover:text-pink-600">Episodes</Link>
+                <span aria-hidden="true"> › </span>
+                <Link href={`/episodes/${date.getUTCFullYear()}`} className="hover:text-pink-600">
+                  {date.getUTCFullYear()}
+                </Link>
+              </>
+            )}
+          </nav>
           <header className="flex flex-col">
             <div className="flex items-center gap-6">
               <EpisodePlayButton
@@ -274,12 +241,12 @@ export default async function Episode({ params }) {
 
           <hr className="my-12 border-gray-200" />
           <div className="mb-10 flex flex-wrap gap-x-6 gap-y-2">
-            {reviewHubSlug && (
+            {hubHref && (
               <Link
-                href={`/reviews/${reviewHubSlug}`}
+                href={hubHref}
                 className="inline-flex items-center gap-2 text-sm font-bold text-pink-600 hover:text-pink-700"
               >
-                Read our full {episode.showTitle} review
+                {hubLabel}
                 <span aria-hidden="true">→</span>
               </Link>
             )}
