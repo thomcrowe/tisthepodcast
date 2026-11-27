@@ -31,6 +31,20 @@ for si, sec in enumerate(d['sections']):
             out.append(new)
     sec['paragraphs'] = out
 
+# A paragraph that starts lowercase is the tail of a sentence cut off at a
+# section break; join it back onto the paragraph before it.
+prev = None
+for sec in d['sections']:
+    keep = []
+    for para in sec['paragraphs']:
+        if prev is not None and para['text'][:1].islower():
+            prev['text'] = prev['text'].rstrip() + ' ' + para['text']
+            continue
+        keep.append(para)
+        prev = para
+    sec['paragraphs'] = keep
+d['sections'] = [sec for sec in d['sections'] if sec['paragraphs']]
+
 d['wordCount'] = sum(len(p['text'].split()) for s in d['sections'] for p in s['paragraphs'])
 d['source'] = 'Whisper large-v3-turbo (mlx-whisper), edited for punctuation, casing, and speaker turns'
 with open(path, 'w', encoding='utf-8') as f:
