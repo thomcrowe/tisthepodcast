@@ -34,7 +34,8 @@ NAME_FIXES = [
     (r"\bTom Crow\b", 'Thom Crowe'),
     # Leave real Toms alone ("Tom Hanks", "Tom Brady", ...).
     (r"\bTom\b(?!\s+[A-Z][a-z])", 'Thom'),
-    (r"\bTiz the [Pp]odcast\b", 'Tis the Podcast'),
+    (r"\b(Tiz|Tits) the [Pp]odcast\b", 'Tis the Podcast'),
+    (r"\bTiz the Pod\b", 'Tis the Pod'),
     (r"\b[Tt]is the podcast\b", 'Tis the Podcast'),
     (r"\bJerry Davila\b", 'Gerry Davila'),
 ]
@@ -69,6 +70,55 @@ EPISODE_FIXES = {
         (r'\bLeanne Schreimer\b', 'Liane Schirmer'),
         (r'\bTara Cherendoff\b', 'Tara Charendoff'),
     ],
+    'now-i-have-a-machine-gun-ho-ho-ho': [
+        (r'\bMcClain\b', 'McClane'),
+        (r'\bHobbs Gruber\b', 'Hans Gruber'),
+        (r'\bAlan Richman\b', 'Alan Rickman'),
+        (r'\bReginald (Bell Johnson|Valjohnson)\b', 'Reginald VelJohnson'),
+        (r'\bspell Thomas Crow as\b', 'spell Thom Crowe as'),
+    ],
+    'but-if-you-had-regular-hands-youd-be-like-everyone-else': [
+        (r'\bEdward Cesar\b', 'Edward Scissorhands'),
+        (r'\bDiane Weist\b', 'Dianne Wiest'),
+        (r'\bAlistair Sims\b', 'Alastair Sim'),
+        (r'\bFreddy Gets Fingered\b', 'Freddy Got Fingered'),
+        (r"\bDanny Ogden's\b", "Danny Elfman's"),
+    ],
+    'happy-human-holiday-dad-rick-and-morty-christmas-episodes': [
+        (r'\b(Dr\.? )?[ZXz]e[dn]on [Bb]loom\b', lambda m: (m.group(1) or '') + 'Xenon Bloom'),
+        (r'\b(Academy|Atopy) Park\b', 'Anatomy Park'),
+        (r'\bReuben\b', 'Ruben'),
+        (r'\bJustin Rowland\b', 'Justin Roiland'),
+        (r'\bMarty Smith\b', 'Morty Smith'),
+    ],
+    'pa-rum-pum-pum-pum-santas-got-a-six-pack-regular-show-christmas-episodes': [
+        (r'\bWhite Alfin\b', 'White Elephant'),
+        (r'\bDungeon Carly Carly\b', 'Dungeon Crawler Carl'),
+        (r'\bMuscleman\b', 'Muscle Man'),
+    ],
+    'ill-be-back-when-you-least-expect-it-next-xmas-futurama-christmas-episodes': [
+        (r'\bHermie Conrad\b', 'Hermes Conrad'),
+        (r'\bPhil Lamar\b', 'Phil LaMarr'),
+    ],
+    'oh-the-entertainmentwasspectacular-twelvedrummers-drumming-elevenpipers-pipingtenlordsa-leapingdoyou-have-any-aspirinwho-s-the-boss-christmas-episodes': [
+        (r'\bTony Maselli\b', 'Tony Micelli'),
+        (r'\bCatherine Hellman\b', 'Katherine Helmond'),
+        (r'\bNicholas Holt\b', 'Nicholas Hoult'),
+        (r'\bRachel Broshnahan\b', 'Rachel Brosnahan'),
+        (r'\bHenry Cavell\b', 'Henry Cavill'),
+        (r'\bPaw Kent\b', 'Pa Kent'),
+        (r'\bChristopher Reeves\b', 'Christopher Reeve'),
+        (r'\bVoodoo\b', 'Vudu'),
+    ],
+    'the-office-christmas-party-moroccan-christmas-extended-editions': [
+        (r'\bStephen Beach\b', 'Steven Beech'),
+        (r'\bBenny Hanna\b', 'Benihana'),
+    ],
+    'look-mister-there-are-some-rules-that-youve-got-to-follow': [
+        (r'\bRan Peltzer\b', 'Rand Peltzer'),
+        (r'\bLynn Pelter\b', 'Lynn Peltzer'),
+        (r'\bBash Times\b', 'Fast Times'),
+    ],
 }
 
 # Where the hosts' conversation ends, in seconds. Everything after is outro
@@ -85,6 +135,15 @@ END_AT = {
     'this-is-halloween-1509328256': 5352.5,
     'why-don-t-you-and-i-just-roll-on-back-to-the-playroom-the-christmas-toy': 3776.5,
     'on-halloween-night-the-great-pumpkin-rises-out-of-his-pumpkin-patch-and-flies-through-the-air-with-his-bag-of-toys-for-all-the-children': 2677,
+    'now-i-have-a-machine-gun-ho-ho-ho': 4785,
+    'theres-no-more-heroes-left-in-the-world': 5554,
+    'but-if-you-had-regular-hands-youd-be-like-everyone-else': 4120,
+    'happy-human-holiday-dad-rick-and-morty-christmas-episodes': 3855,
+    'pa-rum-pum-pum-pum-santas-got-a-six-pack-regular-show-christmas-episodes': 5440,
+    'ill-be-back-when-you-least-expect-it-next-xmas-futurama-christmas-episodes': 6418.5,
+    'youre-supposed-to-be-the-leading-lady-in-your-own-life-for-gods-sake': 2985,
+    'oh-the-entertainmentwasspectacular-twelvedrummers-drumming-elevenpipers-pipingtenlordsa-leapingdoyou-have-any-aspirinwho-s-the-boss-christmas-episodes': 3623,
+    'look-mister-there-are-some-rules-that-youve-got-to-follow': 3090,
 }
 
 # Passages where the hosts sing or recite song lyrics. Replaced with a
@@ -97,9 +156,12 @@ REDACT = {
         (800, 843.5, "[The hosts sing The Nanny's theme song.]"),
         (1040, 1061.5, '[Recites the theme song lyrics.]'),
     ],
+    'ill-be-back-when-you-least-expect-it-next-xmas-futurama-christmas-episodes': [
+        (2603, 2624.5, '[Recites a few lines of the episode\'s song, "Santa Claus Is Gunning You Down."]'),
+    ],
 }
 
-WELCOME = re.compile(r"(welcome( back)? to (another|the|tis|a special)|hello,? listeners,? and welcome)", re.I)
+WELCOME = re.compile(r"(welcome( back)? to (another|the|tis|tiz|a (very )?special)|hello,? listeners,? and welcome)", re.I)
 
 FILLER_WORDS = {
     'yeah', 'yep', 'yes', 'yup', 'okay', 'ok', 'right', 'mm', 'mmhmm', 'mhm',
