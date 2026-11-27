@@ -18,6 +18,9 @@ Usage:
     # every episode from one year
     python3 scripts/transcribe-episodes.py --year 2019
 
+    # redo episodes that already have a transcript
+    python3 scripts/transcribe-episodes.py --force --ids fresh-prince
+
 Then:
     python3 scripts/build-transcripts.py transcripts-raw --live-date YYYY-MM-DD
 
@@ -117,6 +120,7 @@ def main():
     ap.add_argument('--limit', type=int, default=0, help='stop after this many episodes')
     ap.add_argument('--model', default=MODEL)
     ap.add_argument('--keep-audio', action='store_true', help="don't delete the mp3 afterwards")
+    ap.add_argument('--force', action='store_true', help='redo episodes that already have a transcript')
     args = ap.parse_args()
 
     try:
@@ -144,7 +148,7 @@ def main():
             print(f'  ? not in feed, skipping: {eid}')
         elif eid in skip:
             print(f'  - pilot control page, skipping: {eid}')
-        elif not already_done(eid):
+        elif args.force or not already_done(eid):
             queue.append(episodes[eid])
     if args.limit:
         queue = queue[: args.limit]
@@ -158,7 +162,11 @@ def main():
             audio,
             path_or_hf_repo=args.model,
             initial_prompt=PROMPT,
-            condition_on_previous_text=False,  # fewer repeated-line hallucinations
+            # Keep this True: Whisper uses the previous window's text to keep
+            # casing and punctuation. With it off, output drifts into
+            # lowercase run-on text. Repeated-line hallucinations are dropped
+            # later by build-transcripts.py.
+            condition_on_previous_text=True,
             verbose=False,
         )
         segments = [
