@@ -12,7 +12,7 @@ Picked by the brief (first 4), then by Google-referred visits in Vercel Web Anal
 | # | Page | Episode | Why it's in the pilot | Words |
 |---|------|---------|-----------------------|------:|
 | 1 | [/oy-to-the-world-the-nanny-chrismukkah-episodes](https://tisthepodcast.com/oy-to-the-world-the-nanny-chrismukkah-episodes) | The Nanny Chrismukkah episodes | Brief (688 impr. for "the nanny christmas episodes list", pos 2.9) | 13,331 |
-| 2 | [/christmas-is-all-around](https://tisthepodcast.com/christmas-is-all-around) → canonical [/reviews/love-actually](https://tisthepodcast.com/reviews/love-actually) | Love Actually | Brief | 13,626 |
+| 2 | [/christmas-is-all-around](https://tisthepodcast.com/christmas-is-all-around) → canonical [/is-it-a-christmas-movie/love-actually](https://tisthepodcast.com/is-it-a-christmas-movie/love-actually) (was /reviews/love-actually until 2026-11-26) | Love Actually | Brief | 13,626 |
 | 3 | [/and-the-grinch-raised-his-glass-…](https://tisthepodcast.com/and-the-grinch-raised-his-glass-and-led-the-whos-in-a-toast-to-kindness-and-love-the-things-we-need-most) | Dr. Seuss' The Grinch (2018) | Brief | 9,574 |
 | 4 | [/jingle-bells-batmansmells-…](https://tisthepodcast.com/jingle-bells-batmansmells-robinlaidan-egg-the-batmobile-lost-a-wheelandthe-jokergot-awaythechristmasepisodes-of-batmantheanimated-seriesandjustice) | Batman: TAS / Justice League | Brief | 14,943 |
 | 5 | [/i-saw-mommy-kissing-santa-claus-1597868106](https://tisthepodcast.com/i-saw-mommy-kissing-santa-claus-1597868106) | I Saw Mommy Kissing Santa Claus (2001) | 43 Google visitors (via the old `/episode-161-…` URL, now 308'd here) | 12,523 |
@@ -51,7 +51,7 @@ Search Console → Performance → Pages, filter to each group, date range = 28 
 - Model: Whisper large-v3-turbo via `mlx-whisper`, on-device. No speaker labels (diarization needs a gated pyannote model and an HF token; not set up).
 - Cleanup (`scripts/build-transcripts.py`): name fixes (host "Thom", guest names, cast names), filler-only lines dropped, paragraphs on pauses, a timestamped H3 every ~5–10 min.
 - **Removed:** the cold-open clip montage, outro songs, and any passage where the hosts sing or recite song lyrics (replaced with a bracketed note). We can't publish copyrighted lyrics or film audio.
-- Rendered server-side inside a `<details>` "Read the transcript" block below the show notes, with a jump link near the top. On Love Actually it also appears on the canonical review page.
+- Rendered server-side inside a `<details>` "Read the transcript" block below the show notes, with a jump link near the top. On Love Actually it also appears on the canonical verdict page (/is-it-a-christmas-movie/love-actually; the review page was merged into it on 2026-11-26).
 
 To add more episodes: transcribe to `{id, segments:[{start,end,text}]}` JSON, add any `END_AT` / `REDACT` / name-fix entries, and run
 `python3 scripts/build-transcripts.py <raw-dir> --live-date YYYY-MM-DD`.
