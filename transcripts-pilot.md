@@ -55,3 +55,7 @@ Search Console → Performance → Pages, filter to each group, date range = 28 
 
 To add more episodes: transcribe to `{id, segments:[{start,end,text}]}` JSON, add any `END_AT` / `REDACT` / name-fix entries, and run
 `python3 scripts/build-transcripts.py <raw-dir> --live-date YYYY-MM-DD`.
+
+## Batch 1 (live 2026-11-27)
+
+Ten more transcripts, made with `scripts/transcribe-episodes.py` from the top of `scripts/transcribe-priority.txt`: Die Hard, Lethal Weapon, Edward Scissorhands, Gremlins, The Holiday, Rick and Morty, Regular Show, Futurama, Who's the Boss?, and The Office. None are pilot or control pages, so the Dec 22 comparison is unaffected. Four of them (Die Hard, Lethal Weapon, Edward Scissorhands, Gremlins) also show on their `/is-it-a-christmas-movie/` verdict pages.
