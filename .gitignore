@@ -32,3 +32,6 @@ yarn-error.log*
 .vercel
 /content
 .claude/
+
+# Whisper output and downloaded audio (scripts/transcribe-episodes.py)
+/transcripts-raw/

@@ -1,0 +1,49 @@
+# Episodes to transcribe first, in order. One episode id per line; '#' starts a comment.
+# scripts/transcribe-episodes.py reads this when run without --ids or --year.
+
+# 1. Episodes behind the movie verdict and review pages (transcripts show on those pages).
+now-i-have-a-machine-gun-ho-ho-ho
+keep-the-change-ya-filthy-animal
+iron-man-3-title-tbd
+theres-no-more-heroes-left-in-the-world
+look-mister-there-are-some-rules-that-youve-got-to-follow
+mistletoe-can-be-deadily-if-you-eat-it-but-a-kiss-can-be-even-deadlier-if-you-mean-it
+but-if-you-had-regular-hands-youd-be-like-everyone-else
+youre-supposed-to-be-the-leading-lady-in-your-own-life-for-gods-sake
+buddy-the-elf-whats-your-favorite-color-1503931390
+youll-shoot-your-eye-out-kid
+
+# 2. Episode pages with the most Google impressions without a transcript
+#    (Search Console, Aug 25 - Nov 24, 2026, most first). Pilot control pages are left out.
+happy-human-holiday-dad-rick-and-morty-christmas-episodes
+pa-rum-pum-pum-pum-santas-got-a-six-pack-regular-show-christmas-episodes
+ill-be-back-when-you-least-expect-it-next-xmas-futurama-christmas-episodes
+oh-the-entertainmentwasspectacular-twelvedrummers-drumming-elevenpipers-pipingtenlordsa-leapingdoyou-have-any-aspirinwho-s-the-boss-christmas-episodes
+the-office-christmas-party-moroccan-christmas-extended-editions
+oh-this-is-a-special-story-all-about-santa-claus-ready-barney-waiting-for-santa
+everybody-s-asking-what-this-what-is-the-seven-fishes-or-why-do-we-do-it-and-i-think-i-know-what-my-definition-is-the-bear-season-2-episode-6-fishes
+for-my-twelfth-day-recycling-my-teacher-gave-to-methe-magic-school-bus-season-3-episode-13-holiday-special
+how-do-you-think-grandma-got-those-legs-of-hers-shes-not-exactly-a-stairmaster-gal-gilmore-girls-season-1-episode-10-forgiveness-and-stuff
+one-two-freddys-coming-for-youa-nightmare-on-elm-street-1984
+this-is-new-berk-at-snoggletog-the-greatest-time-of-the-year-how-to-train-your-dragon-homecoming
+i-m-putting-my-stank-on-christmas-blackish-pt-1
+that-tree-has-earned-character-by-persevering-through-freezing-winter-and-forest-fires-and-floods-gilmore-girls-christmas-episodes-seasons-2-and-7
+im-part-of-prep-and-landing-an-elite-unit-of-elves-getting-houses-ready-around-the-world-for-the-big-guys-arrival
+a-flintstone-christmas
+nothing-says-merry-christmas-like-a-hostage-situation-reba-season-2-episode-10-cookies-for-santa
+i-ve-ruined-christmas-for-everyone-in-two-lifetimes-richie-rich-s-christmas-wish
+therell-be-presents-and-twinkling-lights-as-we-partake-in-the-seasons-delights-duck-the-halls-a-mickey-mouse-christmas-special
+ears-nestor
+likewhatif-the-grinchhad-succeeded-in-conquering-whoville-andcindy-louwhogrewup-got-boobsand-was-leadinga-resistancesuperstore-christmas-episodes
+silent-night-2023
+me-in-a-santa-suit-i-dont-think-so-last-man-standing-first-four-christmas-episodes
+you-ate-the-baby-jesus-and-his-mother-mary-the-curb-your-enthusiasm-and-im-sorry-christmas-episodes
+snow-em-gee
+youll-never-get-elected-charlie-brown-you-have-no-way-of-winning-no-way
+not-sure-whether-to-stuff-the-goose-with-the-stuffing-or-the-stuffing-with-the-goose-netflix-s-scrooge
+i-do-have-a-mom-she-s-right-here-in-the-flowers-and-in-the-clouds-and-in-the-grass-too-rugrats-mother-s-day
+christmas-at-hogwarts
+i-think-i-just-lost-my-job
+youre-a-trophy-wife-what-contest-in-hell-did-i-win
+well-christmas-is-coming-and-i-think-i-need-your-help-12-gifts-of-christmas
+it-s-going-to-be-the-best-barton-christmas-ever-marvel-s-hawkeye

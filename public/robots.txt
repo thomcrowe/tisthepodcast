@@ -50,3 +50,5 @@ Sitemap: https://tisthepodcast.com/sitemap.xml
 # https://llmstxt.org
 # llms.txt: https://tisthepodcast.com/llms.txt
 # llms-full.txt: https://tisthepodcast.com/llms-full.txt
+
+# IndexNow key: https://tisthepodcast.com/23fc11d8415338614530dcbd8ca05f76.txt
