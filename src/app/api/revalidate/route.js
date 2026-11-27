@@ -1,6 +1,8 @@
 import { revalidatePath } from 'next/cache'
 
 import { getAllEpisodes } from '@/lib/episodes'
+import { submitToIndexNow } from '@/lib/indexnow'
+import { hubHrefForEpisode } from '@/lib/film-links'
 
 export const dynamic = 'force-dynamic'
 
@@ -42,6 +44,15 @@ async function revalidate(request) {
     return Response.json({ revalidated: 'all', at: new Date().toISOString() })
   }
 
+  // ?scope=indexnow-all (with REVALIDATE_SECRET): submit every sitemap URL
+  // to IndexNow once, e.g. after a big site change.
+  if (scope === 'indexnow-all') {
+    const { default: sitemap } = await import('@/app/sitemap')
+    const entries = await sitemap()
+    const indexnow = await submitToIndexNow(entries.map((e) => e.url))
+    return Response.json({ indexnow })
+  }
+
   const episodes = await getAllEpisodes({ fresh: true })
   const newest = episodes.reduce((max, e) => Math.max(max, new Date(e.published).getTime()), 0)
   const isNew = Date.now() - newest < NEW_EPISODE_WINDOW_MS
@@ -52,7 +63,16 @@ async function revalidate(request) {
   const year = new Date(newest).getUTCFullYear()
   const paths = [...EPISODE_LIST_PATHS, `/episodes/${year}`]
   for (const path of paths) revalidatePath(path)
-  return Response.json({ revalidated: paths, newest: new Date(newest).toISOString() })
+
+  // Tell Bing (and ChatGPT search / Copilot) about the new episode right away.
+  const fresh = episodes.filter((e) => Date.now() - new Date(e.published).getTime() < NEW_EPISODE_WINDOW_MS)
+  const indexnow = await submitToIndexNow([
+    ...fresh.map((e) => hubHrefForEpisode(e.id) ?? `/${e.id}`),
+    '/',
+    '/episodes',
+    `/episodes/${year}`,
+  ])
+  return Response.json({ revalidated: paths, indexnow, newest: new Date(newest).toISOString() })
 }
 
 export async function GET(request) {
