@@ -8,9 +8,14 @@ import isItChristmas from '@/data/is-it-christmas.json'
 
 const IS_IT_SLUGS = new Set(isItChristmas.map((a) => a.slug))
 
+// A review's verdict page slug: usually the same, but a review can name a
+// different one (e.g. /reviews/elf-2003 → /is-it-a-christmas-movie/elf).
+const verdictSlugOf = (reviewSlug) =>
+  filmReviews.find((f) => f.slug === reviewSlug)?.verdictSlug ?? reviewSlug
+
 export const MERGED_REVIEW_SLUGS = filmReviews
   .map((f) => f.slug)
-  .filter((slug) => IS_IT_SLUGS.has(slug))
+  .filter((slug) => IS_IT_SLUGS.has(verdictSlugOf(slug)))
 
 const MERGED = new Set(MERGED_REVIEW_SLUGS)
 
@@ -19,13 +24,15 @@ export const isMergedReview = (slug) => MERGED.has(slug)
 // Reviews that still have their own page.
 export const standaloneReviews = filmReviews.filter((f) => !MERGED.has(f.slug))
 
-export function getReviewForVerdict(slug) {
-  return MERGED.has(slug) ? filmReviews.find((f) => f.slug === slug) : null
+export function getReviewForVerdict(verdictSlug) {
+  return (
+    filmReviews.find((f) => MERGED.has(f.slug) && verdictSlugOf(f.slug) === verdictSlug) ?? null
+  )
 }
 
 // Where a review link should point.
 export function reviewHref(slug) {
-  return MERGED.has(slug) ? `/is-it-a-christmas-movie/${slug}` : `/reviews/${slug}`
+  return MERGED.has(slug) ? `/is-it-a-christmas-movie/${verdictSlugOf(slug)}` : `/reviews/${slug}`
 }
 
 // The hub page an episode defers to (canonical), if any.

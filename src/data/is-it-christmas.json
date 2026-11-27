@@ -470,5 +470,75 @@
     "verdictLine": "No, Frozen is not a Christmas movie.",
     "verdictReason": "It's a winter movie: Christmas never comes up, and nothing in the story depends on the holiday.",
     "metaDescription": "No, Frozen is not a Christmas movie — it's a winter movie. Here's why snow alone doesn't make a Christmas film, and the case people make for it."
+  },
+  {
+    "slug": "elf",
+    "film": "Elf",
+    "year": 2003,
+    "episodeId": "buddy-the-elf-whats-your-favorite-color-1503931390",
+    "episodeNumber": 2,
+    "verdict": "yes",
+    "verdictStatement": "Yes — Elf is a Christmas movie, and our #1.",
+    "verdictExplanation": "Elf (2003) follows Buddy, a human raised at the North Pole by Santa's elves, as he travels to New York at Christmastime to find his father. Tis the Podcast covered it in its second-ever episode and called it the hosts' favorite movie; it held the #1 spot on the show's Christmas canon list for years afterward.",
+    "caseFor": [
+      "Buddy is raised at the North Pole by Santa's elves",
+      "The story takes place in New York during the Christmas season",
+      "The climax is about saving Christmas Eve"
+    ],
+    "caseAgainst": [],
+    "podcastAngle": "Elf was the subject of Tis the Podcast's second episode, where the hosts called it their favorite movie. It became the benchmark for everything that followed: the very next episode asked how Home Alone compares to \"our current #1 film, Elf.\"",
+    "faqs": [
+      {
+        "q": "Is Elf a Christmas movie?",
+        "a": "Yes. Elf (2003) is set at the North Pole and in New York at Christmastime, and its story builds to saving Christmas Eve. Tis the Podcast's hosts call it their favorite movie."
+      },
+      {
+        "q": "Which Tis the Podcast episode covers Elf?",
+        "a": "Episode 2, \"Buddy The Elf, What's Your Favorite Color?\", from August 2017."
+      }
+    ],
+    "relatedSlugs": [
+      "home-alone",
+      "a-christmas-story",
+      "the-holiday"
+    ],
+    "verdictLine": "Yes, Elf is a Christmas movie.",
+    "verdictReason": "Buddy is raised by Santa's elves and the story builds to saving Christmas Eve. It's also our favorite movie, and it held #1 on our Christmas canon list for years.",
+    "metaDescription": "Yes, Elf is a Christmas movie, and it's our #1. Why the 2003 Will Ferrell film tops our Christmas canon, from the episode where we called it our favorite."
+  },
+  {
+    "slug": "a-christmas-story",
+    "film": "A Christmas Story",
+    "year": 1983,
+    "episodeId": "youll-shoot-your-eye-out-kid",
+    "episodeNumber": 76,
+    "verdict": "yes",
+    "verdictStatement": "Yes — the Christmas part was never in doubt. The quality was.",
+    "verdictExplanation": "A Christmas Story (1983) follows Ralphie Parker's campaign for a Red Ryder BB gun in the weeks before Christmas. Its Christmas credentials were never the issue on Tis the Podcast; its quality was. The hosts split, with Julia and Thom on one side and Anthony on the other, in one of the show's fiercest debates.",
+    "caseFor": [
+      "Set in the weeks leading up to Christmas",
+      "The plot is a kid's quest for one specific Christmas present",
+      "It ends on Christmas Day"
+    ],
+    "caseAgainst": [],
+    "podcastAngle": "Tis the Podcast covered A Christmas Story on Christmas Eve 2018, timed to TBS's 24-hour marathon. It turned into a Julia-and-Thom vs. Anthony battle over the film's merits, the fiercest since the show's original Grinch episode.",
+    "faqs": [
+      {
+        "q": "Is A Christmas Story a Christmas movie?",
+        "a": "Yes. A Christmas Story (1983) is set in the weeks before Christmas, its plot is Ralphie's quest for a Christmas present, and it ends on Christmas Day."
+      },
+      {
+        "q": "Do the Tis the Podcast hosts like A Christmas Story?",
+        "a": "Not all of them. On the episode, Julia and Thom landed on one side and Anthony on the other, in one of the show's most heated debates."
+      }
+    ],
+    "relatedSlugs": [
+      "home-alone",
+      "elf",
+      "die-hard"
+    ],
+    "verdictLine": "Yes, A Christmas Story is a Christmas movie.",
+    "verdictReason": "The whole film is Ralphie's countdown to Christmas morning and one specific present, even if our hosts split on how good it is.",
+    "metaDescription": "Yes, A Christmas Story is a Christmas movie. Whether it's a good one split our hosts, Julia and Thom vs. Anthony, in one of our fiercest debates."
   }
 ]

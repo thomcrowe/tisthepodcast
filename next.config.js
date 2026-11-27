@@ -5,10 +5,10 @@ const isItChristmas = require('./src/data/is-it-christmas.json')
 // and the review content lives there (see src/lib/film-links.js).
 const isItSlugs = new Set(isItChristmas.map((a) => a.slug))
 const mergedReviewRedirects = filmReviews
-  .filter((f) => isItSlugs.has(f.slug))
+  .filter((f) => isItSlugs.has(f.verdictSlug ?? f.slug))
   .map((f) => ({
     source: `/reviews/${f.slug}`,
-    destination: `/is-it-a-christmas-movie/${f.slug}`,
+    destination: `/is-it-a-christmas-movie/${f.verdictSlug ?? f.slug}`,
     permanent: true,
   }))
 
