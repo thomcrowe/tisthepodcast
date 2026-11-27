@@ -139,8 +139,28 @@ export function getPosterFromData(episodeNumber) {
 
 // Returns all episodes sorted chronologically (episode 1 first), with
 // extracted show titles. Used by The Watch List page.
+// ── Feed cache ──────────────────────────────────────────────────────────
+// Every page render used to download and parse Podbean's 2.5 MB feed (up to
+// three times for one episode page). On-demand rebuilds then took 1–1.5s,
+// which showed up as slow TTFB for real visitors. Keep one parsed copy per
+// server instance for a few minutes and share in-flight requests.
+const FEED_TTL_MS = 10 * 60 * 1000
+let feedCache = null // { at, promise }
+
+export function loadFeed({ fresh = false } = {}) {
+  const now = Date.now()
+  if (!fresh && feedCache && now - feedCache.at < FEED_TTL_MS) return feedCache.promise
+  const promise = parseFeed(FEED_URL)
+  feedCache = { at: now, promise }
+  // Don't keep a failed fetch around; the next caller retries.
+  promise.catch(() => {
+    if (feedCache?.promise === promise) feedCache = null
+  })
+  return promise
+}
+
 export async function getAllEpisodesForList() {
-  const feed = await parseFeed(FEED_URL)
+  const feed = await loadFeed()
 
   return feed.items
     .filter((item) => item.itunes_episode) // skip bonus/unnumbered episodes
@@ -155,8 +175,12 @@ export async function getAllEpisodesForList() {
     .sort((a, b) => a.episodeNumber - b.episodeNumber)
 }
 
-export async function getAllEpisodes() {
-  let feed = await parseFeed(FEED_URL)
+// Parsed episode list, memoized per feed object (so per feed fetch).
+const episodesByFeed = new WeakMap()
+
+export async function getAllEpisodes(options) {
+  const feed = await loadFeed(options)
+  if (episodesByFeed.has(feed)) return episodesByFeed.get(feed).slice()
 
   let episodes = feed.items.map(
     ({ title, description, content, enclosures, published, link, itunes_episode }) => {
@@ -200,5 +224,7 @@ export async function getAllEpisodes() {
     },
   )
 
-  return episodes
+  episodesByFeed.set(feed, episodes)
+  // Callers get their own array so in-place sorts can't reorder the cache.
+  return episodes.slice()
 }
